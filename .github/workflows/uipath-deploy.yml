@@ -19,7 +19,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     env:
       UIPATH_CLIENT_ID: ${{ secrets.UIPATH_CLIENT_ID }}
@@ -29,55 +29,57 @@ jobs:
       UIPATH_URL: ${{ secrets.UIPATH_URL }}
 
     steps:
-      - name: Checkout code
+      # --------------------------------
+      # Checkout code
+      # --------------------------------
+      - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
-      # -------------------------
-      # Setup UiPath CLI (Option 1)
-      # -------------------------
+      # --------------------------------
+      # Setup UiPath CLI
+      # --------------------------------
       - name: Setup UiPath CLI
         uses: uipath/setup-uipath@v2
         with:
           uipath-cli-version: '23.10.8712.28549'
 
       - name: Verify UiPath CLI
-        shell: pwsh
         run: uipcli --version
 
-      # -------------------------
-      # Rest of your logic unchanged
-      # -------------------------
+      # --------------------------------
+      # Read bots.txt
+      # --------------------------------
       - name: Read bot list
         id: readbots
-        shell: bash
         run: |
-          echo "Reading bots.txt..."
-          BOTS=$(cat bots.txt)
+          BOTS=$(tr '\n' ' ' < bots.txt)
           echo "bots=$BOTS" >> $GITHUB_OUTPUT
-          echo "Available bots:"
-          echo "$BOTS"
+          echo "Available bots: $BOTS"
 
-      - name: Validate bot input (if provided)
-        shell: bash
+      # --------------------------------
+      # Validate manual bot input
+      # --------------------------------
+      - name: Validate bot input
         run: |
           if [ -n "${{ github.event.inputs.bot }}" ]; then
-            echo "Validating bot: ${{ github.event.inputs.bot }}"
             if ! grep -qw "${{ github.event.inputs.bot }}" bots.txt; then
               echo "ERROR: Bot '${{ github.event.inputs.bot }}' not found in bots.txt"
               exit 1
             fi
-          else
-            echo "No bot specified. Will deploy all changed bots."
           fi
 
+      # --------------------------------
+      # Determine bots to build
+      # --------------------------------
       - name: Determine bots to build
         id: buildbots
-        shell: bash
         run: |
           if [ -n "${{ github.event.inputs.bot }}" ]; then
             TO_BUILD="${{ github.event.inputs.bot }}"
           else
-            CHANGED_BOTS=$(git diff --name-only HEAD~1 HEAD | grep project.json | awk -F/ '{print $1}' | sort | uniq)
+            CHANGED_BOTS=$(git diff --name-only HEAD^ HEAD | grep project.json | awk -F/ '{print $1}' | sort -u || true)
             TO_BUILD=""
             for bot in $CHANGED_BOTS; do
               if echo "${{ steps.readbots.outputs.bots }}" | grep -qw "$bot"; then
@@ -87,26 +89,9 @@ jobs:
           fi
 
           if [ -z "$TO_BUILD" ]; then
-            echo "⚠ No bots to build."
-          else
-            echo "Bots to build:$TO_BUILD"
+            echo "No bots to build. Exiting."
+            exit 0
           fi
 
           echo "to_build=$TO_BUILD" >> $GITHUB_OUTPUT
-
-      - name: Build UiPath packages
-        shell: bash
-        run: |
-          mkdir -p artifacts
-          for bot in ${{ steps.buildbots.outputs.to_build }}; do
-            echo "🔨 Building $bot"
-            uipcli package restore --project-path "$bot"
-            uipcli package pack --project-path "$bot" --output "artifacts/$bot"
-          done
-
-      - name: Login to UiPath Orchestrator
-        shell: bash
-        run: |
-          uipcli auth login \
-            --client-id "$UIPATH_CLIENT_ID" \
-            --client-secret "$UIPATH_C_
+          echo "Bots to buil
