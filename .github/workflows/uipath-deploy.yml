@@ -33,11 +33,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install UiPath CLI
-        shell: bash
         run: |
-          dotnet tool install --global UiPath.CLI --version 23.10.8753.32995 || echo "UiPath CLI already installed"
-          echo "::add-path::$HOME/.dotnet/tools"
-          uipcli --version
+          echo "Installing UiPath CLI..."
+          dotnet tool install --global UiPath.CLI || echo "UiPath CLI already installed"
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: Verify UiPath CLI
+        run: uipcli --version
+
 
       - name: Read bot list
         id: readbots
@@ -55,7 +58,7 @@ jobs:
           if [ -n "${{ github.event.inputs.bot }}" ]; then
             echo "Validating bot: ${{ github.event.inputs.bot }}"
             if ! grep -qw "${{ github.event.inputs.bot }}" bots.txt; then
-              echo "❌ ERROR: Bot '${{ github.event.inputs.bot }}' not found in bots.txt"
+              echo "ERROR: Bot '${{ github.event.inputs.bot }}' not found in bots.txt"
               exit 1
             fi
           else
