@@ -42,8 +42,7 @@ jobs:
       # --------------------------------
       - name: Install UiPath CLI
         run: |
-          curl -L -o uipathcli.tar.gz \
-            https://github.com/UiPath/uipathcli/releases/uipathcli-linux-amd64.tar.gz
+          curl -L -o uipathcli.tar.gz https://github.com/UiPath/uipathcli/releases/uipathcli-linux-amd64.tar.gz
           tar -xzf uipathcli.tar.gz
           chmod +x uipathcli
           sudo mv uipathcli /usr/local/bin/uipathcli
