@@ -40,14 +40,17 @@ jobs:
       # --------------------------------
       # Setup UiPath CLI
       # --------------------------------
-      - name: Setup UiPath CLI
-        uses: uipath/setup-uipath@v2
-        with:
-          uipath-cli-version: '23.10.8712.28549'
-
+      - name: Install UiPath CLI
+        run: |
+          curl -L -o uipathcli.tar.gz \
+            https://github.com/UiPath/uipathcli/releases/latest/download/uipathcli-linux-amd64.tar.gz
+          tar -xzf uipathcli.tar.gz
+          chmod +x uipathcli
+          sudo mv uipathcli /usr/local/bin/uipathcli
+      
       - name: Verify UiPath CLI
-        run: uipcli --version
-
+        run: uipathcli --version
+      
       # --------------------------------
       # Read bots.txt
       # --------------------------------
