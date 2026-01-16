@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="yahSEl3QAEy-EABV_t0H1Q" Reference="D7WqeYEmnEKMzyxFDfXbPA/LD3Ki-3cfU266uHxag-sHQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/fees" CVScreenId="bbf7e787-e567-4b6d-8581-5e37cea06dd9" CvElementArea="249, 464, 837, 62" CvType="InputBox" DesignTimeRectangle="250, 466, 783, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='payment-account' tag='INPUT' aaname='Payment Account' name='payment-account' parentname='payment-account' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='payment-account' tag='INPUT' aaname='Payment Account' name='payment-account' parentname='payment-account' type='text' class='' /&gt;" Guid="354e6e57-3e51-4c0b-bf8f-0e0a9ebd875c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Fees' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="bbf7e787-e567-4b6d-8581-5e37cea06dd9" CvElementArea="249, 464, 837, 62" CvType="InputBox" DesignTimeRectangle="265, 485, 768, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='Payment Account' innertext='Payment Account' parentname='payment-account' visibleinnertext='Payment Account' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Payment Account' innertext='Payment Account' parentname='payment-account' visibleinnertext='Payment Account' type='' check:text='Payment Account' /&gt;" Guid="b1cf0098-6c75-4458-911c-d02d10b4d705" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="3592ee06d40aa233a4ad599a71c15c66.png" xmlns="">0CglxMFSZ3UOQFsbab_i4pg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

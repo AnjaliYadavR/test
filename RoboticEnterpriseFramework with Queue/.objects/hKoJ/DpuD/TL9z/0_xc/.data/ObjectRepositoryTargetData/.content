@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2CIOGGrc20Gu2-LsaCBHTQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/0_xc1FgznkmTElP0hVHidQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/fees" CVScreenId="8dbeab74-2f36-48c4-96e6-ffc2d9028f7a" CvElementArea="1733, 962, 157, 50" CvTextArea="1754, 977, 87, 21" CvTextArgument="Summary" CvType="Button" DesignTimeRectangle="1736, 965, 153, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='forward-to-summary' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='forward-to-summary' tag='SPAN' type='' aaname='' /&gt;" Guid="ccc04f35-cf2d-487f-995f-f0252e6a5bbc" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Fees' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="59726994f0a442553c6f7fc6bd434a8b.png" xmlns="">0jBHwofzIG0WFRvig_U0rPw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

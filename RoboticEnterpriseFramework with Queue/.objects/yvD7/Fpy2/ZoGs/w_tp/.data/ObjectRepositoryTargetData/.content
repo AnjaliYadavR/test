@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="u8byYxmTAkuMDhRiviz5jA" Reference="D7WqeYEmnEKMzyxFDfXbPA/w_tpBuYYBEiWZ5jD3Nps2g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/286f37f1-9775-4c6a-816e-2fa1bd4a6cc3/parties" CVScreenId="2783a1e5-4240-4f77-bf5e-27d60f8181bf" CvElementArea="27, 963, 219, 48" CvTextArea="47, 977, 176, 16" CvTextArgument="Save draft and exit" CvType="Button" DesignTimeRectangle="29, 965, 215, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='save-draft-and-exit' tag='SPAN' idx='2' /&gt;" Guid="42523c28-e9e5-4ad7-a3a8-e8d52b488fc3" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="75fb94ac5a37da514e48bf345118e5e5.png" xmlns="">0o8eGtgVjnUeUXzsGvRbEug</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

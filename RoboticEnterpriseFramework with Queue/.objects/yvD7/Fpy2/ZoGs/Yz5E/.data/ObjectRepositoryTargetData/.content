@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="t7lILm-LzUi3_EOtpbyISA" Reference="D7WqeYEmnEKMzyxFDfXbPA/Yz5EQ4c9zEea4KtLfnVNQw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/failure-to-payrent/0" CVScreenId="f400e8f3-defb-4fd9-8a03-13357b275992" CvElementArea="1555, 319, 334, 62" CvTextArea="1687, 342, 70, 15" CvTextArgument="LOG OUT" CvType="Button" DesignTimeRectangle="1556, 321, 335, 59" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname=' Log Out' parentid='container' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Log Out' parentid='container' tag='A' type='' class='' check:innerText='LOG OUT' /&gt;" Guid="04614b59-23e8-4994-95ff-7898fae43efa" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PP Admin: Rent Suits' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="18484d3864c02a099f0883f9af29d9a1.png" xmlns="">0-TZyveYtlU2iquAWqoWVfQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fJji6HZDb0K0KMOR990JDQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/t5JlmDz3v0K4ICPsRcqxFw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/a6791283-1ce9-47f1-a503-9ecf7dded23a/case-information" DesignTimeRectangle="1385, 795, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FullSelectorArgument="&lt;webctrl name='close' parentname='caseCategory' tag='FORGE-ICON' /&gt;&lt;webctrl shadowhostid='' tag='svg' parentname='close' /&gt;" FuzzySelectorArgument="&lt;webctrl name='close' parentname='caseCategory' tag='FORGE-ICON' /&gt;&lt;webctrl shadowhostid='' tag='svg' parentname='close' type='' class='' aaname='' /&gt;" Guid="a3ffcc0e-b8e0-42d8-9384-a87cfb67da66" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="da1984401da05c5bc120217250cddf13.png" xmlns="">0FSKjvdDTvU-s6md7IKlbHA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

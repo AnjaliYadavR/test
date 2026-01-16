@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome eFile - Filings",
+  "Type": "Screen",
+  "Id": "yKE5NEYHfESakY0oJBrHlQ",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/yKE5NEYHfESakY0oJBrHlQ",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/DpuD5WtokUCmfqoZKpF6bA",
+  "Created": "2025-04-10T06:49:43.9747619Z",
+  "Updated": "2025-04-10T06:49:43.9747619Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

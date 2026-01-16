@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="AyqJ-O_DuUifshF3AeJ8Kg" Reference="D7WqeYEmnEKMzyxFDfXbPA/K_JDmfjumku8pvvWWN9pbA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/tenant-mailing/0" CVScreenId="6067ebec-751f-4f9c-b745-fc11cf694957" CvElementArea="920, 279, 116, 41" CvType="InputBox" DesignTimeRectangle="922, 281, 112, 38" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='status' tag='SELECT' aaname='Status' name='status' /&gt;" FuzzySelectorArgument="&lt;webctrl id='status' tag='SELECT' aaname='Status' name='status' type='' class='search-box' /&gt;" Guid="397e9b02-cee8-489d-bbb0-e249ff980803" ImageBase64="" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PP Admin: Bulk Mailing' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="2f85415a0cf122fad102acbc52a71977.png" xmlns="">0PzLTSr90rUWKLHWsv-zwkg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SelectItem</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

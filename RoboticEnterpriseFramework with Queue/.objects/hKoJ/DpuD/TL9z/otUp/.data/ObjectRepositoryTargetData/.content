@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="odSZn3M21EKS28UvH9DKOw" Reference="D7WqeYEmnEKMzyxFDfXbPA/otUpduV6ZkKPc3SCctJTYQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/fees" CVScreenId="b28fc4ea-5ad2-4d94-b850-7d3935ac900a" CvElementArea="248, 774, 840, 63" CvType="InputBox" DesignTimeRectangle="250, 775, 783, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='filer-type' tag='INPUT' aaname='Filer Type' name='filer-type' parentname='filer-type' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='filer-type' tag='INPUT' aaname='Filer Type' name='filer-type' parentname='filer-type' type='text' class='' /&gt;" Guid="6c58f114-c760-4ea6-ae9e-5c6811a445f5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Fees' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="b28fc4ea-5ad2-4d94-b850-7d3935ac900a" CvElementArea="248, 774, 840, 63" CvType="InputBox" DesignTimeRectangle="265, 795, 768, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl parentname='filer-type' tag='LABEL' aaname='Filer Type' innertext='Filer Type' visibleinnertext='Filer Type' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='filer-type' tag='LABEL' aaname='Filer Type' innertext='Filer Type' visibleinnertext='Filer Type' type='' class='ng-star-inserted forge-floating-label' check:text='Filer Type' /&gt;" Guid="293743cd-d91d-4846-93a8-d0a1748b4dbd" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="479380918f120c5033add99005dcce01.png" xmlns="">0rLUIR3yLMU2lb8hsqp_E4A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

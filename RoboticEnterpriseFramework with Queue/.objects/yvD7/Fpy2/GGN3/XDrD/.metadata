@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Due Work Details",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "XDrDAkzGOkmTxTLX8RN-Mw",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/XDrDAkzGOkmTxTLX8RN-Mw",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/GGN3n7nxoU-uwy-vI1fxpA",
+  "Created": "2025-04-04T10:16:36.3820762Z",
+  "Updated": "2025-04-04T10:16:36.3820762Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

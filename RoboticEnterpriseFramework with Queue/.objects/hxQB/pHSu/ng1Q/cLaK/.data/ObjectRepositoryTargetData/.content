@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ICVXMffqNU6Cgh8o2Jv02w" Reference="D7WqeYEmnEKMzyxFDfXbPA/cLaKQ5s2HEiWMQtwNSosyA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/8936e089-9fc6-4e94-b1ad-300cb66e5456/filings" CVScreenId="35d249cc-fe2e-49aa-804d-9d72bb9dac46" CvTextArea="1786, 976, 111, 22" CvTextArgument="Skip to fees" CvType="Text" DesignTimeRectangle="1778, 965, 131, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='skip-to-fees' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='skip-to-fees' tag='SPAN' type='' aaname='' /&gt;" Guid="8aeacbc1-0553-4b2a-9179-13cf5ffed4c4" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="16040d6dd1b4503fdde67041ddddaeca.png" xmlns="">0WiPZ6_7duUCelflTMiJ13g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

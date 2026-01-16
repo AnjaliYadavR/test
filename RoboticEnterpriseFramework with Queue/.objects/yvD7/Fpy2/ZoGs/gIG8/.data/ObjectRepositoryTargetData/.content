@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="D3YVbLa5PkOb6sTGDesC-A" Reference="D7WqeYEmnEKMzyxFDfXbPA/gIG8ab26NUKkjQA59iPaQg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/c9434306-2e5c-45b7-bb92-a0d2e96c16ae/case-information" CVScreenId="1e4328c7-63d8-43f3-80e1-722854e7da70" CvElementArea="508, 553, 970, 63" CvType="InputBox" DesignTimeRectangle="510, 555, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='location' tag='INPUT' aaname='Court Location' name='location' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='location' tag='INPUT' aaname='Court Location' name='location' type='text' class='' /&gt;" Guid="caa77fcd-79a0-4a6a-a9f6-c3e2f200b4b3" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="1e4328c7-63d8-43f3-80e1-722854e7da70" CvElementArea="508, 553, 970, 63" CvType="InputBox" DesignTimeRectangle="525, 575, 898, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='Court Location' visibleinnertext='Court Location' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Court Location' visibleinnertext='Court Location' type='' class='ng-star-inserted forge-floating-label' check:text='Court Location' /&gt;" Guid="0c27a97d-f95c-4d3f-a86a-5c650a4deed3" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="11b7653a3f555fd19e6d743228343b49.png" xmlns="">0kjjjaF6jTk6eGLC0aT_jSw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

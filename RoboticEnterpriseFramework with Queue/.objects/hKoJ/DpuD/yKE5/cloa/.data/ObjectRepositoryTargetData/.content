@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2pswOGiaEEK3knRv8VF4uA" Reference="D7WqeYEmnEKMzyxFDfXbPA/cloaXh_N402EdbufYeetdg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/filings" CVScreenId="da675c27-3171-4306-a4ff-045d8484dcc7" CvElementArea="292, 583, 1401, 61" CvType="InputBox" DesignTimeRectangle="293, 755, 1402, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Filing Description' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Filing Description' /&gt;" Guid="320b315e-414d-4bd3-8ef0-093a06a01544" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="efdafd75-4ebe-457c-a434-3ffb866830af" CvElementArea="288, 749, 1407, 63" CvType="InputBox" DesignTimeRectangle="308, 775, 1387, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='Filing Description' innertext='Filing Description' visibleinnertext='Filing Description' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Filing Description' innertext='Filing Description' visibleinnertext='Filing Description' type='' class='ng-star-inserted forge-floating-label' check:text='Filing Description' /&gt;" Guid="bb28cd77-860f-40a0-b17d-581659e4b122" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="30124b732b76eb10c7f9c46a540ceb2b.png" xmlns="">0QycekDp6BEiS_WszdLH4QA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

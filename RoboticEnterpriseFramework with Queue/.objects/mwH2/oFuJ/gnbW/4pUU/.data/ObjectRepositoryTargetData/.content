@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="yJXc_IP07EODoitEI25j5Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/landing" DesignTimeRectangle="333, 372, 333, 70" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='sign-in' tag='SPAN' idx='2' /&gt;" Guid="7295c670-a6e3-45cc-bd51-b50cdbb75541" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Landing Page' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="b4ef3641623e0dc8bbb95a0fb281283e.png" xmlns="">09Gdj4okHIkGqidLyJMcNsw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="z_85d-IbZE-TeQBnkohrDA" Reference="D7WqeYEmnEKMzyxFDfXbPA/0bhjUTKxVUqttPHEMP1agg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/dashboard" CVScreenId="a8dd9576-29e1-4e21-8459-a490221bbcfa" CvElementArea="157, 603, 519, 50" CvTextArea="364, 616, 103, 22" CvTextArgument="Start filing" CvType="Button" DesignTimeRectangle="160, 680, 508, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='start-filing' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='start-filing' tag='SPAN' type='' aaname='' /&gt;" Guid="7eefd821-b1c5-4eac-bf70-4a0fd0baa3a0" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="a8dd9576-29e1-4e21-8459-a490221bbcfa" CvTextArea="159, 311, 119, 27" CvTextArgument="Start filing" CvType="Text" DesignTimeRectangle="160, 304, 508, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' aaname='Start Filing' innertext='Start Filing' visibleinnertext='Start filing' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' aaname='Start Filing' innertext='Start Filing' visibleinnertext='Start filing' type='' class='forge-typography--headline5 mb-0' check:text='Start Filing' /&gt;" Guid="9e3a2536-129e-4696-b764-8c4ddbafdf26" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="682b20f36adb808dc03f73f01d83a047.png" xmlns="">0eTycF6pYi0iAP8VHLe4YLA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

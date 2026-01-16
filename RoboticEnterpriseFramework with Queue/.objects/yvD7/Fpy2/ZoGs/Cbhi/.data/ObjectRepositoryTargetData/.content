@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="YxEWTmg53kKZd3mmDSJ86g" Reference="D7WqeYEmnEKMzyxFDfXbPA/CbhiiK3JWUOCHN1nNtaK5Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/reports/work-queue" CVScreenId="bba1c51e-1f67-4eed-a90b-8d997506c92b" DesignTimeRectangle="1788, 197, 103, 42" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' visibleinnertext='Click Dev ' parentclass='dropdown' /&gt;" Guid="455230e8-71c9-46c2-8def-1ae8e836471e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="bba1c51e-1f67-4eed-a90b-8d997506c92b" CvElementArea="1786, 194, 106, 46" CvType="InputBox" DesignTimeRectangle="1797, 209, 68, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='username' tag='SPAN' type='' aaname='Click Dev' check:innerText='Click Dev' /&gt;" Guid="6f0f4517-5c99-4f75-aa93-8517ae7be9cb" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="2fa0b1f11bed59628857e40f3f6dcaa3.png" xmlns="">02pR9DKQbZkqY1_K9Qkb8qA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

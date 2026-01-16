@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="VxJbG-va9k-FJOiJ5o6gZw" Reference="D7WqeYEmnEKMzyxFDfXbPA/OqgW3VqmcECx9rI5Z2DfwQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="1b8b8fab-6d43-42cd-b45a-39d167310394" CvElementArea="291, 473, 105, 47" CvTextArea="311, 487, 66, 17" CvTextArgument="Person" CvType="Button" DesignTimeRectangle="293, 475, 103, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='FORGE-BUTTON-TOGGLE' /&gt;&lt;webctrl shadowhostid='' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-BUTTON-TOGGLE' /&gt;&lt;webctrl shadowhostid='' tag='BUTTON' type='button' class='forge-button-toggle mdc-ripple-upgraded forge-button-toggle__selected mdc-ripple-upgraded--background-focused' aaname='' /&gt;" Guid="391e6534-119b-4f91-8d62-22dcce1afd84" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="1b8b8fab-6d43-42cd-b45a-39d167310394" CvElementArea="291, 473, 105, 47" CvTextArea="311, 487, 66, 17" CvTextArgument="Person" CvType="Button" DesignTimeRectangle="313, 484, 64, 27" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Person' tag='SPAN' type='' class='' check:innerText='Person' /&gt;" Guid="7f964ed2-5df7-4167-8218-d39af25a02fd" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="3315dc390b68e7f94b9799b211b872c2.png" xmlns="">0P7Ach5aF8EWf-5EM-u2nvw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

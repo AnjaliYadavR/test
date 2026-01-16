@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="W_vqKhkx-Ui8Xk7GPsGd5A" Reference="D7WqeYEmnEKMzyxFDfXbPA/Cd4yH4L7kESnPma5kSQcaA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/filings" CVScreenId="9c3b0798-0a42-462e-b6fc-2d7e91d3cb6a" CvElementArea="1814, 963, 89, 48" CvTextArea="1835, 977, 46, 17" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="1817, 965, 85, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='save-filings' tag='BUTTON' aaname=' Save ' aria-label='Save' innertext=' Save ' type='button' visibleinnertext='Save' /&gt;" FuzzySelectorArgument="&lt;webctrl id='save-filings' tag='BUTTON' aaname=' Save ' aria-label='Save' innertext=' Save ' type='button' visibleinnertext='Save' class='btn--raised btn-primary btn' check:text='Save' /&gt;" Guid="e6680988-6dce-4a45-bdbf-1c3021657adb" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="bbb0a7b328f2c040435c5f2ae0fc77f0.png" xmlns="">0xCobofW0mkaDKBRoGzntJA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

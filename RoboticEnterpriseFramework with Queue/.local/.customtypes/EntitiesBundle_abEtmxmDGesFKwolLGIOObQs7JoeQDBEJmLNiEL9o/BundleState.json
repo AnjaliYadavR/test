@@ -1,0 +1,67 @@
+{
+  "assemblyStates": {
+    "CBCEA6BB48A_pages_Re.XwMnY3upgjG1BUY653y3DBv2": {
+      "namespace": "UiPath.IntegrationService.Activities.SWEntities.CBCEA6BB48A_pages_Retrieve.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.CBCEA6BB48A_pages_Retrieve",
+        "hash": "d2hFTk1PZmpYVWRzcGJTczJpWWNXZFVSa21PWmt1T0xJc2JXUWRCandXVXNzdVF6bXJqaXNyZDJnYm00Z3NLdThHRzJ4Z0NUOE5ybXR1Y2pJaEZZYXc9PQ",
+        "assemblyName": "CBCEA6BB48A_pages_Re.XwMnY3upgjG1BUY653y3DBv2"
+      }
+    },
+    "CA1832A4D10_pages_Li.fzZ4izpe8J1WAMuw1Mk3FN1": {
+      "namespace": "UiPath.IntegrationService.Activities.SWEntities.CA1832A4D10_pages_List.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.CA1832A4D10_pages_List",
+        "hash": "bkEwNzBNcTFDSFB1aG9tYkZXL3ArSEVWSXgvMFByaWxnTE04WjNyVUNnNTI4dk9aNTRmVFR4Z2FCa01jU3I3aVNPNTZBcUxuVmVCWnNrVVB2Qk1ORFE9PQ",
+        "assemblyName": "CA1832A4D10_pages_Li.fzZ4izpe8J1WAMuw1Mk3FN1"
+      }
+    },
+    "CBCEA6BB48A_pages_Li.BEWVq2oHhkJ11YtTh2DjMqD2": {
+      "namespace": "UiPath.IntegrationService.Activities.SWEntities.CBCEA6BB48A_pages_List.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.CBCEA6BB48A_pages_List",
+        "hash": "bkEwNzBNcTFDSFB1aG9tYkZXL3ArSEVWSXgvMFByaWxnTE04WjNyVUNnNTI4dk9aNTRmVFR4Z2FCa01jU3I3aVNPNTZBcUxuVmVCWnNrVVB2Qk1ORFE9PQ",
+        "assemblyName": "CBCEA6BB48A_pages_Li.BEWVq2oHhkJ11YtTh2DjMqD2"
+      }
+    },
+    "CA1832A4D10_curated_.6al8x18goyP1DMBUO3nu9wj": {
+      "namespace": "UiPath.IntegrationService.Activities.SWEntities.CA1832A4D10_curated_searchContent_List.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.CA1832A4D10_curated_searchContent_List",
+        "hash": "MTRXclUzNGxoLzU2OVdNem53Z3prSjk5Q01MQm4zVU0xVG9IamNLdVZEOFJxQXZScEEvdHFJNjE4ckplOWkycmJCb2RPMmNocitSbDBkdE1kL3p5YlE9PQ",
+        "assemblyName": "CA1832A4D10_curated_.6al8x18goyP1DMBUO3nu9wj"
+      }
+    },
+    "CBCEA6BB48A_curated_.HPJ6D1BnQIQ1M89ey1iYP1x1": {
+      "namespace": "UiPath.IntegrationService.Activities.SWEntities.CBCEA6BB48A_curated_searchContent_List.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.CBCEA6BB48A_curated_searchContent_List",
+        "hash": "MTRXclUzNGxoLzU2OVdNem53Z3prSjk5Q01MQm4zVU0xVG9IamNLdVZEOFJxQXZScEEvdHFJNjE4ckplOWkycmJCb2RPMmNocitSbDBkdE1kL3p5YlE9PQ",
+        "assemblyName": "CBCEA6BB48A_curated_.HPJ6D1BnQIQ1M89ey1iYP1x1"
+      }
+    },
+    "CA1832A4D10_pages_Re.KV3vI3UpThM12uIZq3CYXdF3": {
+      "namespace": "UiPath.IntegrationService.Activities.SWEntities.CA1832A4D10_pages_Retrieve.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.CA1832A4D10_pages_Retrieve",
+        "hash": "d2hFTk1PZmpYVWRzcGJTczJpWWNXZFVSa21PWmt1T0xJc2JXUWRCandXVXNzdVF6bXJqaXNyZDJnYm00Z3NLdThHRzJ4Z0NUOE5ybXR1Y2pJaEZZYXc9PQ",
+        "assemblyName": "CA1832A4D10_pages_Re.KV3vI3UpThM12uIZq3CYXdF3"
+      }
+    },
+    "fd0620628161.MBWaw1UKCoB10vr4Y1AKy9R": {
+      "namespace": "UiPath.UIAutomationNext.Activities.Design.SWEntities.fd0620628161.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.UIAutomationNext.Activities.Design.SWEntities.fd0620628161",
+        "hash": "MDYyMDYyODE2MQ",
+        "assemblyName": "fd0620628161.MBWaw1UKCoB10vr4Y1AKy9R"
+      }
+    }
+  }
+}

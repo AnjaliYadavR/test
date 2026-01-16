@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="8_Q3KcqoiU24aI3rsYx5WQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/failure-to-payrent/0" CVScreenId="3de92def-99bd-4a08-901d-f639711b7662" CvElementArea="1785, 618, 96, 30" CvTextArea="1792, 624, 78, 13" CvTextArgument="Take Action" CvType="Button" DesignTimeRectangle="1787, 800, 92, 27" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl id='dtService' tag='TABLE' /&gt;&lt;webctrl tag='DIV' rowName='3.' visibleinnertext='Take Action' /&gt;" FuzzySelectorArgument="&lt;webctrl id='dtService' tag='TABLE' /&gt;&lt;webctrl tag='DIV' rowName='3.' visibleinnertext='Take Action' type='' class='btn btn-success btn-xs context-actions' aaname='                                                             Take Action                                                         ' check:text='Take Action' /&gt;" Guid="9a046088-909b-4812-8e50-cf9fac2b89cc" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PP Admin: Rent Suits' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="9bae08cf6c355c67c3280e276ceb6e88.png" xmlns="">0hB1kKSr93UGye3jU0qGOfw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

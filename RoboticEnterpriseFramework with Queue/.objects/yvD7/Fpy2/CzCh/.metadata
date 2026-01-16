@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome PP Admin Rent Suits(1)",
+  "Type": "Screen",
+  "Id": "CzCho4JXlEeGrmRto9k4RA",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/CzCho4JXlEeGrmRto9k4RA",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/Fpy25eyyDk-zLJNwl133RQ",
+  "Created": "2025-04-14T08:25:14.919414Z",
+  "Updated": "2025-04-14T08:25:14.919414Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="86ID3Pd3dkOvVCBU0sfKXA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/dashboard" CVScreenId="52ead42b-9569-4cec-8c06-856408530110" CvElementArea="158, 678, 510, 50" CvTextArea="361, 691, 102, 22" CvTextArgument="Start filing" CvType="Button" DesignTimeRectangle="364, 689, 100, 27" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='start-filing' tag='SPAN' aaname='Start Filing' innertext='Start Filing' visibleinnertext='Start filing' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='start-filing' tag='SPAN' aaname='Start Filing' innertext='Start Filing' visibleinnertext='Start filing' type='' check:text='Start Filing' /&gt;" Guid="1dca549f-dd5c-4eaf-b840-2d255934b07c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="52ead42b-9569-4cec-8c06-856408530110" CvTextArea="159, 311, 119, 27" CvTextArgument="Start filing" CvType="Text" DesignTimeRectangle="140, 284, 548, 81" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='Start Filing' visibleinnertext='Start filing' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' innertext='Start Filing' visibleinnertext='Start filing' type='' aaname='' check:text='Start Filing' /&gt;" Guid="8cb12d38-6889-4fb9-893f-ff988ee3f525" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="853ecc715ee0fdeaf7c0e04aabf8e8fc.png" xmlns="">08n_myxTEw0uFwmrV7PH_Rg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

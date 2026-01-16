@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="5tVCZQXYDk2L5bjV5LtT2w" Reference="D7WqeYEmnEKMzyxFDfXbPA/oam6jgJckkic4LxlvQVUVQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://test.clicknotices.com/cn-admin/failure-to-payrent/0" ContentHash="XpPCxajo0E2P0q_9NyZlXQ" DesignTimeRectangle="253, 430, 1638, 2150" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl id='dtService' tag='TABLE' /&gt;&lt;webctrl id='data-container' tag='TBODY' /&gt;" Guid="f0bca7c0-2cc9-4203-97f4-234969f1a41b" Reference="D7WqeYEmnEKMzyxFDfXbPA/oam6jgJckkic4LxlvQVUVQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PP Admin: Rent Suits' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a02e8be913f4f039fd5d2e63ef6ae9d2.png" xmlns="">0iZwT1DF2U0mNBRrKc6XwxA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">ExtractData</x:String>
+    <p:InArgument x:TypeArguments="x:String" x:Key="ExtractDataSettings" xml:space="preserve">&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;
+	&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='New column 0'&gt;
+		&lt;IsValidName&gt;true&lt;/IsValidName&gt;
+		&lt;ValidationErrorMessage /&gt;
+		&lt;IsExtra&gt;false&lt;/IsExtra&gt;
+		&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;
+		&lt;Format xsi:type='TextColumnFormat' /&gt;
+	&lt;/Column&gt;
+&lt;/Table&gt;</p:InArgument>
+    <x:Null x:Key="NextLinkTarget" />
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

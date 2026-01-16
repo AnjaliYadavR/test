@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="RpOhurEY3kSZ0T-tG35txQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/Si9_7fYBs0GQZNeis7E-Tw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="1fcb16f9-b9ec-44bb-a36e-3f5ec5c8bcd8" CvElementArea="767, 546, 452, 63" CvType="InputBox" DesignTimeRectangle="770, 548, 348, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl name='address0_region' tag='INPUT' aaname='State' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='address0_region' tag='INPUT' aaname='State' type='text' class='' /&gt;" Guid="d6e079c6-48c1-47c0-afc0-f8529112a60a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="1fcb16f9-b9ec-44bb-a36e-3f5ec5c8bcd8" CvElementArea="767, 546, 452, 63" CvType="InputBox" DesignTimeRectangle="785, 568, 333, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='State' tag='LABEL' type='' class='ng-star-inserted forge-floating-label' check:innerText='State' /&gt;" Guid="02f10be4-f0ca-4657-9596-d2f4966a4855" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="d15f0cf921fc291f466367a3c12a1fbd.png" xmlns="">0o-SEFwal30a8g6A21vOxuQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

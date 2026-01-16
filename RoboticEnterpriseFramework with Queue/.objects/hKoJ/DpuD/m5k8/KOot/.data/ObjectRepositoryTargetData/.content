@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UyTuSlqsREuAIC88kJP9dQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/KOotAFwSPkOHMqG6oy7k4Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="15320f00-ca89-47ed-b7ac-38e309af5e05" CvElementArea="394, 534, 96, 48" CvTextArea="414, 549, 55, 21" CvTextArgument="Entity" CvType="Button" DesignTimeRectangle="396, 536, 93, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl idx='2' tag='FORGE-BUTTON-TOGGLE' /&gt;&lt;webctrl shadowhostid='' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-BUTTON-TOGGLE' /&gt;&lt;webctrl shadowhostid='' tag='BUTTON' type='button' aaname='' /&gt;" Guid="9a254c61-98f6-4f42-b8ba-763dd47504ea" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="892892b3-ff66-4147-8be5-542f1f609daa" CvElementArea="394, 534, 96, 48" CvTextArea="414, 549, 55, 21" CvTextArgument="Entity" CvType="Button" DesignTimeRectangle="416, 545, 54, 27" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Entity' tag='SPAN' innertext='Entity' visibleinnertext='Entity' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Entity' tag='SPAN' innertext='Entity' visibleinnertext='Entity' type='' class='' check:text='Entity' /&gt;" Guid="2cc49c16-5440-4b0d-bd74-64c9892558db" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="78e51b6a738a042f843e2a10cb6f9269.png" xmlns="">0nNMlRqhpOk2OyUalMU7J7g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

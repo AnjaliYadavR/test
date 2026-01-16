@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="7rN5gkXk1E-C2zxWlgMkaw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.clicknotices.com/cn-admin/failure-to-payrent/0" CVScreenId="8d46e383-bfde-4b5f-b517-e30dff95ca21" DesignTimeRectangle="22, 598, 200, 62" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='sidebar' tag='A' visibleinnertext=' Rent Suits' aaname='*Rent Suits*' /&gt;" Guid="b2c63b5b-feea-4204-8048-d441bd7e2cc8" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PP Admin: Rent Suits' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="8d46e383-bfde-4b5f-b517-e30dff95ca21" CvTextArea="60, 620, 71, 15" CvTextArgument="Rent Suits" CvType="Text" DesignTimeRectangle="62, 616, 69, 25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Rent Suits' parentid='sidebar' tag='SPAN' type='' class='' check:innerText='Rent Suits' /&gt;" Guid="2e4291ff-f657-4166-9cd4-7a8f541a0aa0" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="c6494ec1b43d1a67f313e201f7d5b9f1.png" xmlns="">0aH0WgObSGEKKtjVP7M2gxw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

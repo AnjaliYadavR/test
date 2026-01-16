@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="EMoToKTGH0KlbKBl19g55g" Reference="D7WqeYEmnEKMzyxFDfXbPA/WwJw-b4_lEmgCP_T3-r7BQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/13eec88c-2b2e-46c3-95be-528a728549ce/case-information" CVScreenId="21715574-5041-4a4c-96a0-ad992d13f128" CvTextArea="509, 475, 195, 23" CvTextArgument="Case information" CvType="Text" DesignTimeRectangle="490, 448, 1008, 81" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='Case InformationHelp' visibleinnertext='Case information' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' innertext='Case InformationHelp' visibleinnertext='Case information' type='' aaname='' check:text='Case InformationHelp' /&gt;" Guid="0069a0ec-b4ac-4b9b-9d6d-5bbf0d321d78" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="32ce085e7d92ed974aa6c594e1cd3fe7.png" xmlns="">0gPLCSX8FhE62WMEpRgFY-g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

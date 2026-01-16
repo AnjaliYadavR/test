@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="v0zbKKzohEu0JxJC0sh7jA" Reference="D7WqeYEmnEKMzyxFDfXbPA/BLUwr0uIZ0aV90LC950VFw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="2d2d8016-f47d-4b25-8304-b7a246dd62c5" CvElementArea="1777, 963, 134, 50" CvTextArea="1796, 976, 65, 22" CvTextArgument="Filings" CvType="Button" DesignTimeRectangle="1779, 965, 130, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='forward-to-filings' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='forward-to-filings' tag='SPAN' type='' aaname='' /&gt;" Guid="b9555b7c-32c5-434d-b922-dde32134a329" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="ae9696fc59bdc2a214daf3057835495c.png" xmlns="">0-9i67vnDmUevOyfJrRGHhA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

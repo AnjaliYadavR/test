@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Jj58YBT6HkaLJ6QMadaNiA" Reference="D7WqeYEmnEKMzyxFDfXbPA/aZHZyRp0nEiI65Xjj6kn6w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="c58af5fb-47d6-4e2c-9a2c-66c3dcfeb3d2" CvElementArea="247, 818, 161, 49" CvType="Button" DesignTimeRectangle="250, 820, 156, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='add-party' tag='SPAN' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='add-party' tag='SPAN' type='' class='forge-button__ripple' aaname='' /&gt;" Guid="b15e68a7-769f-4ef2-af9d-8a4815ebd5a3" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="ea7ca039f656f0235b3021a11e52806e.png" xmlns="">0Di6QOAPPlEuMTP9-N4HX2A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Security",
+  "Type": "Element",
+  "Id": "xHlbL-Gu_0-D2y890wOLyg",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/xHlbL-Gu_0-D2y890wOLyg",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/yKE5NEYHfESakY0oJBrHlQ",
+  "Created": "2025-04-10T07:43:05.5727398Z",
+  "Updated": "2025-04-10T07:43:05.5727398Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

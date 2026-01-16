@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="oqHRp9FcukKMckJU6WpPlQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/bkeKqLOQlEy0vUmo38S0GA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/8156f1aa-9ffe-4249-a7bd-1b146c400ebb/filings" CVScreenId="3a3b56c0-2002-4e57-9bcf-be4e036c2b45" CvElementArea="291, 763, 1405, 63" CvType="InputBox" DesignTimeRectangle="293, 765, 1402, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Courtesy Copies' /&gt;" Guid="d1bb87e2-2282-4cab-b73b-f4846e141c67" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="e0e2ac73e15fdacca30dbbbdc9246d97.png" xmlns="">0--hNSF8eoEWCQWfBzeh03A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

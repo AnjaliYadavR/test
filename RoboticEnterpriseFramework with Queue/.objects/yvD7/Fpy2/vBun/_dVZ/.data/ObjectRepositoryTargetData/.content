@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="nR3Emni2jUaDfS3POd7HXg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/reports/work-queue" CVScreenId="bba1c51e-1f67-4eed-a90b-8d997506c92b" DesignTimeRectangle="1788, 197, 103, 42" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='container' tag='A' visibleinnertext='Click Dev ' /&gt;" Guid="165ef7f0-e420-41bb-8730-c7beb0dc531d" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PP Admin: Work Queues Reports' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="bba1c51e-1f67-4eed-a90b-8d997506c92b" CvElementArea="1786, 194, 106, 46" CvType="InputBox" DesignTimeRectangle="1797, 209, 68, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='username' tag='SPAN' type='' aaname='Click Dev' check:innerText='Click Dev' /&gt;" Guid="458e4947-19da-402b-b9ea-afeb71f4e11c" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="56acc6ccf345ddc9ab7f6f2b3fea48d6.png" xmlns="">0AGOV_unnXE6ZOQ62sMobUA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SelectItem</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

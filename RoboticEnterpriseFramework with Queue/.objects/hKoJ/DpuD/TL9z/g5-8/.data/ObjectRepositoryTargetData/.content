@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rJYhF56OJkaFgWq5csVSzw" Reference="D7WqeYEmnEKMzyxFDfXbPA/g5-8Whieh0CwL_2_sUYwzQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/fees" CVScreenId="88a834d5-dea6-4098-98c2-55e9a8b393d2" CvElementArea="249, 615, 837, 61" CvType="InputBox" DesignTimeRectangle="250, 615, 798, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='selected-text' shadowhostid='' tag='DIV' parentname='party-responsible-for-fees' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='selected-text' shadowhostid='' tag='DIV' parentname='party-responsible-for-fees' type='' placeholder='Select...' aaname='' /&gt;" Guid="c91f6038-47c7-43bb-8954-fee529348d42" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Fees' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="88a834d5-dea6-4098-98c2-55e9a8b393d2" CvElementArea="249, 615, 837, 61" CvType="InputBox" DesignTimeRectangle="265, 623, 783, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='select-label' shadowhostid='' tag='LABEL' aaname='Party Responsible for Fees' parentname='party-responsible-for-fees' visibleinnertext='Party Responsible for Fees' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='select-label' shadowhostid='' tag='LABEL' aaname='Party Responsible for Fees' parentname='party-responsible-for-fees' visibleinnertext='Party Responsible for Fees' type='' class='forge-floating-label forge-floating-label--float-above-end-keyframe forge-floating-label--float-above' check:text='Party Responsible for Fees' /&gt;" Guid="05cbb178-2b5d-4c5d-88b0-e8023af31300" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="4a4ed98bea2f4cb8853cefc48629f6ee.png" xmlns="">0fXNpMJRWeECpYV09IWV9HQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

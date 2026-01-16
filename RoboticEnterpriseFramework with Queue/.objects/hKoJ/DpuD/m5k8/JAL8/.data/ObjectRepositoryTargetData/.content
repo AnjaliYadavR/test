@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="9XikPP0DvkaihKm9YuMwVQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/JAL8fvooiEm--CZb5pGLwg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="78438797-16c3-4857-90aa-7a20eba94613" DesignTimeRectangle="293, 524, 705, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='partyType0' tag='INPUT' aaname='Party Type' name='partyType0' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='partyType0' tag='INPUT' aaname='Party Type' name='partyType0' type='text' /&gt;" Guid="5543a425-0e86-4a46-822f-c2c4ef4ead3c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="78438797-16c3-4857-90aa-7a20eba94613" CvElementArea="290, 522, 809, 62" CvType="InputBox" DesignTimeRectangle="308, 532, 690, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='ng-star-inserted forge-floating-label forge-field__label--focused forge-floating-label--float-above forge-floating-label--float-above-end-keyframe' aaname='Party Type' check:innerText='Party Type' /&gt;" Guid="70978728-0546-4544-90c9-5a3bb3c16ff3" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="0c36434d11018ab4f47fae271eee4e1d.png" xmlns="">0ExhHhvpdhkq1skdvT6e0zw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

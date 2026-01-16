@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome cn-admin Login(1)",
+  "Type": "Screen",
+  "Id": "gnbWKPd93EakwbY4kf6hKQ",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/gnbWKPd93EakwbY4kf6hKQ",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/oFuJYxzX-E2l8lMLGnr9_A",
+  "Created": "2025-04-09T06:26:47.0160116Z",
+  "Updated": "2025-04-09T06:26:47.0160116Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

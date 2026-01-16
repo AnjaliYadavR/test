@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="TTbkjjCsEke3bWvNy0hQZg" Reference="D7WqeYEmnEKMzyxFDfXbPA/z0HJzpX1mUCQe49fFIaNyA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="51763c93-0d6d-427e-ab1e-543313b3cc11" CvElementArea="1777, 963, 134, 50" CvTextArea="1796, 976, 65, 22" CvTextArgument="Filings" CvType="Button" DesignTimeRectangle="1778, 965, 131, 46" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;ctrl name='eFile - Parties' role='document' /&gt;&lt;ctrl name='go forward to Filings' role='push button' aastate='focusable, opaque' text='Filings' /&gt;" FuzzySelectorArgument="&lt;ctrl name='eFile - Parties' role='document' /&gt;&lt;ctrl name='go forward to Filings' role='push button' aastate='focusable, opaque' text='Filings' automationid='' check:text='Filings' /&gt;" Guid="ec838328-31c6-4825-b267-feeb185bcf2a" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='eFile - Parties - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, CV" SelectionStrategy="AA" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="81fd7b5d14245b60520fe37d77ff4d68.png" xmlns="">05_rJaB_cgE6UjVoQuwN7Zw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

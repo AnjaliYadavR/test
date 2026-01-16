@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="wE3mP4c6ck6IMI61eV86RQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/vrk_jbGzlUO4SNaAu9PACA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/filings" CVScreenId="2a55c074-bfc4-4519-b81b-110cb4483acc" CvElementArea="693, 535, 111, 34" CvTextArea="729, 545, 38, 16" CvTextArgument="Open" CvType="Button" DesignTimeRectangle="695, 537, 110, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' aaname='Open' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' aaname='Open' check:text='&amp;amp;Open' /&gt;" Guid="e9a9a519-b396-4f06-af6b-2d8eadc45607" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="2147a6493d5b9ca0c40b124fd92fef0e.png" xmlns="">0idjiQBLUyka6l4h0vkQ4hw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

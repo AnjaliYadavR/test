@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Damage Amount",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "LiMBdvRKEkuFQFmehCfQcQ",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/LiMBdvRKEkuFQFmehCfQcQ",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/ZoGsNV8qB06oeMxhH8UbOQ",
+  "Created": "2025-04-14T14:12:46.4628115Z",
+  "Updated": "2025-04-14T14:12:46.4628115Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

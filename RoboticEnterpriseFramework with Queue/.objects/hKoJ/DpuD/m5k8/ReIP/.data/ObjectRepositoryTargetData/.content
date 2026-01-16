@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="z-kLnMnnCk6qCFuvor4CGA" Reference="D7WqeYEmnEKMzyxFDfXbPA/ReIPeXrXoka0DloUTzaHgw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="fece52f4-1690-4651-9b72-0cfd84332b41" CvElementArea="295, 626, 684, 61" CvType="InputBox" DesignTimeRectangle="293, 628, 686, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='email0' tag='INPUT' aaname='Email' name='email0' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='email0' tag='INPUT' aaname='Email' name='email0' type='text' /&gt;" Guid="5ca1d995-d176-445a-8b3f-9009a6fea2c0" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="fece52f4-1690-4651-9b72-0cfd84332b41" DesignTimeRectangle="308, 635, 671, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' innertext='Email' visibleinnertext='Email' /&gt;" Guid="be2c649f-923b-4bba-940b-92bc6a71843b" SearchSteps="Selector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="68d0b674d24935ad2f6ac4916e25d5c0.png" xmlns="">0zPf-HobsX0iDibQPwyYjLw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

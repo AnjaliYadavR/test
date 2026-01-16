@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Jgw2weGaYUKelVxYMMWIzA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="7d82404b-955e-491d-8068-a0f921aced2b" CvElementArea="290, 839, 688, 63" CvType="InputBox" DesignTimeRectangle="293, 841, 686, 60" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' tag='FORGE-TEXT-FIELD' /&gt;&lt;webctrl type='' shadowhostid='' tag='DIV' class='forge-text-field forge-field forge-field--label forge-field--trailing' aaname='' /&gt;" Guid="5a660605-759a-4e1c-b763-ad7a1633af9a" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="7d82404b-955e-491d-8068-a0f921aced2b" CvElementArea="290, 839, 688, 63" CvType="InputBox" DesignTimeRectangle="308, 861, 616, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Lead Attorney' tag='LABEL' type='' class='ng-star-inserted forge-floating-label' check:innerText='Lead Attorney' /&gt;" Guid="ce3f471a-9d4a-40e0-a29b-ee6a73850e3e" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="f482eea44614252d4203d1ebfe6a3ef3.png" xmlns="">0Rord3e6jdUmOCoMkE408sQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SelectItem</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

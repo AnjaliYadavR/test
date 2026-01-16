@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="RDauc-82qkydxWUczMH6ZQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/hDWTxWzEYUSpLfXV-cysKg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/286f37f1-9775-4c6a-816e-2fa1bd4a6cc3/parties" CVScreenId="12d43491-8e80-47d0-9914-81ef0575a472" CvElementArea="1814, 963, 89, 48" CvTextArea="1835, 977, 46, 17" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="1817, 965, 85, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='save-parties' tag='BUTTON' aaname=' Save ' type='button' visibleinnertext='Save' /&gt;" FuzzySelectorArgument="&lt;webctrl id='save-parties' tag='BUTTON' aaname=' Save ' type='button' visibleinnertext='Save' check:text='Save' /&gt;" Guid="dd098703-e987-46ce-86a3-f04c356a0a28" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="f60b6941a511dfc621df2f28d1100c2c.png" xmlns="">0qVyJjQe7fkCyzXLha3LpTQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="27rozO4fZkKQeOrcM4b4Yw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/7f04c70f-d481-46a3-ab20-84f6500619f0/case-information" CVScreenId="1711d732-ba08-4b06-b26f-df4ae4513fe9" DesignTimeRectangle="510, 623, 968, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl css-selector='div&amp;gt;div' shadowhostid='' tag='DIV' innertext='Damage Amount' visibleinnertext='Damage Amount' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl type='' shadowhostid='' tag='DIV' innertext='Damage Amount' visibleinnertext='Damage Amount' aaname='' check:text='Damage Amount' /&gt;" Guid="243a712f-27a4-4d39-b47b-7a6a73ac7492" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="df54bb0cfd462f8ee1b0e77ff80caa9a.png" xmlns="">0LXDCXvF3mkyw8JDi1WseZA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

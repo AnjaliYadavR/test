@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="j0C7VEV4cE2KO-rFbZEJnw" Reference="D7WqeYEmnEKMzyxFDfXbPA/2uiTgCxp-0CusiH26d2pUA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="ef9d6717-b95f-468b-96b2-66f01e618aa1" CvTextArea="259, 476, 82, 21" CvTextArgument="Parties" CvType="Text" DesignTimeRectangle="240, 448, 1528, 81" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='PartiesHelp' visibleinnertext='Parties' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' innertext='PartiesHelp' visibleinnertext='Parties' type='' class='card-header d-flex flex-column' aaname='' check:text='PartiesHelp' /&gt;" Guid="ee3a9495-0749-41e5-b9ed-b10f2d340780" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="5b389f1749ab1912040079ac67bc44b4.png" xmlns="">0rzasVm6iXE2bT1mAGkglyw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

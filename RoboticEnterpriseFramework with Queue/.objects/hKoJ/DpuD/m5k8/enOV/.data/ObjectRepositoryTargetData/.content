@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="j5BokpazFEC08ImxexxrgA" Reference="D7WqeYEmnEKMzyxFDfXbPA/enOVlJ_qDEag1ZIDK8HgBQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/3775593d-9232-443e-86d7-e6265d2da128/parties" CVScreenId="4f504162-8aa0-45eb-8fe2-a44bc9c99888" DesignTimeRectangle="293, 841, 631, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='leadAttorney0' tag='INPUT' aaname='Lead Attorney' type='text' /&gt;" Guid="ac21d12d-8a9c-4c01-b068-61eeb6a34ced" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="38a8d8caa0ec0ddffab0162d7474f77d.png" xmlns="">0jd35LmcQn0yVs_RmAjiq9A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

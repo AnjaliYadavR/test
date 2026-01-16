@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="N0RgPe2SY0K8pdTyjuxWrA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/landing" DesignTimeRectangle="579, 610, 760, 43" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl aria-role='form' tag='IFRAME' /&gt;&lt;webctrl id='Password' tag='INPUT' aaname='Password' name='Password' type='password' /&gt;" Guid="869ae996-1634-4cae-91a6-5552fea1b38c" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Landing Page' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="579, 579, 82, 25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-role='form' tag='IFRAME' /&gt;&lt;webctrl aaname='Password' tag='LABEL' type='' class='' check:innerText='Password' /&gt;" Guid="821bd525-4a96-4af0-8295-c47122757540" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="51a0c681107fcf8c540403bdd6021853.png" xmlns="">0lmQUR0zyx0qNfLWq5An8GA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

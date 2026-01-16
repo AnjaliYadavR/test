@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="jPDvtGUyWEeBQY_ED-O6xw" Reference="D7WqeYEmnEKMzyxFDfXbPA/s6Z3Imyu70G6eD8iDX7lbQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/ed1e39d5-02a5-452d-99b7-f5f82391ac07/filings" CVScreenId="2c0c6ac7-c853-47ae-ab35-fd9702494bdd" CvTextArea="99, 312, 234, 28" CvType="AnyWordGroup" DesignTimeRectangle="100, 306, 232, 45" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H4' aaname='Edit Filing Details' innertext='Edit Filing Details' visibleinnertext='Edit Filing Details' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H4' visibleinnertext='Edit Filing Details' type='' class='modal-title' /&gt;" Guid="512fa80a-9105-4e7e-8254-44d5797697f4" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="01becf542de67cefdde619229b0fe9e2.png" xmlns="">0CbfP71dKcEmgsudJVKmTXw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

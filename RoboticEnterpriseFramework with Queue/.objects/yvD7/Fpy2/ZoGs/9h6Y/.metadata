@@ -1,0 +1,14 @@
+﻿{
+  "Name": "addAdd Party",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "9h6YgBdDo0ObhL_qoeZ-AQ",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/9h6YgBdDo0ObhL_qoeZ-AQ",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/ZoGsNV8qB06oeMxhH8UbOQ",
+  "Created": "2025-04-16T12:16:09.9481234Z",
+  "Updated": "2025-04-16T12:16:09.9481234Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

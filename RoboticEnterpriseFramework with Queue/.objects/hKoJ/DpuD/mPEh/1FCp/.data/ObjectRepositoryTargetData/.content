@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="oCec6mxPFUKesRJ9F4_GSg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/7f04c70f-d481-46a3-ab20-84f6500619f0/case-information" CVScreenId="01ade1e7-a429-4908-b97c-fb074e9a2d63" DesignTimeRectangle="510, 623, 968, 90" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl shadowhostid='' tag='DIV' innertext='Damage Amount' parentname='damageAmount' visibleinnertext='Damage Amount' idx='1' /&gt;" Guid="959a3844-53dc-4596-b7f7-bea9b4ae4189" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="bd5adce3ff77f1df8e354483b594801c.png" xmlns="">0qQMbo5C1FUGOOfb0b-jbHA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SelectItem</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

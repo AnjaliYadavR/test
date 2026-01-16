@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="KsnBXQpYDUKcuTEiQ3fF2g" Reference="D7WqeYEmnEKMzyxFDfXbPA/XyKL0F8a50GHe7gxYphfZQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/3a0f62e4-21e8-4933-b4a2-26c54a4f8037/parties" CVScreenId="42e3b255-679c-4dc9-ab47-cc674f805a0e" DesignTimeRectangle="903, 781, 182, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='add-party' tag='BUTTON' /&gt;" Guid="38ad22fd-7712-46e2-b595-6fd95c678def" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="42e3b255-679c-4dc9-ab47-cc674f805a0e" CvElementArea="901, 778, 186, 49" CvTextArea="970, 792, 94, 23" CvTextArgument="Add Party" CvType="Button" DesignTimeRectangle="973, 793, 92, 21" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='add-party' tag='SPAN' type='' class='d-sm-inline flex-1' aaname='Add Party' check:innerText='Add Party' /&gt;" Guid="a54d5001-7d41-4904-aafa-3a75f9b22531" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="97c63211a316579fb662c7bec4f2a167.png" xmlns="">0rdP9WG-gVE2ncT6V0sWLmw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="S0Sl_XPwvkqbtJ5L8SISrQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/MxJHkrbnzk-v-H6VsZ_P4A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/filings" DesignTimeRectangle="926, 740, 136, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Select files' tag='BUTTON' type='button' aaname='Select file' visibleinnertext='Select file' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Select files' tag='BUTTON' type='button' aaname='Select file' visibleinnertext='Select file' check:text='Select file' /&gt;" Guid="34e6da09-a7bc-4f12-b8b4-cc7cbf3c1270" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="2">
+          <Target DesignTimeRectangle="946, 752, 96, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Select file' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Select file' tag='SPAN' type='' class='' check:innerText='Select file' /&gt;" Guid="41ecf796-25a0-4017-bfad-3cc1b7145bb8" SearchSteps="Selector, FuzzySelector" />
+          <Target CVScreenId="990d0efe-2868-4724-adb5-b9dec09d4ab1" CvTextArea="290, 529, 161, 18" CvTextArgument="* Lead Document" CvType="Text" DesignTimeRectangle="293, 522, 157, 35" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Lead Document' class='label-asterisk' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Lead Document' class='label-asterisk' tag='SPAN' type='' check:innerText='Lead Document' /&gt;" Guid="00239a31-5ff1-458c-b608-21a286cf4e3d" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="c893eabc318eeb0213f5a9f40e758ec0.png" xmlns="">0I-fv6Ox91UW3s6_WFoOhuw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

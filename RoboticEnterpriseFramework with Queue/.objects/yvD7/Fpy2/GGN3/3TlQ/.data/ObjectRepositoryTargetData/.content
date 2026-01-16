@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="GwPmjUCG9EyxmlYp2Ooy9Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.clicknotices.com/cn-admin/dashboard" CVScreenId="01b26a31-3d6e-4864-bf51-22dda7d53526" CvElementArea="31, 875, 22, 22" CvTextArea="60, 880, 71, 15" CvTextArgument="Rent Suits" CvType="CheckBox" DesignTimeRectangle="22, 858, 200, 62" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='*Rent Suits*' parentid='sidebar' tag='A' visibleinnertext=' Rent Suits' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='*Rent Suits*' parentid='sidebar' tag='A' visibleinnertext=' Rent Suits' type='' class='' check:text='Rent Suits' /&gt;" Guid="7e181139-8cbb-469f-940f-41d03e685d99" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PP Admin: Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="01b26a31-3d6e-4864-bf51-22dda7d53526" CvTextArea="60, 880, 71, 15" CvTextArgument="Rent Suits" CvType="Text" DesignTimeRectangle="62, 876, 69, 25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Rent Suits' parentid='sidebar' tag='SPAN' type='' class='' check:innerText='Rent Suits' /&gt;" Guid="167cc064-865f-4dcd-8e4b-b02f5f07e75c" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="28c34206fd73a74f46542722c087c822.png" xmlns="">0vqr64sZrS0yhzOf3xIvGKw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

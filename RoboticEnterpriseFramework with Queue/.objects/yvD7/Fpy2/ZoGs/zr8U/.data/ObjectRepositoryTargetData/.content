@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="hyXg5DqKRECMB9QqhqAyoQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/zr8UNCH950y_c0lesRpWpA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/dashboard" DesignTimeRectangle="423, 611, 111, 38" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='spinner-text' tag='SPAN' aaname='Loading...' innertext='Loading...' visibleinnertext='Loading...' /&gt;" FuzzySelectorArgument="&lt;webctrl class='spinner-text' tag='SPAN' aaname='Loading...' innertext='Loading...' visibleinnertext='Loading...' type='' check:text='Loading...' /&gt;" Guid="82630c32-b70d-479d-a2d2-5251d3fa32b3" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="f135349e2b0eb3856ee8e5feed3b37ef.png" xmlns="">0mBSykTV6d0Kl94YTL8ds2g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

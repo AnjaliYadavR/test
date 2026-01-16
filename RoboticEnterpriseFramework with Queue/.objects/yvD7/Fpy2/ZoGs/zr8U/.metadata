@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Loading...",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "zr8UNCH950y_c0lesRpWpA",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/zr8UNCH950y_c0lesRpWpA",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/ZoGsNV8qB06oeMxhH8UbOQ",
+  "Created": "2025-04-25T12:10:41.3722213Z",
+  "Updated": "2025-04-25T12:10:41.3722213Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome PP Admin Work Queues Reports",
+  "Type": "Screen",
+  "Id": "vBunPvvePEW-98qfR3hwTQ",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/vBunPvvePEW-98qfR3hwTQ",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/Fpy25eyyDk-zLJNwl133RQ",
+  "Created": "2025-04-04T12:10:45.3099906Z",
+  "Updated": "2025-04-04T12:10:45.3099906Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="gsmoDg07skGZI92Krs-hfA" Reference="D7WqeYEmnEKMzyxFDfXbPA/pjXQMkrHSEm-SFdgwxfN4w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/2c9658a1-a0a0-46d2-8b9f-6347d4951513/filings" DesignTimeRectangle="303, 529, 371, 75" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='card-body' tag='DIV' innertext=' Uploading Files ' visibleinnertext='Uploading Files' /&gt;" Guid="276d38fe-ea18-49cd-8cde-4dcff52b4eed" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="fc0ef9d38326a2a3671ee7b83d975549.png" xmlns="">07FxVa5EUUkKhhlxweWGJUA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,1828 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="StartFiling" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_Config" Type="InArgument(njl:JObject)" />
+    <x:Property Name="in_dt_strCourtLocation" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_strExceptionPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_jobjCourtFilingSchema" Type="InArgument(njl:JObject)" />
+    <x:Property Name="in_dt_strOdysseyFilingCodes" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="out_strPetition" Type="OutArgument(x:String)" />
+    <x:Property Name="out_strCaseNo" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>StartFiling_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="StartFiling" sap:VirtualizedContainerService.HintSize="1156,467.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strExceptionPath" />
+      <Variable x:TypeArguments="x:String" Name="strCounty" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_CaseInfo" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message - Start Filling Workflow started" sap:VirtualizedContainerService.HintSize="560,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Start Filling Workflow Started&quot;]" />
+    <TryCatch DisplayName="Try Catch - Court Location not found" sap:VirtualizedContainerService.HintSize="560,56.8" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_47">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign - Look for court Location" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strCounty]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_dt_strCourtLocation.AsEnumerable().Where(Function(row) row("SrNo").ToString.Equals(in_jobjCourtFilingSchema("county").ToString)).Select(Function(row) row("CountyName").ToString).First()]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,348" sap2010:WorkflowViewState.IdRef="Sequence_48">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message - Court Location not found" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Error" Message="[&quot;BE Court Location not found - &quot;+exception.ToString]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <Throw DisplayName="Throw - BE Court Location" Exception="[new BusinessRuleException(&quot;Court Location Not found.&quot;)]" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Throw_11">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Throw>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_49">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+    <TryCatch DisplayName="Try Catch - Look for Filling mapping" sap:VirtualizedContainerService.HintSize="560,56.8" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="467.2,278.4" sap2010:WorkflowViewState.IdRef="Sequence_50">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign - Filling mapping not found" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[dt_CaseInfo]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[in_dt_strOdysseyFilingCodes.AsEnumerable().Where(Function(row) row("CountyCode").ToString.Equals(in_jobjCourtFilingSchema("county").ToString)).CopyToDataTable()]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <Assign DisplayName="Assign - Get filling code" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_strPetition]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[dt_CaseInfo(0)("Filing Code").ToString]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,348" sap2010:WorkflowViewState.IdRef="Sequence_51">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message - Filling Code mapping not found" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Error" Message="[&quot;BE Filling mapping not found&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <Throw DisplayName="Throw - BE Filling mapping not found" Exception="[new BusinessRuleException(&quot;Odyssey Filling Mapping not found for the court Location Not found.&quot;)]" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Throw_12">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Throw>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_52">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser - Start Filling" sap:VirtualizedContainerService.HintSize="560,225.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="4b81ab51-f429-4edb-aae5-e1ce021bc065" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <TryCatch DisplayName="Try Catch - Start Filling" sap:VirtualizedContainerService.HintSize="526.4,2680" sap2010:WorkflowViewState.IdRef="TryCatch_14">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch.Try>
+              <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="524.8,1172.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="491.2,118.4" sap2010:WorkflowViewState.IdRef="Activate_1">
+                  <ui:Activate.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[in_Browser]" Id="f3ede2f6-8c6d-4e84-aa74-80ad81930277" TimeoutMS="[cint(in_Config(&quot;TimeOutDelay&quot;).ToString)]" WaitForReady="COMPLETE" />
+                  </ui:Activate.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:Activate>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml) - Start filling" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:RetryScope DisplayName="Retry Scope - Start Filling click" sap:VirtualizedContainerService.HintSize="491.2,232.8" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="[cint(in_Config(&quot;RetryCount&quot;).ToString)]" RetryInterval="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;RetryInterval&quot;).ToString))]">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <uix:NCheckState DisplayName="Check App State 'Start Filing'" sap:VirtualizedContainerService.HintSize="292,24.8" sap2010:WorkflowViewState.IdRef="NCheckState_14" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears - Start filling " sap:VirtualizedContainerService.HintSize="449.6,456" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message - &quot;Started Filing Court case&quot;" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Started Filing Court case&quot;]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Start Filing'" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/dashboard" CVScreenId="a6c8549a-d32f-41f7-8210-f9a9e6bd3484" CvElementArea="158, 603, 519, 50" CvTextArea="364, 616, 103, 22" CvTextArgument="Start filing" CvType="Button" DesignTimeRectangle="160, 605, 515, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='start-filing' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='start-filing' tag='SPAN' type='' aaname='' /&gt;" Guid="67213ab3-79ca-42d8-a08f-246104e4f0b1" ImageBase64="" InformativeScreenshot="172dbaf5255b28d349161555bb3e4a0b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="a6c8549a-d32f-41f7-8210-f9a9e6bd3484" CvTextArea="159, 311, 119, 27" CvTextArgument="Start filing" CvType="Text" DesignTimeRectangle="160, 304, 515, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' innertext='Start Filing' visibleinnertext='Start filing' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' innertext='Start Filing' visibleinnertext='Start filing' type='' aaname='Start Filing' check:text='Start Filing' /&gt;" Guid="78ac033a-a11c-4e2f-ba5c-ef63540868e9" SearchSteps="Selector, FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                              <uix:NClick.VerifyOptions>
+                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionOptions.Retry>
+                                  <uix:VerifyExecutionOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionOptions.Timeout>
+                                </uix:VerifyExecutionOptions>
+                              </uix:NClick.VerifyOptions>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear - Start filling" sap:VirtualizedContainerService.HintSize="449.6,704.8" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TakeScreenshot - Invoke Workflow File (Framework\TakeScreenshot.xaml) - &quot;Started Filing Court case&quot;" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                                <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:InvokeWorkflowFile>
+                            <ui:LogMessage DisplayName="Log Message - Start filling button not found" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Warn" Message="[&quot;Start Filling button not found - &quot;+strExceptionPath]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summary - Invoke Workflow File (EFilingTabs\Summary.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="EFilingTabs\Summary.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                                <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Browser">[in_Browser]</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:InvokeWorkflowFile>
+                            <Throw DisplayName="Throw - Start filling button not found" Exception="[new BusinessRuleException(&quot;Start Filling button not found&quot;)]" sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="Throw_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Throw>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/dashboard" CVScreenId="a8dd9576-29e1-4e21-8459-a490221bbcfa" ContentHash="z_85d-IbZE-TeQBnkohrDA" CvElementArea="157, 603, 519, 50" CvTextArea="364, 616, 103, 22" CvTextArgument="Start filing" CvType="Button" DesignTimeRectangle="160, 680, 508, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='start-filing' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='start-filing' tag='SPAN' type='' aaname='' /&gt;" Guid="7eefd821-b1c5-4eac-bf70-4a0fd0baa3a0" InformativeScreenshot="682b20f36adb808dc03f73f01d83a047.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/0bhjUTKxVUqttPHEMP1agg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="a8dd9576-29e1-4e21-8459-a490221bbcfa" CvTextArea="159, 311, 119, 27" CvTextArgument="Start filing" CvType="Text" DesignTimeRectangle="160, 304, 508, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' aaname='Start Filing' innertext='Start Filing' visibleinnertext='Start filing' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' aaname='Start Filing' innertext='Start Filing' visibleinnertext='Start filing' type='' class='forge-typography--headline5 mb-0' check:text='Start Filing' /&gt;" Guid="9e3a2536-129e-4696-b764-8c4ddbafdf26" SearchSteps="Selector, FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:RetryScope>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml)" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:RetryScope DisplayName="Retry Scope - Start new case" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="[cint(in_Config(&quot;RetryCount&quot;).ToString)]" RetryInterval="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;RetryInterval&quot;).ToString))]">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <uix:NCheckState DisplayName="Check App State 'Start new case'" sap:VirtualizedContainerService.HintSize="952,747.2" sap2010:WorkflowViewState.IdRef="NCheckState_15" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Click to start a new case" sap:VirtualizedContainerService.HintSize="449.6,280" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Start new case'" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/start-filing" CVScreenId="364c63fa-3720-4cef-b429-5605b1036159" CvElementArea="267, 703, 671, 47" CvTextArea="532, 717, 141, 18" CvTextArgument="Start new case" CvType="Button" DesignTimeRectangle="270, 705, 668, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='btnFileNewCase' tag='BUTTON' aaname=' Start new case ' visibleinnertext='Start new case' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btnFileNewCase' tag='BUTTON' aaname=' Start new case ' visibleinnertext='Start new case' type='button' check:text='Start new case' /&gt;" Guid="8693476b-84ec-4a25-b7f5-4f86f7d9b412" InformativeScreenshot="68a3179d9b14fb1e89870960da1b5e23.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Start Filing' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="364c63fa-3720-4cef-b429-5605b1036159" CvTextArea="259, 485, 155, 22" CvTextArgument="File new case" CvType="Text" DesignTimeRectangle="260, 457, 678, 65" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H5' aaname='File New Case' visibleinnertext='File new case' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H5' aaname='File New Case' visibleinnertext='File new case' type='' class='forge-typography--headline5 mb-0 pb-1 pt-3' check:text='File New Case' /&gt;" Guid="8e06fc68-09a8-4b55-9658-56d3b6681061" SearchSteps="Selector, FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                              <uix:NClick.VerifyOptions>
+                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionOptions.Retry>
+                                  <uix:VerifyExecutionOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionOptions.Timeout>
+                                </uix:VerifyExecutionOptions>
+                              </uix:NClick.VerifyOptions>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Handle exceptions in case processing" sap:VirtualizedContainerService.HintSize="449.6,528.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot for error handling Start new case" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                                <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:InvokeWorkflowFile>
+                            <ui:LogMessage DisplayName="Log warning for case filling exception" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Warn" Message="[&quot;Exception found while filling new case - &quot;+strExceptionPath]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                            <Throw DisplayName="Handle missing button exception" Exception="[New BusinessRuleException(&quot;'Start New Case' button not found&quot;)]" sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="Throw_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Throw>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/start-filing" CVScreenId="364c63fa-3720-4cef-b429-5605b1036159" CvElementArea="267, 703, 671, 47" CvTextArea="532, 717, 141, 18" CvTextArgument="Start new case" CvType="Button" DesignTimeRectangle="270, 705, 668, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='btnFileNewCase' tag='BUTTON' aaname=' Start new case ' visibleinnertext='Start new case' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btnFileNewCase' tag='BUTTON' aaname=' Start new case ' visibleinnertext='Start new case' type='button' check:text='Start new case' /&gt;" Guid="8693476b-84ec-4a25-b7f5-4f86f7d9b412" InformativeScreenshot="68a3179d9b14fb1e89870960da1b5e23.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Start Filing' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="364c63fa-3720-4cef-b429-5605b1036159" CvTextArea="259, 485, 155, 22" CvTextArgument="File new case" CvType="Text" DesignTimeRectangle="260, 457, 678, 65" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H5' aaname='File New Case' visibleinnertext='File new case' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H5' aaname='File New Case' visibleinnertext='File new case' type='' class='forge-typography--headline5 mb-0 pb-1 pt-3' check:text='File New Case' /&gt;" Guid="8e06fc68-09a8-4b55-9658-56d3b6681061" SearchSteps="Selector, FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:RetryScope>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml)" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:RetryScope DisplayName="Retry scope to get case reference number" sap:VirtualizedContainerService.HintSize="491.2,372.8" sap2010:WorkflowViewState.IdRef="RetryScope_12" NumberOfRetries="[cint(in_Config(&quot;RetryCount&quot;).ToString)]" RetryInterval="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;RetryInterval&quot;).ToString))]">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Retrieve and log case reference number" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Case Number From Web Page" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ef392029-08b9-410b-9c1a-39f4c9496aa6" Selector="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;&lt;webctrl tag='H3' parentclass='page-header-right-content' /&gt;" TimeoutMS="[cint(in_Config(&quot;TimeOutDelay&quot;).ToString)]" WaitForReady="COMPLETE" />
+                          </ui:GetValue.Target>
+                          <ui:GetValue.Value>
+                            <OutArgument x:TypeArguments="x:String">[out_strCaseNo]</OutArgument>
+                          </ui:GetValue.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:GetValue>
+                        <ui:LogMessage DisplayName="Log case reference number message" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Case Reference No. - &quot;+out_strCaseNo]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:RetryScope>
+                <ui:RetryScope DisplayName="Retry scope for app state visibility check" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="RetryScope_6" NumberOfRetries="[cint(in_Config(&quot;RetryCount&quot;).ToString)]" RetryInterval="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;RetryInterval&quot;).ToString))]">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <uix:NCheckState DisplayName="Check app state and log results Case infomation" sap:VirtualizedContainerService.HintSize="952,747.2" sap2010:WorkflowViewState.IdRef="NCheckState_16" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Log message for new case window found" sap:VirtualizedContainerService.HintSize="449.6,230.4" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log message for filing a new case" sap:VirtualizedContainerService.HintSize="416,168.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Filing New Case window Found&quot;]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Handle missing case window scenario" sap:VirtualizedContainerService.HintSize="449.6,528.8" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot for exception handling for case information" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                                <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                            <ui:LogMessage DisplayName="Log error for missing case filing window" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace" Message="[&quot;Filing New Case window not Found - &quot;+strExceptionPath]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                            <Throw DisplayName="Handle business rule exceptions in workflow" Exception="[new BusinessRuleException(&quot;Filing New Case window not found&quot;)]" sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="Throw_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Throw>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/13eec88c-2b2e-46c3-95be-528a728549ce/case-information" CVScreenId="21715574-5041-4a4c-96a0-ad992d13f128" ContentHash="EMoToKTGH0KlbKBl19g55g" CvTextArea="509, 475, 195, 23" CvTextArgument="Case information" CvType="Text" DesignTimeRectangle="490, 448, 1008, 81" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='Case InformationHelp' visibleinnertext='Case information' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' innertext='Case InformationHelp' visibleinnertext='Case information' type='' aaname='' check:text='Case InformationHelp' /&gt;" Guid="0069a0ec-b4ac-4b9b-9d6d-5bbf0d321d78" InformativeScreenshot="32ce085e7d92ed974aa6c594e1cd3fe7.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/WwJw-b4_lEmgCP_T3-r7BQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:RetryScope>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml)" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <If Condition="[not(String.IsNullOrWhiteSpace(strCounty) and dt_CaseInfo is Nothing)]" DisplayName="If - fill details when country code and odessy mapping found" sap:VirtualizedContainerService.HintSize="491.2,48" sap2010:WorkflowViewState.IdRef="If_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="strMonetary" />
+                        <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="strDamageAmt" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:RetryScope DisplayName="Validate court location with retries and exceptions" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="RetryScope_7" NumberOfRetries="[cint(in_Config(&quot;RetryCount&quot;).ToString)]" RetryInterval="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;RetryInterval&quot;).ToString))]">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <uix:NCheckState DisplayName="Validate Court Location input and handle exceptions" sap:VirtualizedContainerService.HintSize="957.6,972.8" sap2010:WorkflowViewState.IdRef="NCheckState_17" IsLoose="True" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Workflow for Court Location entry and loading" sap:VirtualizedContainerService.HintSize="449.6,727.2" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;KeywordDelay&quot;).ToString)).TotalSeconds]" DisplayName="Type Into Court Location in Workflow" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="HardwareEvents" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Text="[strCounty]" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                                    <uix:NTypeInto.Target>
+                                      <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/c9434306-2e5c-45b7-bb92-a0d2e96c16ae/case-information" CVScreenId="1e4328c7-63d8-43f3-80e1-722854e7da70" ContentHash="D3YVbLa5PkOb6sTGDesC-A" CvElementArea="508, 553, 970, 63" CvType="InputBox" DesignTimeRectangle="510, 555, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='location' tag='INPUT' aaname='Court Location' name='location' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='location' tag='INPUT' aaname='Court Location' name='location' type='text' class='' /&gt;" Guid="caa77fcd-79a0-4a6a-a9f6-c3e2f200b4b3" InformativeScreenshot="11b7653a3f555fd19e6d743228343b49.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/gIG8ab26NUKkjQA59iPaQg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="1e4328c7-63d8-43f3-80e1-722854e7da70" CvElementArea="508, 553, 970, 63" CvType="InputBox" DesignTimeRectangle="525, 575, 898, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='Court Location' visibleinnertext='Court Location' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Court Location' visibleinnertext='Court Location' type='' class='ng-star-inserted forge-floating-label' check:text='Court Location' /&gt;" Guid="0c27a97d-f95c-4d3f-a86a-5c650a4deed3" SearchSteps="Selector, FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NTypeInto.Target>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NTypeInto>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;VShortDelay&quot;).ToString)).TotalSeconds]" DisplayName="Execute keyboard shortcuts using UI automation for court location" sap:VirtualizedContainerService.HintSize="416,239.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V4">
+                                    <uix:NKeyboardShortcuts.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NKeyboardShortcuts.VerifyOptions>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NKeyboardShortcuts>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Handle exceptions and take screenshots if court location not found" sap:VirtualizedContainerService.HintSize="455.2,754.4" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TakeScreenshot - Invoke Workflow File (Framework\TakeScreenshot.xaml) court location" sap:VirtualizedContainerService.HintSize="421.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                                      <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InvokeWorkflowFile>
+                                  <ui:LogMessage DisplayName="Log warning for court location exception" sap:VirtualizedContainerService.HintSize="421.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Warn" Message="[&quot;Court Location exception found - &quot;+strExceptionPath]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click the close button in the UI" sap:VirtualizedContainerService.HintSize="421.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_18" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Version="V4">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5ca59788-e814-438b-8916-56ef219fc023/case-information" ContentHash="x5LceGhN1kOjU5lWrW52UA" DesignTimeRectangle="1383, 662, 35, 35" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl parentname='location' tag='BUTTON' type='button' aaname='close' innertext='close' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='location' tag='BUTTON' type='button' aaname='close' innertext='close' class='forge-icon-button forge-icon-button--dense' check:text='close' /&gt;" Guid="b1dd8d20-3c0c-41d5-b917-312d48900162" InformativeScreenshot="2cefc38154cbb6f0a6ee6a971b297ede.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/129trkO9b0GCF0loapEYhQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NClick>
+                                  <Throw DisplayName="Handle missing court location exception" Exception="[new BusinessRuleException(&quot;Court Location field not loaded&quot;)]" sap:VirtualizedContainerService.HintSize="421.6,115.2" sap2010:WorkflowViewState.IdRef="Throw_13">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Throw>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/c9434306-2e5c-45b7-bb92-a0d2e96c16ae/case-information" CVScreenId="1e4328c7-63d8-43f3-80e1-722854e7da70" ContentHash="D3YVbLa5PkOb6sTGDesC-A" CvElementArea="508, 553, 970, 63" CvType="InputBox" DesignTimeRectangle="510, 555, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='location' tag='INPUT' aaname='Court Location' name='location' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='location' tag='INPUT' aaname='Court Location' name='location' type='text' class='' /&gt;" Guid="caa77fcd-79a0-4a6a-a9f6-c3e2f200b4b3" InformativeScreenshot="11b7653a3f555fd19e6d743228343b49.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/gIG8ab26NUKkjQA59iPaQg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="1e4328c7-63d8-43f3-80e1-722854e7da70" CvElementArea="508, 553, 970, 63" CvType="InputBox" DesignTimeRectangle="525, 575, 898, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='Court Location' visibleinnertext='Court Location' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Court Location' visibleinnertext='Court Location' type='' class='ng-star-inserted forge-floating-label' check:text='Court Location' /&gt;" Guid="0c27a97d-f95c-4d3f-a86a-5c650a4deed3" SearchSteps="Selector, FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean" />
+                        </ui:RetryScope.Condition>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:RetryScope>
+                      <ui:RetryScope DisplayName="Retry case category management with error handling" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="RetryScope_8" NumberOfRetries="[cint(in_Config(&quot;RetryCount&quot;).ToString)]" RetryInterval="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;RetryInterval&quot;).ToString))]">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <uix:NCheckState DisplayName="Manage case category with error handling" sap:VirtualizedContainerService.HintSize="969.6,2264.8" sap2010:WorkflowViewState.IdRef="NCheckState_18" IsLoose="True" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Case category handling with exception management" sap:VirtualizedContainerService.HintSize="467.2,2046.4" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:String" Name="strCaseCatogery" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="Assign Case Category" sap:VirtualizedContainerService.HintSize="433.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[strCaseCatogery]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[dt_CaseInfo(0)("Category").ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on the 'Case Category' element" sap:VirtualizedContainerService.HintSize="433.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_19" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/749fc343-72e3-4089-9bf1-03734c9e0b46/case-information" CVScreenId="fd82e1d0-17a0-4f05-af9c-3ed177877972" ContentHash="rNL_ETtitUqNTCv4pe-aHQ" DesignTimeRectangle="510, 759, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='caseCategory' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='caseCategory' tag='INPUT' type='text' class='forge-field__input--focused' aaname='Case Category' /&gt;" Guid="5722b337-85a8-4a48-9155-6b70dc2926b5" InformativeScreenshot="8e7f0d30013a577aa5f030877858e382.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/xaSwXI9J9ky5HXCahcKn_Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                  </uix:NClick>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml) case category" sap:VirtualizedContainerService.HintSize="433.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;KeywordDelay&quot;).ToString)).TotalSeconds]" DisplayName="Type Into Case Category Field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="HardwareEvents" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Text="[strCaseCatogery.Substring(0, 5)]" Version="V4">
+                                    <uix:NTypeInto.Target>
+                                      <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/749fc343-72e3-4089-9bf1-03734c9e0b46/case-information" CVScreenId="fd82e1d0-17a0-4f05-af9c-3ed177877972" ContentHash="rNL_ETtitUqNTCv4pe-aHQ" DesignTimeRectangle="510, 759, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='caseCategory' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='caseCategory' tag='INPUT' type='text' class='forge-field__input--focused' aaname='Case Category' /&gt;" Guid="5722b337-85a8-4a48-9155-6b70dc2926b5" InformativeScreenshot="8e7f0d30013a577aa5f030877858e382.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/xaSwXI9J9ky5HXCahcKn_Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                    </uix:NTypeInto.Target>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NTypeInto>
+                                  <TryCatch DisplayName="Try-Catch for Web Interaction and Exception Handling case category" sap:VirtualizedContainerService.HintSize="433.6,979.2" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <TryCatch.Try>
+                                      <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="421.6,190.4" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click DIV Element in Web Application" sap:VirtualizedContainerService.HintSize="388,130.4" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                          <ui:Click.CursorPosition>
+                                            <ui:CursorPosition Position="Center">
+                                              <ui:CursorPosition.OffsetX>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetX>
+                                              <ui:CursorPosition.OffsetY>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetY>
+                                            </ui:CursorPosition>
+                                          </ui:Click.CursorPosition>
+                                          <ui:Click.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c13f062-7884-437b-b049-f312657f6ebe" InformativeScreenshot="f86417d7b4277ca3f9c73967a15be5c5" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;&lt;webctrl tag='SPAN' visibleinnertext='{0}' /&gt;&quot;, strCaseCatogery)]" TimeoutMS="[cint(in_Config(&quot;MediumDelay&quot;).ToString)]" WaitForReady="COMPLETE" />
+                                          </ui:Click.Target>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:Click>
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                                        <ActivityAction x:TypeArguments="s:Exception">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="421.6,525.6" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TakeScreenshot - Invoke Workflow File (Framework\TakeScreenshot.xaml) Case catogery not found" sap:VirtualizedContainerService.HintSize="388,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                                              <ui:InvokeWorkflowFile.Arguments>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                                                <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                                              </ui:InvokeWorkflowFile.Arguments>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:InvokeWorkflowFile>
+                                            <ui:LogMessage DisplayName="Log message for case category exception" sap:VirtualizedContainerService.HintSize="388,176" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Warn" Message="[&quot;Case catogery exception found - &quot;+strExceptionPath]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:LogMessage>
+                                            <Throw DisplayName="Handle business rule exceptions in workflow case category field not found" Exception="[new BusinessRuleException(&quot;For Case category field, Expected value not found&quot;)]" sap:VirtualizedContainerService.HintSize="388,113.6" sap2010:WorkflowViewState.IdRef="Throw_16">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Throw>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                    <TryCatch.Finally>
+                                      <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="421.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Sequence>
+                                    </TryCatch.Finally>
+                                  </TryCatch>
+                                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;VShortDelay&quot;).ToString)).TotalSeconds]" DisplayName="Keyboard Shortcuts Case category" sap:VirtualizedContainerService.HintSize="433.6,239.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V4">
+                                    <uix:NKeyboardShortcuts.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NKeyboardShortcuts.VerifyOptions>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NKeyboardShortcuts>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Handle case category loading errors case category not found" sap:VirtualizedContainerService.HintSize="449.6,754.4" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TakeScreenshot - Invoke Workflow File (Framework\TakeScreenshot.xaml) Case catogery" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                                      <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InvokeWorkflowFile>
+                                  <ui:LogMessage DisplayName="Log warning for case category exception case catogery not found" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Warn" Message="[&quot;Case catogery exception found - &quot;+strExceptionPath]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click on 'SVG' icon in application close button" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Version="V4">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/a6791283-1ce9-47f1-a503-9ecf7dded23a/case-information" ContentHash="fJji6HZDb0K0KMOR990JDQ" DesignTimeRectangle="1385, 795, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FullSelectorArgument="&lt;webctrl name='close' parentname='caseCategory' tag='FORGE-ICON' /&gt;&lt;webctrl shadowhostid='' tag='svg' parentname='close' /&gt;" FuzzySelectorArgument="&lt;webctrl name='close' parentname='caseCategory' tag='FORGE-ICON' /&gt;&lt;webctrl shadowhostid='' tag='svg' parentname='close' type='' class='' aaname='' /&gt;" Guid="a3ffcc0e-b8e0-42d8-9384-a87cfb67da66" InformativeScreenshot="da1984401da05c5bc120217250cddf13.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/t5JlmDz3v0K4ICPsRcqxFw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NClick>
+                                  <Throw DisplayName="Handle case category loading error - case catogery not found" Exception="[new BusinessRuleException(&quot;Case category field not loaded&quot;)]" sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="Throw_14">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Throw>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/749fc343-72e3-4089-9bf1-03734c9e0b46/case-information" CVScreenId="fd82e1d0-17a0-4f05-af9c-3ed177877972" ContentHash="rNL_ETtitUqNTCv4pe-aHQ" DesignTimeRectangle="510, 759, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='caseCategory' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='caseCategory' tag='INPUT' type='text' class='forge-field__input--focused' aaname='Case Category' /&gt;" Guid="5722b337-85a8-4a48-9155-6b70dc2926b5" InformativeScreenshot="8e7f0d30013a577aa5f030877858e382.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/xaSwXI9J9ky5HXCahcKn_Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean" />
+                        </ui:RetryScope.Condition>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:RetryScope>
+                      <ui:RetryScope DisplayName="Retry Case Type Processing with Error Handling" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="RetryScope_10" NumberOfRetries="[cint(in_Config(&quot;RetryCount&quot;).ToString)]" RetryInterval="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;RetryInterval&quot;).ToString))]">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <uix:NCheckState DisplayName="Workflow for processing case type with error handling" sap:VirtualizedContainerService.HintSize="969.6,2264.8" sap2010:WorkflowViewState.IdRef="NCheckState_19" IsLoose="True" Version="V4">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Case Type Processing with Exception Management" sap:VirtualizedContainerService.HintSize="467.2,2046.4" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:String" Name="strCaseType" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="Assign Case Type From Data Table" sap:VirtualizedContainerService.HintSize="433.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[strCaseType]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[Regex.Matches(dt_CaseInfo(0)("Case type").ToString,"^[a-zA-Z\s-]+")(0).ToString]</InArgument>
+                                    </Assign.Value>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Assign>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Case Type' in the application" sap:VirtualizedContainerService.HintSize="433.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_20" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Version="V4">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/e010407a-677d-4a5d-80b3-9fb2a1150e71/case-information" CVScreenId="9b94ecc8-1e01-4285-b8d6-767ba599e4a6" ContentHash="1-YhwTxATU2_gIoAB5YszQ" DesignTimeRectangle="510, 666, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='caseType' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='caseType' tag='INPUT' type='text' class='forge-field__input--focused' aaname='Case Type' /&gt;" Guid="4e6320fb-9d79-489a-bd3d-3cd8f1383551" InformativeScreenshot="8e8b118c462beef326f01221d02dcf72.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/-oOZIiwUpU6mGI8uM1-GZQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="9b94ecc8-1e01-4285-b8d6-767ba599e4a6" CvElementArea="511, 665, 963, 61" CvType="InputBox" DesignTimeRectangle="525, 674, 898, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' type='' aaname='Case Type' check:innerText='Case Type' /&gt;" Guid="356dcec2-e763-44d1-89b0-cc35df975e20" SearchSteps="Selector, FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NClick>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WaitForLoading Workflow case type" sap:VirtualizedContainerService.HintSize="433.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InvokeWorkflowFile>
+                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;KeywordDelay&quot;).ToString)).TotalSeconds]" DisplayName="Input Case Type in Workflow" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_8" InteractionMode="HardwareEvents" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Text="[strCaseType.Substring(0,3)]" Version="V4">
+                                    <uix:NTypeInto.Target>
+                                      <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/e010407a-677d-4a5d-80b3-9fb2a1150e71/case-information" CVScreenId="9b94ecc8-1e01-4285-b8d6-767ba599e4a6" ContentHash="1-YhwTxATU2_gIoAB5YszQ" DesignTimeRectangle="510, 666, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='caseType' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='caseType' tag='INPUT' type='text' class='forge-field__input--focused' aaname='Case Type' /&gt;" Guid="4e6320fb-9d79-489a-bd3d-3cd8f1383551" InformativeScreenshot="8e8b118c462beef326f01221d02dcf72.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/-oOZIiwUpU6mGI8uM1-GZQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="9b94ecc8-1e01-4285-b8d6-767ba599e4a6" CvElementArea="511, 665, 963, 61" CvType="InputBox" DesignTimeRectangle="525, 674, 898, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' type='' aaname='Case Type' check:innerText='Case Type' /&gt;" Guid="356dcec2-e763-44d1-89b0-cc35df975e20" SearchSteps="Selector, FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NTypeInto.Target>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NTypeInto>
+                                  <TryCatch DisplayName="Case type handling with exception management" sap:VirtualizedContainerService.HintSize="433.6,979.2" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <TryCatch.Try>
+                                      <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="416,190.4" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on a DIV element case type" sap:VirtualizedContainerService.HintSize="382.4,130.4" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                          <ui:Click.CursorPosition>
+                                            <ui:CursorPosition Position="Center">
+                                              <ui:CursorPosition.OffsetX>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetX>
+                                              <ui:CursorPosition.OffsetY>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetY>
+                                            </ui:CursorPosition>
+                                          </ui:Click.CursorPosition>
+                                          <ui:Click.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c13f062-7884-437b-b049-f312657f6ebe" InformativeScreenshot="f86417d7b4277ca3f9c73967a15be5c5" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;&lt;webctrl tag='SPAN' visibleinnertext='{0}*' /&gt;&quot;, strCaseType)]" TimeoutMS="[cint(in_Config(&quot;MediumDelay&quot;).ToString)]" WaitForReady="COMPLETE" />
+                                          </ui:Click.Target>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:Click>
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+                                        <ActivityAction x:TypeArguments="s:Exception">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,525.6" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot for exception handling case type not found" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                                              <ui:InvokeWorkflowFile.Arguments>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                                                <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                                              </ui:InvokeWorkflowFile.Arguments>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:InvokeWorkflowFile>
+                                            <ui:LogMessage DisplayName="Log case type exception message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Warn" Message="[&quot;Case Type exception found - &quot;+strExceptionPath]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:LogMessage>
+                                            <Throw DisplayName="Handle business rule exceptions in the process case type" Exception="[new BusinessRuleException(&quot;For Case Type field, Expected value not found&quot;)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_17">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Throw>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                    <TryCatch.Finally>
+                                      <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Sequence>
+                                    </TryCatch.Finally>
+                                  </TryCatch>
+                                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;VShortDelay&quot;).ToString)).TotalSeconds]" DisplayName="Execute keyboard shortcuts in the application case type" sap:VirtualizedContainerService.HintSize="433.6,239.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V4">
+                                    <uix:NKeyboardShortcuts.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NKeyboardShortcuts.VerifyOptions>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NKeyboardShortcuts>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Handle case type loading and logging" sap:VirtualizedContainerService.HintSize="449.6,754.4" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TakeScreenshot - Invoke Workflow File (Framework\TakeScreenshot.xaml) case type not found" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                                      <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InvokeWorkflowFile>
+                                  <ui:LogMessage DisplayName="Log case type exception message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Warn" Message="[&quot;Case Type exception found - &quot;+strExceptionPath]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click on a specific SVG element case type" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Version="V4">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5ca59788-e814-438b-8916-56ef219fc023/case-information" ContentHash="MF3KeV98n0CabnY3n7TAGQ" DesignTimeRectangle="1385, 811, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FullSelectorArgument="&lt;webctrl name='close' parentname='caseType' tag='FORGE-ICON' /&gt;&lt;webctrl shadowhostid='' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl name='close' parentname='caseType' tag='FORGE-ICON' /&gt;&lt;webctrl shadowhostid='' tag='svg' type='' class='' aaname='' /&gt;" Guid="d76a1b61-f5b7-4d0a-85a6-3bb6111ca5d4" InformativeScreenshot="f0e0e0dedbf9cf1aed383d57abdd40b7.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/M7XiQhbAYECr8Q7YEDnc6g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="e565fbd3-1e3f-4216-a7e7-282ff58d06a5" CvElementArea="513, 795, 965, 61" CvType="InputBox" DesignTimeRectangle="525, 804, 853, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' type='' aaname='Case Type' check:innerText='Case Type' /&gt;" Guid="3384d234-51e2-4531-9f3b-0f1a65f24473" SearchSteps="Selector, FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NClick>
+                                  <Throw DisplayName="Handle case type loading error" Exception="[new BusinessRuleException(&quot;Case Type field not loaded&quot;)]" sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="Throw_15">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Throw>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/e010407a-677d-4a5d-80b3-9fb2a1150e71/case-information" CVScreenId="9b94ecc8-1e01-4285-b8d6-767ba599e4a6" ContentHash="1-YhwTxATU2_gIoAB5YszQ" DesignTimeRectangle="510, 666, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='caseType' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='caseType' tag='INPUT' type='text' class='forge-field__input--focused' aaname='Case Type' /&gt;" Guid="4e6320fb-9d79-489a-bd3d-3cd8f1383551" InformativeScreenshot="8e8b118c462beef326f01221d02dcf72.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/-oOZIiwUpU6mGI8uM1-GZQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="9b94ecc8-1e01-4285-b8d6-767ba599e4a6" CvElementArea="511, 665, 963, 61" CvType="InputBox" DesignTimeRectangle="525, 674, 898, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' type='' aaname='Case Type' check:innerText='Case Type' /&gt;" Guid="356dcec2-e763-44d1-89b0-cc35df975e20" SearchSteps="Selector, FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean" />
+                        </ui:RetryScope.Condition>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:RetryScope>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml) Case type" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                      <Assign DisplayName="Assign Damage Amount Variable" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="Assign_7">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strMonetary]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[in_Config("DamageAmount").ToString]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <TryCatch DisplayName="Workflow for handling damage amount clicks and exceptions" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch.Try>
+                          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="416,329.6" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Selected Text DIV damage amount" sap:VirtualizedContainerService.HintSize="382.4,139.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e47828a9-706a-4808-8d76-4bd2cb8e1a74" InformativeScreenshot="537107c164be71b2d01d89b19698e9e1" Selector="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='selected-text' shadowhostid='' tag='DIV' /&gt;" TimeoutMS="[cint(TimeSpan.FromMilliseconds(cint(in_Config(&quot;ShortDelay&quot;).ToString)).TotalSeconds)]" WaitForReady="COMPLETE" />
+                              </ui:Click.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:Click>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="[cint(TimeSpan.FromMilliseconds(cint(in_Config(&quot;VShortDelay&quot;).ToString)).TotalSeconds)]" DisplayName="Click on Forge List Item" sap:VirtualizedContainerService.HintSize="382.4,130.4" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3d024db7-df82-4ad2-bccf-2617ed1220cc" InformativeScreenshot="9246008c26bce4622d6fa8d3172b6e75" Selector="[string.Format(&quot;&lt;webctrl tag='FORGE-LIST-ITEM' innertext='{0}' visibleinnertext='{0}' /&gt;&quot;, strMonetary)]" TimeoutMS="[cint(TimeSpan.FromMilliseconds(cint(in_Config(&quot;ShortDelay&quot;).ToString)).TotalSeconds)]" WaitForReady="COMPLETE" />
+                              </ui:Click.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:Click>
+                          </Sequence>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,525.6" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TakeScreenshot - Invoke Workflow File (Framework\TakeScreenshot.xaml) - damage amount not found" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                                    <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeWorkflowFile>
+                                <ui:LogMessage DisplayName="Log case type exception message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Warn" Message="[&quot;Case Type exception found - &quot;+strExceptionPath]">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:LogMessage>
+                                <Throw DisplayName="Handle missing damage amount value exception" Exception="[new BusinessRuleException(&quot;Damage amount value not found&quot;)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_18">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Throw>
+                              </Sequence>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                        <TryCatch.Finally>
+                          <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </TryCatch.Finally>
+                      </TryCatch>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml)" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;KeywordDelay&quot;).ToString)).TotalSeconds]" DisplayName="Type Damage Amount in Workflow" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Text="[in_Config(&quot;ProcedureOrRemedies&quot;).ToString]" Version="V4">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/1a0e1224-c135-494a-afe2-5d4c1ecd363c/case-information" CVScreenId="9cb13c0e-296e-46a1-82c1-2c5f2787a791" ContentHash="Bd2BDSQytECo4meL3nDXRQ" DesignTimeRectangle="510, 795, 968, 70" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl tag='FORGE-CHIP-FIELD' /&gt;&lt;webctrl shadowhostid='' tag='DIV' parentclass='forge-chip-field forge-field forge-field--roomy' type='' class='forge-field__label-input-container' aaname='' /&gt;" Guid="48f30b88-4e2b-4ba3-9d2c-15601e8d6e21" InformativeScreenshot="a3462af9bd657ed04bcbfef263206675.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/LiMBdvRKEkuFQFmehCfQcQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="5ef8b525-6cfa-482f-95ec-0fb5de242e5e" CvTextArea="507, 739, 195, 20" CvTextArgument="Procedure/Remedies" CvType="Text" DesignTimeRectangle="510, 733, 968, 35" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H3' visibleinnertext='Procedure/Remedies' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' visibleinnertext='Procedure/Remedies' type='' aaname='Procedure/Remedies' check:text='Procedure/Remedies' /&gt;" Guid="ff98fc0a-d80d-4e21-9eef-a5a10a2b4666" SearchSteps="Selector, FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.VerifyOptions>
+                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionTypeIntoOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          </uix:VerifyExecutionTypeIntoOptions>
+                        </uix:NTypeInto.VerifyOptions>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml)" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;VShortDelay&quot;).ToString)).TotalSeconds]" DisplayName="Execute keyboard shortcuts in the application damage amount" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V4">
+                        <uix:NKeyboardShortcuts.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
+                            <uix:VerifyExecutionOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionOptions.Timeout>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NKeyboardShortcuts.VerifyOptions>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NKeyboardShortcuts>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WaitForLoading - Invoke Workflow File (WaitForLoading.xaml)" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="EFilingTabs\WaitForLoading.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="njl:JObject" x:Key="in_Config">[in_Config]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on a specified 'SPAN' element parties" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Timeout="[TimeSpan.FromMilliseconds(cint(in_Config(&quot;TimeOutDelay&quot;).ToString)).TotalSeconds]" Version="V4">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/case-information" CVScreenId="55def126-6461-491a-93fc-34b0c5c88623" ContentHash="A5Bo-WH26EWgggA7_TfZWg" CvElementArea="1753, 962, 138, 50" CvTextArea="1772, 976, 68, 17" CvTextArgument="Parties" CvType="Button" DesignTimeRectangle="1755, 965, 134, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='forward-to-parties' tag='SPAN' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='forward-to-parties' tag='SPAN' type='' class='forge-button__ripple' aaname='' /&gt;" Guid="3187782e-efd4-4497-8d76-e36e91a26741" InformativeScreenshot="04bc195f47a9e7df4ea5504274ee99d8.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/KyVB8qk7-0GT8lcK5ckNow" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <uix:NClick.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
+                            <uix:VerifyExecutionOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionOptions.Timeout>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NClick.VerifyOptions>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NClick>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,622.4" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:SetTransactionProgress TimeoutMS="{x:Null}" DisplayName="Set Transaction Progress" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="491.2,226.4" sap2010:WorkflowViewState.IdRef="SetTransactionProgress_4" Progress="[&quot;&amp;D&quot;+out_strCaseNo+&quot;&amp;S&quot;+strExceptionPath]" TransactionItem="[in_TransactionItem]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:SetTransactionProgress>
+                    <uix:NCheckState DisplayName="Check App State 'SPAN(2)'" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_8" IsLoose="True" Version="V4">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,280" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN(2)'" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/eea5b4cd-9333-4203-ad62-124c2daf7ee0/case-information" CVScreenId="94d7eeb8-eadc-452a-b738-a5ed7dadb47a" ContentHash="d56-eB5dFEydDBtdj9s4lA" CvElementArea="27, 963, 219, 48" CvTextArea="47, 977, 176, 16" CvTextArgument="Save draft and exit" CvType="Button" DesignTimeRectangle="29, 965, 215, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' type='' aaname='' /&gt;" Guid="ad0693bb-bdd8-47e1-9ff5-5dc18f8b8d7b" InformativeScreenshot="794e38910fef34f3d6d5d7a7df9bdb35.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/h12GKVhqWUS-WsYTyubpDA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/eea5b4cd-9333-4203-ad62-124c2daf7ee0/case-information" CVScreenId="94d7eeb8-eadc-452a-b738-a5ed7dadb47a" ContentHash="d56-eB5dFEydDBtdj9s4lA" CvElementArea="27, 963, 219, 48" CvTextArea="47, 977, 176, 16" CvTextArgument="Save draft and exit" CvType="Button" DesignTimeRectangle="29, 965, 215, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' type='' aaname='' /&gt;" Guid="ad0693bb-bdd8-47e1-9ff5-5dc18f8b8d7b" InformativeScreenshot="794e38910fef34f3d6d5d7a7df9bdb35.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/h12GKVhqWUS-WsYTyubpDA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="491.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Business Exception Found in workflow Start Filling - &quot;+exception.ToString]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <ui:SetTransactionProgress TimeoutMS="{x:Null}" DisplayName="Set Transaction Progress" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="SetTransactionProgress_6" Progress="[&quot;BE Exception - &quot;+exception.ToString]" TransactionItem="[in_TransactionItem]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:SetTransactionProgress>
+                    <Rethrow sap:VirtualizedContainerService.HintSize="491.2,48" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+              <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,679.2" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:SetTransactionProgress TimeoutMS="{x:Null}" DisplayName="Set Transaction Progress" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="491.2,226.4" sap2010:WorkflowViewState.IdRef="SetTransactionProgress_7" Progress="[&quot;&amp;D&quot;+out_strCaseNo+&quot;&amp;S&quot;+strExceptionPath]" TransactionItem="[in_TransactionItem]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:SetTransactionProgress>
+                    <uix:NCheckState DisplayName="Check App State 'SPAN(2)(1)'" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_13" IsLoose="True" Version="V4">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,280" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN(2)(1)'" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_23" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4b81ab51-f429-4edb-aae5-e1ce021bc065" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/eea5b4cd-9333-4203-ad62-124c2daf7ee0/case-information" CVScreenId="94d7eeb8-eadc-452a-b738-a5ed7dadb47a" ContentHash="pzayZAaUfEirc7nIFHKEQw" CvElementArea="27, 963, 219, 48" CvTextArea="47, 977, 176, 16" CvTextArgument="Save draft and exit" CvType="Button" DesignTimeRectangle="29, 965, 215, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' type='' aaname='' /&gt;" Guid="ad0693bb-bdd8-47e1-9ff5-5dc18f8b8d7b" InformativeScreenshot="794e38910fef34f3d6d5d7a7df9bdb35.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/RNOnM3Qtkky1B6LFIigc2g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/eea5b4cd-9333-4203-ad62-124c2daf7ee0/case-information" CVScreenId="94d7eeb8-eadc-452a-b738-a5ed7dadb47a" ContentHash="pzayZAaUfEirc7nIFHKEQw" CvElementArea="27, 963, 219, 48" CvTextArea="47, 977, 176, 16" CvTextArgument="Save draft and exit" CvType="Button" DesignTimeRectangle="29, 965, 215, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' type='' aaname='' /&gt;" Guid="ad0693bb-bdd8-47e1-9ff5-5dc18f8b8d7b" InformativeScreenshot="794e38910fef34f3d6d5d7a7df9bdb35.png" Reference="D7WqeYEmnEKMzyxFDfXbPA/RNOnM3Qtkky1B6LFIigc2g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TakeScreenshot - Invoke Workflow File (Framework\TakeScreenshot.xaml)" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_strExceptionPath]</InArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strExceptionPath]</InOutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InvokeWorkflowFile>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="491.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Error" Message="[&quot;System Exception Found in workflow Start Filling - &quot;+exception.ToString]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                          <ui:SetTransactionProgress TimeoutMS="{x:Null}" DisplayName="Set Transaction Progress" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="491.2,226.4" sap2010:WorkflowViewState.IdRef="SetTransactionProgress_3" Progress="[&quot;BE Exception - &quot;+exception.ToString]" TransactionItem="[in_TransactionItem]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:SetTransactionProgress>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                    </ui:CommentOut>
+                    <Rethrow sap:VirtualizedContainerService.HintSize="491.2,48" sap2010:WorkflowViewState.IdRef="Rethrow_4" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+            <TryCatch.Finally>
+              <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="524.8,24.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </TryCatch.Finally>
+          </TryCatch>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log message for workflow end status" sap:VirtualizedContainerService.HintSize="560,48" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Start Filling Workflow Ended&quot;]" />
+  </Sequence>
+</Activity>

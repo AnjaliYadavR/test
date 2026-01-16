@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="pzayZAaUfEirc7nIFHKEQw" Reference="D7WqeYEmnEKMzyxFDfXbPA/RNOnM3Qtkky1B6LFIigc2g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/eea5b4cd-9333-4203-ad62-124c2daf7ee0/case-information" CVScreenId="94d7eeb8-eadc-452a-b738-a5ed7dadb47a" CvElementArea="27, 963, 219, 48" CvTextArea="47, 977, 176, 16" CvTextArgument="Save draft and exit" CvType="Button" DesignTimeRectangle="29, 965, 215, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='save-draft-and-exit' tag='SPAN' type='' aaname='' /&gt;" Guid="ad0693bb-bdd8-47e1-9ff5-5dc18f8b8d7b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="794e38910fef34f3d6d5d7a7df9bdb35.png" xmlns="">0NbI93oIn2k2Dk9jNm2cZ-g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

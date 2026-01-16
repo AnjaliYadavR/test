@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="A5Bo-WH26EWgggA7_TfZWg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/case-information" CVScreenId="55def126-6461-491a-93fc-34b0c5c88623" CvElementArea="1753, 962, 138, 50" CvTextArea="1772, 976, 68, 17" CvTextArgument="Parties" CvType="Button" DesignTimeRectangle="1755, 965, 134, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='forward-to-parties' tag='SPAN' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='forward-to-parties' tag='SPAN' type='' class='forge-button__ripple' aaname='' /&gt;" Guid="3187782e-efd4-4497-8d76-e36e91a26741" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="04bc195f47a9e7df4ea5504274ee99d8.png" xmlns="">0gd-Seiu9m0C_qFBZLbrekQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

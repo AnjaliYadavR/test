@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome eFile - Parties",
+  "Type": "App",
+  "Id": "hKoJSznlCUOhR1-3V37l0w",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/hKoJSznlCUOhR1-3V37l0w",
+  "Created": "2025-04-09T12:29:08.9777654Z",
+  "Updated": "2025-04-09T12:29:08.9777654Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="J5FT0NC-z0Oo0AtDmSd6GQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/reports/work-queue" CVScreenId="bdd00d4c-2221-49a9-9986-701b2198eb08" CvTextArea="270, 450, 292, 32" CvTextArgument="Due Work Details" CvType="Text" DesignTimeRectangle="272, 448, 291, 41" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' aaname='Due Work Details' innertext='Due Work Details' visibleinnertext='Due Work Details' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' aaname='Due Work Details' innertext='Due Work Details' visibleinnertext='Due Work Details' type='' class='' check:text='Due Work Details' /&gt;" Guid="ef1c6f43-2d34-4bba-bf6b-d8a9ff05151a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PP Admin: Work Queues Reports' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="672c147ee7b877a466d84a1e8b3e171e.png" xmlns="">0RBWdPldJkEeUgn31t_zZaw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

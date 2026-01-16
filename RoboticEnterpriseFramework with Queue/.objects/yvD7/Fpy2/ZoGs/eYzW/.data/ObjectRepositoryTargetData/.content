@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="F2tzJNAOZUyiPsAQ4k2mSA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/13eec88c-2b2e-46c3-95be-528a728549ce/case-information" CVScreenId="21715574-5041-4a4c-96a0-ad992d13f128" CvElementArea="510, 647, 967, 62" CvType="InputBox" DesignTimeRectangle="510, 649, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='location' tag='INPUT' type='text' class='' aaname='Court Location' /&gt;" Guid="be8b54bf-cd3d-4779-b2e7-4bcc1f8284f0" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="21715574-5041-4a4c-96a0-ad992d13f128" CvElementArea="510, 647, 967, 62" CvType="InputBox" DesignTimeRectangle="525, 669, 898, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='ng-star-inserted forge-floating-label' aaname='Court Location' check:innerText='Court Location' /&gt;" Guid="825c4e84-a694-4fd0-aae3-cabb792987ab" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="1ce9cdb3be8921eda67cc660b80622ca.png" xmlns="">07aASK7MwyUWx9-jcm_nLnw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

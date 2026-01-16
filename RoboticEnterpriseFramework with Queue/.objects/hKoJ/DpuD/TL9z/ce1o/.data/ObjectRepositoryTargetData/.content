@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="DFy5IWv_JkeE5XtqIIZLPA" Reference="D7WqeYEmnEKMzyxFDfXbPA/ce1oPeRp0Eeq6IbIu4fCvg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/8936e089-9fc6-4e94-b1ad-300cb66e5456/fees" CVScreenId="fc8dc9da-c801-4d62-9d21-cc6d81632633" CvElementArea="250, 695, 835, 60" CvType="InputBox" DesignTimeRectangle="250, 695, 783, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='filing-attorney' tag='INPUT' /&gt;" Guid="19b55d6c-85e8-468c-946b-ae9140eedaf3" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Fees' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="7154ecda19e2a22f4aad13a2bc2df5c2.png" xmlns="">0Lm4Ws1btFkmEAF3WxBwBSw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

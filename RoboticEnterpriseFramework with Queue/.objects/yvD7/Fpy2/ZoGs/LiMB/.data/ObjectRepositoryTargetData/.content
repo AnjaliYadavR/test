@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Bd2BDSQytECo4meL3nDXRQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/LiMBdvRKEkuFQFmehCfQcQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/1a0e1224-c135-494a-afe2-5d4c1ecd363c/case-information" CVScreenId="9cb13c0e-296e-46a1-82c1-2c5f2787a791" DesignTimeRectangle="510, 795, 968, 70" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl tag='FORGE-CHIP-FIELD' /&gt;&lt;webctrl shadowhostid='' tag='DIV' parentclass='forge-chip-field forge-field forge-field--roomy' type='' class='forge-field__label-input-container' aaname='' /&gt;" Guid="48f30b88-4e2b-4ba3-9d2c-15601e8d6e21" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="5ef8b525-6cfa-482f-95ec-0fb5de242e5e" CvTextArea="507, 739, 195, 20" CvTextArgument="Procedure/Remedies" CvType="Text" DesignTimeRectangle="510, 733, 968, 35" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H3' visibleinnertext='Procedure/Remedies' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' visibleinnertext='Procedure/Remedies' type='' aaname='Procedure/Remedies' check:text='Procedure/Remedies' /&gt;" Guid="ff98fc0a-d80d-4e21-9eef-a5a10a2b4666" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="a3462af9bd657ed04bcbfef263206675.png" xmlns="">01WMGQbidhEW_8hoOOtscZw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

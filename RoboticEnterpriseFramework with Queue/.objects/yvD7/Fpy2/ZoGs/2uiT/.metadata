@@ -1,0 +1,13 @@
+﻿{
+  "Name": "PartiesHelp",
+  "Type": "Element",
+  "Id": "2uiTgCxp-0CusiH26d2pUA",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/2uiTgCxp-0CusiH26d2pUA",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/ZoGsNV8qB06oeMxhH8UbOQ",
+  "Created": "2025-04-09T12:08:24.4417333Z",
+  "Updated": "2025-04-09T12:08:24.4417333Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

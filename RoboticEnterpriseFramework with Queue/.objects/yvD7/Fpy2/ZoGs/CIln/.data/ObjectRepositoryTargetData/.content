@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="mG9hIOp6xUmwj9bwl2aaag" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="0e3aff7b-419d-441e-8121-a1274bf68a6d" CvElementArea="292, 483, 803, 62" CvType="InputBox" DesignTimeRectangle="293, 485, 805, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='FORGE-TEXT-FIELD' /&gt;&lt;webctrl css-selector='div&amp;gt;div' shadowhostid='' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-TEXT-FIELD' /&gt;&lt;webctrl type='' shadowhostid='' tag='DIV' class='forge-text-field forge-field forge-field--trailing forge-field--required forge-field--invalid forge-field--label forge-field--focused' aaname='' /&gt;" Guid="98474911-55d0-4990-a5e3-8bdd7084470e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="bd5ed9c2f48dd3c9dc0f082805804220.png" xmlns="">0W-lT6tiRdE-Wj1ssTrkfgA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

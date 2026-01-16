@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="NOcvP2-Qt0iLUy-P54RTZA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/dashboard" CVScreenId="a6c8549a-d32f-41f7-8210-f9a9e6bd3484" CvElementArea="158, 603, 519, 50" CvTextArea="364, 616, 103, 22" CvTextArgument="Start filing" CvType="Button" DesignTimeRectangle="160, 605, 515, 45" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl class='forge-button__ripple' parentid='start-filing' tag='SPAN' type='' aaname='' /&gt;" Guid="67213ab3-79ca-42d8-a08f-246104e4f0b1" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="a6c8549a-d32f-41f7-8210-f9a9e6bd3484" CvTextArea="159, 311, 119, 27" CvTextArgument="Start filing" CvType="Text" DesignTimeRectangle="160, 304, 515, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' innertext='Start Filing' visibleinnertext='Start filing' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' innertext='Start Filing' visibleinnertext='Start filing' type='' aaname='Start Filing' check:text='Start Filing' /&gt;" Guid="78ac033a-a11c-4e2f-ba5c-ef63540868e9" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="38d5722991092eb54f53533b905e627a.png" xmlns="">0ZW43aNZ150GxMYUqQcIiGw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

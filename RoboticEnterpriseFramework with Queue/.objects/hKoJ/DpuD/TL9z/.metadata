@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome eFile - Fees",
+  "Type": "Screen",
+  "Id": "TL9zcoRBTkiICJ33x6DTFg",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/TL9zcoRBTkiICJ33x6DTFg",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/DpuD5WtokUCmfqoZKpF6bA",
+  "Created": "2025-04-10T08:02:29.9297471Z",
+  "Updated": "2025-04-10T08:02:29.9297471Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

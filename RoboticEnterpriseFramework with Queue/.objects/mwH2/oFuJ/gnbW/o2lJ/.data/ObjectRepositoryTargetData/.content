@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ru4RJJ5n4k-a-bEG6WRMzA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/landing" DesignTimeRectangle="579, 411, 760, 52" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl aria-role='form' tag='IFRAME' /&gt;&lt;webctrl tag='DIV' aaname='*Please sign in to continue*' innertext='*Please sign in to continue*' /&gt;" Guid="8e13876e-e3ce-45c6-bce0-f859acaf2754" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Landing Page' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="7d2fdc256fef5ff5bae171ad0cabccae.png" xmlns="">0R5Nml_sTAUWu6Y7_0z1WPA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

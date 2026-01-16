@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Remember me Forgot Pass…",
+  "Type": "Element",
+  "Id": "jfEYeAZz80uhKWfFyZ35qw",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/jfEYeAZz80uhKWfFyZ35qw",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/GGN3n7nxoU-uwy-vI1fxpA",
+  "Created": "2025-04-04T14:33:21.2627456Z",
+  "Updated": "2025-04-04T14:33:21.2627456Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

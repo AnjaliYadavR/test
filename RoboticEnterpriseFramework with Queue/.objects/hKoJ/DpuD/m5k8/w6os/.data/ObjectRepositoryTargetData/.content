@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="zgL6CnJ8k0SqJas1h5Cf1Q" Reference="D7WqeYEmnEKMzyxFDfXbPA/w6osDbRSk0mNLfkJvuG39Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="9ae0b5d2-bb25-475e-bd4e-49c6adf155f6" CvElementArea="295, 626, 683, 61" CvType="InputBox" DesignTimeRectangle="293, 628, 686, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='email0' tag='INPUT' aaname='Email' /&gt;" FuzzySelectorArgument="&lt;webctrl id='email0' tag='INPUT' aaname='Email' type='text' class='ng-pristine ng-valid ng-touched forge-field__input--focused' placeholder='Example: someone@domain.com' /&gt;" Guid="213dc4a3-6374-49b5-bcab-769ca4206f2c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="9ae0b5d2-bb25-475e-bd4e-49c6adf155f6" CvElementArea="295, 626, 683, 61" CvType="InputBox" DesignTimeRectangle="308, 636, 671, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' type='' class='ng-star-inserted forge-floating-label forge-floating-label--float-above forge-floating-label--float-above-end-keyframe' check:innerText='Email' /&gt;" Guid="cb024b3e-ce84-4395-8572-a3ae084ffe75" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="f028ec1d317647c9cf0ba607e998ad00.png" xmlns="">0wzZ51E6yHUCN5QjJbjiSig</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

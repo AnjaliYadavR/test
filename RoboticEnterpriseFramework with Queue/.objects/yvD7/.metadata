@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome cn-admin Login",
+  "Type": "App",
+  "Id": "yvD773SX1Uam05mQdcKDmQ",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/yvD773SX1Uam05mQdcKDmQ",
+  "Created": "2025-04-04T09:41:16.0411645Z",
+  "Updated": "2025-04-04T09:41:16.0411645Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

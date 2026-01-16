@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rl2JQWZrJkKuK59YxUErzA" Reference="D7WqeYEmnEKMzyxFDfXbPA/ckjhJoLgvEqRxNsprqCqWg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/filings" DesignTimeRectangle="293, 528, 50, 50" DesignTimeScaleFactor="1.25" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl tag='INPUT' aaname='eFile Only' type='radio' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' aaname='eFile Only' type='radio' /&gt;" Guid="2bd39dae-db23-4cd7-a419-f4dd333a1fff" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="17a5d8ea-13fa-4b3e-a0de-4e2252ee0c91" CvTextArea="346, 542, 91, 22" CvTextArgument="eFile Only" CvType="Text" DesignTimeRectangle="343, 535, 94, 35" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' innertext='eFile Only' visibleinnertext='eFile Only' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' innertext='eFile Only' visibleinnertext='eFile Only' type='' class='tyl-typography--subtitle1-secondary' aaname='' check:text='checked' /&gt;" Guid="8a0ff982-b617-4d2f-8e06-d31470ec4640" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="ad8a8fb852f5480656644c327d6bea8e.png" xmlns="">0x_ljG0K-iUu3xzSBC7lPfw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

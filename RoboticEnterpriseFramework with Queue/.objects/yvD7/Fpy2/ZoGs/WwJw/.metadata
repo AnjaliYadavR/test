@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Case InformationHelp",
+  "Type": "Element",
+  "Id": "WwJw-b4_lEmgCP_T3-r7BQ",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/WwJw-b4_lEmgCP_T3-r7BQ",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/ZoGsNV8qB06oeMxhH8UbOQ",
+  "Created": "2025-04-09T10:12:22.7829884Z",
+  "Updated": "2025-04-09T10:12:22.7829884Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

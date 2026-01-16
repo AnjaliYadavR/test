@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="xBBEc8sEVUO1PuyQwBmXbg" Reference="D7WqeYEmnEKMzyxFDfXbPA/eNGjV14-PkyusvxhYulwMw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/4b1130f7-0019-4e82-8100-d973eeaa1d7b/fees" CVScreenId="ce15696a-d341-4f59-99a5-f63336dc8c0e" CvElementArea="254, 694, 833, 62" CvType="InputBox" DesignTimeRectangle="250, 695, 783, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='filing-attorney' tag='INPUT' /&gt;" Guid="304b6c56-06e5-4895-90c1-057ed69cf641" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Fees' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="ce15696a-d341-4f59-99a5-f63336dc8c0e" CvElementArea="254, 694, 833, 62" CvType="InputBox" DesignTimeRectangle="265, 703, 768, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentname='filing-attorney' tag='LABEL' type='' class='ng-star-inserted forge-floating-label forge-field__label--focused forge-floating-label--float-above forge-floating-label--float-above-end-keyframe' aaname='Filing Attorney' check:innerText='Filing Attorney' /&gt;" Guid="5f6702bc-7343-44aa-9d1e-2d07dadf2e5a" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="27212c5dda358d55f9a623dd631b1cc7.png" xmlns="">0AuV0F2iUAk-1lRSTCDy-3w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

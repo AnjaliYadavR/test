@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="FVeTbAsumEO4Ba8BpzE_og" Reference="D7WqeYEmnEKMzyxFDfXbPA/CeTTFG_C60y9X7kiKrLPrQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="d8faae34-6a67-4f28-bd3b-662503d646bf" CvElementArea="291, 747, 451, 63" CvType="InputBox" DesignTimeRectangle="293, 749, 447, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl name='address0_city' tag='INPUT' type='text' aaname='City' id='address0_city' /&gt;" FuzzySelectorArgument="&lt;webctrl name='address0_city' tag='INPUT' type='text' aaname='City' id='address0_city' class='ng-pristine ng-valid ng-touched' /&gt;" Guid="5e2f6995-e6c2-4b44-9a33-ce73c9b20618" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="d8faae34-6a67-4f28-bd3b-662503d646bf" CvElementArea="291, 747, 451, 63" CvType="InputBox" DesignTimeRectangle="308, 769, 432, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='City' tag='LABEL' type='' class='ng-star-inserted forge-floating-label' check:innerText='City' /&gt;" Guid="00b3097d-639b-48a4-8602-f5051c97c24e" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="a1af11e7004a4b32a9a0854d57a71023.png" xmlns="">07BbL4IvFM0uhxWueUujlDg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

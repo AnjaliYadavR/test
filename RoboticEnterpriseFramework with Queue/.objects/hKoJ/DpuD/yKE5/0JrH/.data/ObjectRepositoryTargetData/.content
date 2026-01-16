@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="k9VAe94xsEaIDBRFRP5MGA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/a535533c-a93b-422a-878b-e9c466aa2b41/filings" CVScreenId="dd36d4c2-1f7c-4653-b274-fcb72428a033" DesignTimeRectangle="1817, 965, 85, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='save-filings' tag='BUTTON' /&gt;" Guid="3a6a695c-65e0-4266-b7ae-15f83c3cf9a6" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="6633ee9f8d6c62c421fc811a46130bcd.png" xmlns="">0crF_NHrRMEG_4WQIckAgFQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

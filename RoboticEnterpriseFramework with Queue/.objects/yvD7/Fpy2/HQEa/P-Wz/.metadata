@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Take Action",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "P-WzJu7C3EOk6ckXZI6HZQ",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/P-WzJu7C3EOk6ckXZI6HZQ",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/HQEaAO-md0W45SPgtKQJVQ",
+  "Created": "2025-04-14T06:46:34.7224676Z",
+  "Updated": "2025-04-14T06:46:34.7224676Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

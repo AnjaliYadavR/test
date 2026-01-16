@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fXSxfba9ak2ZwlWvRkUVuw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="4c62268d-44f3-47df-9a76-9cfe02c2b1c3" CvTextArea="541, 602, 190, 18" CvTextArgument="+ Add party details" CvType="Text" DesignTimeRectangle="539, 583, 586, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='TD' colName='Party Name' rowName='PlaintiffIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' visibleinnertext='Party name is blank&amp;#xA;Add party details' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='tyl-table-cell tyl-table-body__cell' tag='TD' colName='Party Name' rowName='PlaintiffIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' visibleinnertext='Party name is blank&amp;#xA;Add party details' aaname='' check:text='Party name is blankAdd party details' /&gt;" Guid="74f0f892-1ff7-4300-b751-9faa07f72ee6" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="4c62268d-44f3-47df-9a76-9cfe02c2b1c3" CvTextArea="541, 602, 190, 18" CvTextArgument="+ Add party details" CvType="Text" DesignTimeRectangle="540, 590, 192, 45" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='forge-button__ripple' parentid='add-party-details' tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='forge-button__ripple' parentid='add-party-details' type='' tag='SPAN' aaname='' /&gt;" Guid="59d9e156-cfef-452f-87b0-61d8d9eaba17" SearchSteps="Selector, FuzzySelector, CV" />
+          <Target CVScreenId="4c62268d-44f3-47df-9a76-9cfe02c2b1c3" CvTextArea="271, 602, 63, 17" CvTextArgument="Plaintiff" CvType="Text" DesignTimeRectangle="273, 602, 60, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Plaintiff' tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Plaintiff' type='' tag='SPAN' class='' check:innerText='Plaintiff' /&gt;" Guid="ac10efbb-3726-4901-9d67-070607d059a7" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="8dd2bd85fe136767bcf83764d2155bbb.png" xmlns="">0B82Gv54el0a-LGjOUxtGcg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

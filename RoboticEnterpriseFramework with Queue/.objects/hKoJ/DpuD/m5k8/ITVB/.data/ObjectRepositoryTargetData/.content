@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="mkVHhPGJW06ShiaDUMbO9w" Reference="D7WqeYEmnEKMzyxFDfXbPA/ITVBckcxJU2BX5BgBKkVMA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="64ea1d9a-ad5c-4218-94df-ed0c75950e90" CvTextArea="541, 609, 190, 17" CvTextArgument="+ Add party details" CvType="Text" DesignTimeRectangle="540, 597, 192, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='add-party-details' tag='SPAN' colName='Party Name' rowName='PlaintiffIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='add-party-details' tag='SPAN' colName='Party Name' rowName='PlaintiffIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' type='' class='forge-button__ripple' aaname='' /&gt;" Guid="2e080114-0148-4e12-ba7c-2109fdb65fc0" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="64ea1d9a-ad5c-4218-94df-ed0c75950e90" CvTextArea="271, 607, 63, 18" CvTextArgument="Plaintiff" CvType="Text" DesignTimeRectangle="273, 608, 60, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Plaintiff' tag='SPAN' colName='Party Type' innertext='Plaintiff' visibleinnertext='Plaintiff' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Plaintiff' tag='SPAN' colName='Party Type' innertext='Plaintiff' visibleinnertext='Plaintiff' type='' class='' check:text='Plaintiff' /&gt;" Guid="ff1f9ade-af66-4192-9889-ea3d3fd48f9e" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="613396dad4141de755c0d5325cee6048.png" xmlns="">0TYh7xHv5YUKglNd7jJ8kog</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

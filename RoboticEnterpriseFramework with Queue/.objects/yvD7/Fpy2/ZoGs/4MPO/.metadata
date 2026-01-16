@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Damage Amount(1)",
+  "Type": "Element",
+  "Id": "4MPOLpw5v0WTi_P8aB9QDg",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/4MPOLpw5v0WTi_P8aB9QDg",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/ZoGsNV8qB06oeMxhH8UbOQ",
+  "Created": "2025-04-16T11:10:24.5078227Z",
+  "Updated": "2025-04-16T11:10:24.5078227Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

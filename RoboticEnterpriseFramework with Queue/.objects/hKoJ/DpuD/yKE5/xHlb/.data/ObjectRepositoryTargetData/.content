@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UHmnubc7WEqurw2mBZ6VGA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/filings" CVScreenId="948dd2f3-ce0d-45bb-821e-7053e3bb84b1" CvElementArea="1247, 575, 449, 63" CvType="InputBox" DesignTimeRectangle="1248, 577, 407, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='selected-text' shadowhostid='' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='selected-text' shadowhostid='' tag='DIV' type='' class='forge-select__selected-text' placeholder='Select...' aaname='' /&gt;" Guid="d692da0c-5288-4e40-af66-8f773efdce49" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="948dd2f3-ce0d-45bb-821e-7053e3bb84b1" CvElementArea="1247, 575, 449, 63" CvType="InputBox" DesignTimeRectangle="1263, 584, 392, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='select-label' shadowhostid='' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='select-label' shadowhostid='' tag='LABEL' type='' class='forge-floating-label forge-floating-label--float-above-end-keyframe forge-floating-label--float-above' aaname='Security' check:innerText='Security' /&gt;" Guid="3c80a031-6973-434d-8a51-e39e5ef9557f" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="f8c3298215fa11d4d7c2f2606b49bf44.png" xmlns="">0PLpX7DV1pEOCdhY8pelkbw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome eFile - Case Information",
+  "Type": "Screen",
+  "Id": "mPEhtgaAkUWhvreUWYS9Tg",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/mPEhtgaAkUWhvreUWYS9Tg",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/DpuD5WtokUCmfqoZKpF6bA",
+  "Created": "2025-04-16T11:11:43.2843575Z",
+  "Updated": "2025-04-16T11:11:43.2843575Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="J8eGSAZEl0-_y9mlD_HApQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/68kVl5xI3kytrw1iEhm3Pw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin" CVScreenId="743ead64-17e3-4a0b-a07f-4373da45b456" DesignTimeRectangle="788, 409, 362, 48" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='login_password' tag='INPUT' name='login_password' /&gt;" FuzzySelectorArgument="&lt;webctrl id='login_password' tag='INPUT' name='login_password' type='password' placeholder='Password' aaname='' /&gt;" Guid="33c6376f-7b18-4c3d-94e7-26de71e59872" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='cn-admin: Login' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="a872bfbdd9a5e3df652f4f76b2f07029.png" xmlns="">0t9MVBHSjeE6R80tOcgsHpw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

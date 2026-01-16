@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fMvBblQR50CDQLfV2NDURQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/tenant-mailing/0" CVScreenId="80657e17-f3e3-43b6-8257-dfda124d6aac" CvElementArea="1810, 280, 84, 40" CvTextArea="1826, 292, 50, 13" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="1812, 281, 80, 37" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname=' Search' tag='A' innertext=' Search' visibleinnertext='Search' /&gt;" Guid="9d3d779a-56fc-422f-8469-0411c6ed0c84" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="bb55d350c612e8aed20f3282e7ba3357.png" xmlns="">0F0nu5GFUj0ukuVFtzaTYtg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

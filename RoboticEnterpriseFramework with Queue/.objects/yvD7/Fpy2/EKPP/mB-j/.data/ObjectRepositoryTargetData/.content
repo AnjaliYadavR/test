@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="TE6uBa0CPEmI3vCpv_mU6w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/view-court-filing-schema/8020415461YLZR/1" CVScreenId="6336fb76-a518-4798-8dde-78d91a121346" CvElementArea="41, 685, 240, 45" CvTextArea="56, 698, 207, 21" CvTextArgument="Copy Court Filing Schema" CvType="Button" DesignTimeRectangle="43, 688, 236, 42" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='copyButton' tag='BUTTON' aaname='Copy Court Filing Schema' innertext='Copy Court Filing Schema' type='button' visibleinnertext='Copy Court Filing Schema' /&gt;" FuzzySelectorArgument="&lt;webctrl id='copyButton' tag='BUTTON' aaname='Copy Court Filing Schema' innertext='Copy Court Filing Schema' type='button' visibleinnertext='Copy Court Filing Schema' class='btn btn-primary' check:text='Copy Court Filing Schema' /&gt;" Guid="80583a81-742c-4c5a-8c22-a21ece4c7af5" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='Print' title='test.clicknotices.com/cn-admin/view-court-filing-schema/*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="818d07c9fc27aa5da55ee20a5a2babc4.png" xmlns="">0Xg117DmfMEaM6njOMkQ7YQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

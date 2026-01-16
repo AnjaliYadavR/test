@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="lWRkXp87TESFfZ4WXqXWsw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/failure-to-payrent/0" CVScreenId="7249d009-b9b3-481f-93c0-389478882e5e" CvTextArea="1571, 655, 148, 15" CvTextArgument="Court Filing Schema" CvType="Text" DesignTimeRectangle="1572, 655, 148, 18" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Court Filing Schema' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Court Filing Schema' tag='SPAN' type='' class='' check:innerText='Court Filing Schema' /&gt;" Guid="3b5b1009-dd54-4d1a-b0de-f5cb3a4de298" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PP Admin: Rent Suits' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="992aebe2a141284dc6e1ba858966839d.png" xmlns="">0QyRMZ4IfB0iVPG7hdkbyEA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="l609hnEBJkiZkxrRzg5hsA" Reference="D7WqeYEmnEKMzyxFDfXbPA/_7b9N_ME0kGoPygN9IZ4IQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin" CVScreenId="3cdc44a0-cab7-4191-a106-738c0fa5c760" CvElementArea="787, 517, 364, 64" CvTextArea="925, 535, 86, 21" CvTextArgument="SIGN IN" CvType="Button" DesignTimeRectangle="788, 519, 362, 57" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext='Sign in' name='login_btn' visibleinnertext='SIGN IN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-lg btn-login btn-block' aaname='Sign in' check:innerText='SIGN IN' /&gt;" Guid="8b4ce015-cf71-4648-b68a-0817420ca52d" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='cn-admin: Login' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="505ba0a938a6a61ef7c5a31d52d872c5.png" xmlns="">0_lDlh8owY0yXdTnq75qSzA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="aAYCAhSy10CWfsYLX-EKeQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/iTUla1putk23Q0yw54EhHw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="2762e054-9199-413d-bdb0-3a7b9e5f440f" CvElementArea="1245, 682, 452, 62" CvType="InputBox" DesignTimeRectangle="1248, 683, 447, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl name='address0_zipCode' tag='INPUT' aaname='Zip Code' id='address0_zipCode' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='address0_zipCode' tag='INPUT' aaname='Zip Code' id='address0_zipCode' type='text' class='ng-pristine ng-valid ng-touched' /&gt;" Guid="13f55e16-052a-4f81-9978-04485bd97c73" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="2762e054-9199-413d-bdb0-3a7b9e5f440f" CvElementArea="1245, 682, 452, 62" CvType="InputBox" DesignTimeRectangle="1263, 703, 432, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Zip Code' tag='LABEL' type='' class='ng-star-inserted forge-floating-label' check:innerText='Zip Code' /&gt;" Guid="b67ded94-486f-474f-81dc-e64809a71d2a" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="f957aef48460a27a9d611cf4c79fd54e.png" xmlns="">0MaTifLyrWEmfN21fUwJmdQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

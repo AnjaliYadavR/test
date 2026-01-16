@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="3tPSndD5fk-vuRM8a07c5g" Reference="D7WqeYEmnEKMzyxFDfXbPA/LCoEVsGInE6DcZ988A1-lQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="e99438a3-272d-43eb-9fc7-4d75cd0a1f1d" CvTextArea="271, 607, 63, 18" CvTextArgument="Plaintiff" CvType="Text" DesignTimeRectangle="273, 608, 60, 21" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Plaintiff' type='' tag='SPAN' class='' check:innerText='Plaintiff' /&gt;" Guid="fe6edf6e-8ab6-4074-8542-0cec1ec085ff" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="e99438a3-272d-43eb-9fc7-4d75cd0a1f1d" CvTextArea="541, 609, 190, 17" CvTextArgument="+ Add party details" CvType="Text" DesignTimeRectangle="540, 597, 192, 45" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='add-party-details' tag='SPAN' colName='Party Name' rowName='PlaintiffIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='add-party-details' tag='SPAN' colName='Party Name' rowName='PlaintiffIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' type='' class='forge-button__ripple' aaname='' /&gt;" Guid="89b8f64a-e1ef-4639-b8ff-6204bff8a640" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="da582c904b5a4888afff37858f340d0b.png" xmlns="">0JzL92acKDkKGgUjNqPJ3NQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="frp1gHu7skSj8ul5AMcNIA" Reference="D7WqeYEmnEKMzyxFDfXbPA/STNJvUEfC0ur6J7SYaJXPg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="1434f202-3070-4dd8-950a-7dd0c49e6c19" DesignTimeRectangle="293, 540, 328, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='nameFirst0' tag='INPUT' aaname='First Name' name='nameFirst0' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='nameFirst0' tag='INPUT' aaname='First Name' name='nameFirst0' type='text' /&gt;" Guid="6cd247b4-3996-439e-8f82-4bf9a5121bbe" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="1434f202-3070-4dd8-950a-7dd0c49e6c19" CvElementArea="292, 538, 330, 62" CvType="InputBox" DesignTimeRectangle="308, 560, 313, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='First Name' tag='LABEL' type='' class='ng-star-inserted forge-floating-label' check:innerText='First Name' /&gt;" Guid="5d0ffc5d-a342-407f-9a05-45f345023f59" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="27acbfc29d6966cad24706c1c3167dc0.png" xmlns="">0fvlO4mYYcUCF6rENBNVfjQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="vVISOkZMNkeJirAKoekVJw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/start-filing" CVScreenId="364c63fa-3720-4cef-b429-5605b1036159" CvElementArea="267, 703, 671, 47" CvTextArea="532, 717, 141, 18" CvTextArgument="Start new case" CvType="Button" DesignTimeRectangle="270, 705, 668, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='btnFileNewCase' tag='BUTTON' aaname=' Start new case ' visibleinnertext='Start new case' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btnFileNewCase' tag='BUTTON' aaname=' Start new case ' visibleinnertext='Start new case' type='button' check:text='Start new case' /&gt;" Guid="8693476b-84ec-4a25-b7f5-4f86f7d9b412" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Start Filing' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="364c63fa-3720-4cef-b429-5605b1036159" CvTextArea="259, 485, 155, 22" CvTextArgument="File new case" CvType="Text" DesignTimeRectangle="260, 457, 678, 65" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H5' aaname='File New Case' visibleinnertext='File new case' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H5' aaname='File New Case' visibleinnertext='File new case' type='' class='forge-typography--headline5 mb-0 pb-1 pt-3' check:text='File New Case' /&gt;" Guid="8e06fc68-09a8-4b55-9658-56d3b6681061" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="68a3179d9b14fb1e89870960da1b5e23.png" xmlns="">0mE5WsuweOkWf3Jp9tkg_2g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

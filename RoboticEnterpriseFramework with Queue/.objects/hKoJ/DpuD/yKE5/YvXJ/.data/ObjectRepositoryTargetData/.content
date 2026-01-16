@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fta7ZI8zvkqec8TVH3f9_Q" Reference="D7WqeYEmnEKMzyxFDfXbPA/YvXJACM5Y0-orvLmgpQxsQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/filings" CVScreenId="8a301faa-f79f-452c-8b44-7bd4100e718f" CvElementArea="900, 770, 186, 49" CvType="Button" DesignTimeRectangle="903, 773, 182, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='add-filing' tag='BUTTON' aaname='addAdd filing' innertext='addAdd filing' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='add-filing' tag='BUTTON' aaname='addAdd filing' innertext='addAdd filing' type='button' class='btn--raised forge-btn-white btn-primary btn' check:text='addAdd filing' /&gt;" Guid="a82ab734-521b-4d18-b7ce-cc559f1d0171" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="8a301faa-f79f-452c-8b44-7bd4100e718f" CvElementArea="900, 770, 186, 49" CvTextArea="970, 785, 94, 22" CvTextArgument="Add filing" CvType="Button" DesignTimeRectangle="973, 785, 92, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='add-filing' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='add-filing' tag='SPAN' type='' class='d-sm-inline flex-1' aaname='Add filing' check:innerText='Add filing' /&gt;" Guid="ffd754e4-2f09-4f0d-93ed-ca4e04bb8a49" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="b8f229ca0443b09a012860ebdb69c517.png" xmlns="">0KCo5VEB9MUi5a1RwVcydUQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

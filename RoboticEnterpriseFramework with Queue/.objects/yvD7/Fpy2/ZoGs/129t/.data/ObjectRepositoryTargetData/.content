@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="x5LceGhN1kOjU5lWrW52UA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5ca59788-e814-438b-8916-56ef219fc023/case-information" DesignTimeRectangle="1383, 662, 35, 35" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl parentname='location' tag='BUTTON' type='button' aaname='close' innertext='close' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='location' tag='BUTTON' type='button' aaname='close' innertext='close' class='forge-icon-button forge-icon-button--dense' check:text='close' /&gt;" Guid="b1dd8d20-3c0c-41d5-b917-312d48900162" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="2cefc38154cbb6f0a6ee6a971b297ede.png" xmlns="">08rtjbEBK-0m6ube2hGNajg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

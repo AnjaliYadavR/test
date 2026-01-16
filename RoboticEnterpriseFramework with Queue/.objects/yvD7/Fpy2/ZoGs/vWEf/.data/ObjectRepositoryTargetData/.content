@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="zuR8Lpf5D0WAQf_08WYzPg" Reference="D7WqeYEmnEKMzyxFDfXbPA/vWEf4QmuzUagheTOEReDKg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/d29aeca3-1e3f-4eac-a9d8-486153483dc3/case-information" CVScreenId="3622be94-be03-4faf-ab28-00003e02b521" CvElementArea="515, 652, 961, 61" CvType="InputBox" DesignTimeRectangle="510, 653, 968, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='FORGE-SELECT' aria-label='Damage Amount' parentname='damageAmount' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-SELECT' aria-label='Damage Amount' parentname='damageAmount' type='' class='ng-dirty ng-touched ng-valid' aaname='' /&gt;" Guid="5341821e-6d9d-4374-889d-374d7c6bdab3" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="715d0af958dcd0d75968a21baa739aea.png" xmlns="">0rj84xHi6jEiOjMjSS-fGdw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SelectItem</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

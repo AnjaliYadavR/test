@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Save",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "KCcVXuF2Wka7RrfifXAZsA",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/KCcVXuF2Wka7RrfifXAZsA",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/yKE5NEYHfESakY0oJBrHlQ",
+  "Created": "2025-04-10T08:00:07.4690452Z",
+  "Updated": "2025-04-10T08:00:07.4690452Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

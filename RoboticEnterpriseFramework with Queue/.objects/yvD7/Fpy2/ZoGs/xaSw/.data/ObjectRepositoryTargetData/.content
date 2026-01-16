@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rNL_ETtitUqNTCv4pe-aHQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/xaSwXI9J9ky5HXCahcKn_Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/749fc343-72e3-4089-9bf1-03734c9e0b46/case-information" CVScreenId="fd82e1d0-17a0-4f05-af9c-3ed177877972" DesignTimeRectangle="510, 759, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='caseCategory' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='caseCategory' tag='INPUT' type='text' class='forge-field__input--focused' aaname='Case Category' /&gt;" Guid="5722b337-85a8-4a48-9155-6b70dc2926b5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="8e7f0d30013a577aa5f030877858e382.png" xmlns="">0Wne6V1OAJUesVfceFMpztA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

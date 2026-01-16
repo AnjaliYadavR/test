@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2twwhozqWUqXsYNcb8bTGg" Reference="D7WqeYEmnEKMzyxFDfXbPA/5wtUztkc0USM3D58RwULjQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin/reports/work-queue" CVScreenId="4651c18a-5b8b-4a71-9ffe-759faabf3b14" CvElementArea="31, 749, 22, 22" CvTextArea="60, 755, 71, 13" CvTextArgument="Rent Suits" CvType="CheckBox" DesignTimeRectangle="22, 731, 200, 62" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='*Rent Suits*' tag='A' visibleinnertext=' Rent Suits' /&gt;" Guid="6552da4a-f8cc-4f02-ba5e-1313755dd799" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="4651c18a-5b8b-4a71-9ffe-759faabf3b14" CvTextArea="60, 755, 71, 13" CvTextArgument="Rent Suits" CvType="Text" DesignTimeRectangle="62, 750, 69, 25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Rent Suits' parentid='sidebar' tag='SPAN' type='' class='' check:innerText='Rent Suits' /&gt;" Guid="3ecbbf52-28f4-4ef1-91cd-df4ea59f1c21" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="1f5666a2e9f1aa42c3743df6bcb12c1f.png" xmlns="">0EMKzH6ZFQ0uLPgYhgHpLFA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

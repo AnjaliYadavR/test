@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Monetary relief of $250…",
+  "Type": "Element",
+  "Id": "vWEf4QmuzUagheTOEReDKg",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/vWEf4QmuzUagheTOEReDKg",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/ZoGsNV8qB06oeMxhH8UbOQ",
+  "Created": "2025-04-14T14:14:17.0376615Z",
+  "Updated": "2025-04-14T14:14:17.0376615Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

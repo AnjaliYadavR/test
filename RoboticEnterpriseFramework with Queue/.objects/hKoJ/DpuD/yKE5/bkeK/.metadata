@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Courtesy Copies",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "bkeKqLOQlEy0vUmo38S0GA",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/bkeKqLOQlEy0vUmo38S0GA",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/yKE5NEYHfESakY0oJBrHlQ",
+  "Created": "2025-04-10T07:56:51.5119177Z",
+  "Updated": "2025-04-10T07:56:51.5119177Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Filings",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "fgBb2k10YU-PwnSWmgSfqA",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/fgBb2k10YU-PwnSWmgSfqA",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/ZoGsNV8qB06oeMxhH8UbOQ",
+  "Created": "2025-04-10T06:48:54.5010348Z",
+  "Updated": "2025-04-10T06:48:54.5010348Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,93 @@
+name: UiPath Build and Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select environment to deploy'
+        required: true
+        default: 'Dev'
+        type: choice
+        options:
+          - Dev
+          - Test
+          - Prod
+      bot:
+        description: 'Select bot to deploy (leave empty for all changed bots)'
+        required: false
+        default: ''
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    env:
+      UIPATH_CLIENT_ID: ${{ secrets.UIPATH_CLIENT_ID }}
+      UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_CLIENT_SECRET }}
+      UIPATH_ORG: ${{ secrets.UIPATH_ORG }}
+      UIPATH_TENANT: ${{ secrets.UIPATH_TENANT }}
+      UIPATH_URL: ${{ secrets.UIPATH_URL }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install UiPath CLI
+        run: |
+          dotnet tool install --global UiPath.CLI --version 23.10.8753.32995 || echo "Already installed"
+          echo "::add-path::$HOME/.dotnet/tools"
+          uipcli --version
+
+      - name: Read bot list
+        id: readbots
+        run: |
+          BOTS=$(cat bots.txt)
+          echo "bots=$BOTS" >> $GITHUB_OUTPUT
+
+      - name: Detect bots to build
+        id: buildbots
+        run: |
+          echo "Selected bot input: '${{ github.event.inputs.bot }}'"
+          if [ -n "${{ github.event.inputs.bot }}" ]; then
+            # User selected a specific bot
+            TO_BUILD="${{ github.event.inputs.bot }}"
+          else
+            # Detect changed bots
+            CHANGED_BOTS=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep project.json | awk -F/ '{print $1}' | sort | uniq)
+            TO_BUILD=""
+            for bot in $CHANGED_BOTS; do
+              if echo "${{ steps.readbots.outputs.bots }}" | grep -qw $bot; then
+                TO_BUILD="$TO_BUILD $bot"
+              fi
+            done
+          fi
+          echo "Bots to build: $TO_BUILD"
+          echo "to_build=$TO_BUILD" >> $GITHUB_OUTPUT
+
+      - name: Build packages
+        run: |
+          mkdir -p artifacts
+          for bot in ${{ steps.buildbots.outputs.to_build }}; do
+            echo "Building $bot..."
+            uipcli package restore --project-path $bot
+            uipcli package pack --project-path $bot --output artifacts/$bot
+          done
+
+      - name: Login to UiPath Orchestrator
+        run: |
+          uipcli auth login \
+            --client-id $UIPATH_CLIENT_ID \
+            --client-secret $UIPATH_CLIENT_SECRET \
+            --account-name $UIPATH_ORG \
+            --tenant $UIPATH_TENANT \
+            --url $UIPATH_URL
+
+      - name: Deploy packages
+        run: |
+          ENVIRONMENT="${{ github.event.inputs.environment }}"
+          echo "Deploying to $ENVIRONMENT folder..."
+          for bot in artifacts/*; do
+            BOT_NAME=$(basename $bot)
+            echo "Deploying $BOT_NAME to $ENVIRONMENT folder..."
+            uipcli package deploy --package-path $bot --folder "$ENVIRONMENT"
+          done

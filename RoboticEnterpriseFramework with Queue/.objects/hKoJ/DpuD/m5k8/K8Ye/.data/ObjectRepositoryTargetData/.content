@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="OFwvYEc7q0-XibAB_h6doA" Reference="D7WqeYEmnEKMzyxFDfXbPA/K8Ye8i88TEOEd9EGpSOKVg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="d1935748-1f6c-497b-be2a-1e8733cc60a1" CvElementArea="292, 655, 1402, 64" CvType="InputBox" DesignTimeRectangle="293, 658, 1402, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl name='address0_line1' tag='INPUT' aaname='Address Line 1' id='address0_line1' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='address0_line1' tag='INPUT' aaname='Address Line 1' id='address0_line1' type='text' class='ng-pristine ng-valid ng-touched' /&gt;" Guid="4724755f-621f-4a33-8154-14ec8b5076de" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="d1935748-1f6c-497b-be2a-1e8733cc60a1" CvElementArea="292, 655, 1402, 64" CvType="InputBox" DesignTimeRectangle="308, 678, 1387, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Address Line 1' tag='LABEL' type='' class='ng-star-inserted forge-floating-label' check:innerText='Address Line 1' /&gt;" Guid="366a7ef3-7f3f-414b-831c-6a1949fafce1" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="291bad18a11484b64f16b4aedf7db019.png" xmlns="">0JhCCDbC1_EKo1zgXlWVZ3g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

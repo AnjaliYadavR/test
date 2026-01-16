@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Bulk Mailings",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "5wtUztkc0USM3D58RwULjQ",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/5wtUztkc0USM3D58RwULjQ",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/vBunPvvePEW-98qfR3hwTQ",
+  "Created": "2025-04-04T12:16:19.7661497Z",
+  "Updated": "2025-04-04T12:16:19.7661497Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

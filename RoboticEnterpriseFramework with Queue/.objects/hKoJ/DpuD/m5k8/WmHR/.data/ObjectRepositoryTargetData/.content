@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="RbEzWu0axU2j2vv6RJGGDQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/WmHRvv8GykqfjZfGHf3lJw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="46faa4c0-89f3-4b2e-86ac-35fdc05abc3c" CvTextArea="541, 731, 190, 18" CvTextArgument="+ Add party details" CvType="Text" DesignTimeRectangle="540, 720, 192, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='add-party-details' tag='SPAN' colName='Party Name' rowName='DefendantIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='add-party-details' tag='SPAN' colName='Party Name' rowName='DefendantIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' type='' class='forge-button__ripple' aaname='' /&gt;" Guid="262bdedc-a897-45bd-bd62-fc4772620bc3" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="46faa4c0-89f3-4b2e-86ac-35fdc05abc3c" CvTextArea="270, 731, 83, 17" CvTextArgument="Defendant" CvType="Text" DesignTimeRectangle="273, 731, 80, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Defendant' tag='SPAN' colName='Party Type' rowName='DefendantIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' visibleinnertext='Defendant' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Defendant' tag='SPAN' colName='Party Type' rowName='DefendantIncomplete (Required)Party details incomplete Incomplete (Required)Incomplete (Required)' visibleinnertext='Defendant' type='' class='' check:text='Defendant' /&gt;" Guid="d2969ea8-190c-4ea1-bed3-2182f848c9c6" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7d23ed474d13a6434ce698ee3058836b.png" xmlns="">04IvqSUS2fkem9ayA6cBLNw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

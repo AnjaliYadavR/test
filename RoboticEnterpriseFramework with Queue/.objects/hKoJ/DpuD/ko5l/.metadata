@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome eFile - Parties(1)",
+  "Type": "Screen",
+  "Id": "ko5ld6WKPk2gISmJgNlqxw",
+  "Reference": "D7WqeYEmnEKMzyxFDfXbPA/ko5ld6WKPk2gISmJgNlqxw",
+  "ParentRef": "D7WqeYEmnEKMzyxFDfXbPA/DpuD5WtokUCmfqoZKpF6bA",
+  "Created": "2025-04-17T10:37:31.2516043Z",
+  "Updated": "2025-04-17T10:37:31.2516043Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

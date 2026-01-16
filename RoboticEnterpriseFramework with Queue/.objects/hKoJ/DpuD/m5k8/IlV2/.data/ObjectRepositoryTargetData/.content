@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ssV8QFn2ukySyDtNtCqKpA" Reference="D7WqeYEmnEKMzyxFDfXbPA/IlV2kx_DF0WEO0oUj0ztRQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/parties" CVScreenId="53dc59a4-a864-458a-abf0-f009ba3044a1" CvElementArea="291, 816, 451, 63" CvType="InputBox" DesignTimeRectangle="293, 818, 447, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl name='address0_city' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='address0_city' tag='INPUT' type='text' class='ng-pristine ng-valid ng-touched' aaname='City' /&gt;" Guid="bc99a72b-5394-4b0a-a1a4-47903e4d1aac" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Parties' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="53dc59a4-a864-458a-abf0-f009ba3044a1" CvElementArea="291, 816, 451, 63" CvType="InputBox" DesignTimeRectangle="308, 838, 432, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='City' tag='LABEL' type='' class='ng-star-inserted forge-floating-label' check:innerText='City' /&gt;" Guid="38ed3947-8210-4f30-a8fa-715eb5f0d4c9" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7bd0905ca367d48ab99ce72606806677.png" xmlns="">0MJmjhiHo6EWOT-Fs4325qw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

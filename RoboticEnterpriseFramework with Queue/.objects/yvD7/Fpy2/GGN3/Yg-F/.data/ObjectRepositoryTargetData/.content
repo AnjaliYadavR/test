@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="SoNhbf8IrUORfcn_0_k13g" Reference="D7WqeYEmnEKMzyxFDfXbPA/Yg-F8lZkjkix5zqX7jWXFg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin" CVScreenId="ea1bedd0-862d-436e-ab46-6731438e4067" DesignTimeRectangle="763, 242, 412, 75" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' aaname='sign in now' visibleinnertext='SIGN IN NOW' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' aaname='sign in now' check:innerText='SIGN IN NOW' /&gt;" Guid="3156df4e-0c28-40c6-95b1-22846525add3" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="78c17822b3fbc026593fa21f94c31523.png" xmlns="">07ECS-54_GESq3vZtTYTW2A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

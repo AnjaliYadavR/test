@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fHolRZzvukmYUrbO9OcGDw" Reference="D7WqeYEmnEKMzyxFDfXbPA/eJ42tCivz06W6N0JyvYyLg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="test.clicknotices.com/cn-admin" CVScreenId="cb6ab528-52b4-4398-94a8-2e86dd80fe36" DesignTimeRectangle="788, 657, 362, 61" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='login_form' tag='DIV' aaname='*' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='login_form' tag='DIV' aaname='*' type='' /&gt;" Guid="27c9aee7-9331-4e99-81a6-2d0607e32e9d" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='cn-admin: Login' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="2ec61f22d5ae3ab1f5a1e77128befb69.png" xmlns="">0C2dSoyQBQE6tisPwpC3EXA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

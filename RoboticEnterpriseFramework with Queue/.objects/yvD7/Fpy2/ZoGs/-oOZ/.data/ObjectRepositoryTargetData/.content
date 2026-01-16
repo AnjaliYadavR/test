@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="1-YhwTxATU2_gIoAB5YszQ" Reference="D7WqeYEmnEKMzyxFDfXbPA/-oOZIiwUpU6mGI8uM1-GZQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/e010407a-677d-4a5d-80b3-9fb2a1150e71/case-information" CVScreenId="9b94ecc8-1e01-4285-b8d6-767ba599e4a6" DesignTimeRectangle="510, 666, 913, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='caseType' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='caseType' tag='INPUT' type='text' class='forge-field__input--focused' aaname='Case Type' /&gt;" Guid="4e6320fb-9d79-489a-bd3d-3cd8f1383551" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="9b94ecc8-1e01-4285-b8d6-767ba599e4a6" CvElementArea="511, 665, 963, 61" CvType="InputBox" DesignTimeRectangle="525, 674, 898, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='caseType' tag='LABEL' type='' aaname='Case Type' check:innerText='Case Type' /&gt;" Guid="356dcec2-e763-44d1-89b0-cc35df975e20" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="8e8b118c462beef326f01221d02dcf72.png" xmlns="">0guf5JMVx9U6Q3VNEbsL5hg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

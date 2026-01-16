@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="VYBappFwoUWKqNffC-CD2g" Reference="D7WqeYEmnEKMzyxFDfXbPA/d6EgZst3sEie93FtRIkgwQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/5e3299d8-3700-481e-b58e-59bfba93eba5/filings" CVScreenId="9e3ab371-03e5-4d93-8384-f85b17b03b0f" CvElementArea="291, 560, 1403, 62" CvType="InputBox" DesignTimeRectangle="293, 562, 1402, 60" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Client Reference Number' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Client Reference Number' class='ng-untouched ng-pristine ng-valid forge-field__input--focused' placeholder='Firm client re-bill or case tracking #' /&gt;" Guid="3b072ebc-4c63-45b5-b59c-494195bfbb7f" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Filings' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="9e3ab371-03e5-4d93-8384-f85b17b03b0f" CvElementArea="291, 560, 1403, 62" CvType="InputBox" DesignTimeRectangle="308, 570, 1387, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='Client Reference Number' visibleinnertext='Client Reference Number' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Client Reference Number' visibleinnertext='Client Reference Number' type='' check:text='Client Reference Number' /&gt;" Guid="b9e3497c-f0b6-4a85-9e86-094430d0a720" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="abb47bba9cc2ce7e27d6cf2b9e4d72fc.png" xmlns="">0fHYi_hnCr0Cxnmn9gh-r5Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

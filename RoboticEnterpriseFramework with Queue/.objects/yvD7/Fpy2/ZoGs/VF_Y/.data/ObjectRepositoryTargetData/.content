@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="8pSRO12ZZkOd7Hue3L0aZw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="efiletx.tylertech.cloud/OfsEfsp/ui/edit-envelope/13eec88c-2b2e-46c3-95be-528a728549ce/case-information" CVScreenId="5d8cc848-3242-4b7f-a94e-94021997d2f3" CvElementArea="512, 622, 963, 61" CvType="InputBox" DesignTimeRectangle="510, 623, 928, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='selected-text' shadowhostid='' tag='DIV' parentname='damageAmount' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FORGE-SELECT' /&gt;&lt;webctrl id='selected-text' shadowhostid='' tag='DIV' parentname='damageAmount' type='' class='forge-select__selected-text' placeholder='Select...' aaname='' /&gt;" Guid="84d75c55-b8ab-458f-a005-02451a057255" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eFile - Case Information' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="6efd40f62cbbc0b03b03a057c8326317.png" xmlns="">0W_6eTZ580U6o3zO_mrbPkg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
