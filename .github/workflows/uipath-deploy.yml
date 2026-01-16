@@ -32,32 +32,37 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # -------------------------
+      # Only modify CLI install for Windows
+      # -------------------------
       - name: Install UiPath CLI if missing
+        shell: pwsh
         run: |
-          echo "Checking if UiPath CLI is already installed..."
-          if ! command -v uipcli &> /dev/null
-          then
-              echo "UiPath CLI not found. Installing..."
+          Write-Host "Checking if UiPath CLI is already installed..."
+          if (-not (Get-Command uipcli -ErrorAction SilentlyContinue)) {
+              Write-Host "UiPath CLI not found. Installing..."
               # Download latest standalone UiPath CLI zip
-              curl -L -o UiPath.CLI.zip https://downloads.uipath.com/UiPath.CLI/latest/UiPath.CLI.zip
+              Invoke-WebRequest -Uri https://downloads.uipath.com/UiPath.CLI/latest/UiPath.CLI.zip -OutFile "$env:USERPROFILE\UiPath.CLI.zip"
               
               # Create folder for CLI
-              mkdir -p $HOME/uipathcli
+              New-Item -ItemType Directory -Path "$env:USERPROFILE\uipathcli" -Force
               
               # Extract the CLI
-              tar -xf UiPath.CLI.zip -C $HOME/uipathcli
+              Expand-Archive "$env:USERPROFILE\UiPath.CLI.zip" -DestinationPath "$env:USERPROFILE\uipathcli" -Force
               
               # Add CLI folder to PATH
-              echo "$HOME/uipathcli" >> $GITHUB_PATH
-          else
-              echo "UiPath CLI already installed!"
-          fi
-      
+              echo "$env:USERPROFILE\uipathcli" >> $env:GITHUB_PATH
+          } else {
+              Write-Host "UiPath CLI already installed!"
+          }
+
       - name: Verify UiPath CLI
+        shell: pwsh
         run: uipcli --version
-      
 
-
+      # -------------------------
+      # Rest of the logic unchanged
+      # -------------------------
       - name: Read bot list
         id: readbots
         shell: bash
@@ -88,7 +93,6 @@ jobs:
           if [ -n "${{ github.event.inputs.bot }}" ]; then
             TO_BUILD="${{ github.event.inputs.bot }}"
           else
-            # Manual workflow safe diff
             CHANGED_BOTS=$(git diff --name-only HEAD~1 HEAD | grep project.json | awk -F/ '{print $1}' | sort | uniq)
             TO_BUILD=""
             for bot in $CHANGED_BOTS; do
