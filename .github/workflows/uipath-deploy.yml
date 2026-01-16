@@ -30,39 +30,22 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Important for 'git diff' to work correctly
 
-      # -------------------------
-      # Only modify CLI install for Windows
-      # -------------------------
-      - name: Install UiPath CLI if missing
-        shell: pwsh
-        run: |
-          Write-Host "Checking if UiPath CLI is already installed..."
-          if (-not (Get-Command uipcli -ErrorAction SilentlyContinue)) {
-              Write-Host "UiPath CLI not found. Installing..."
-              # Download latest standalone UiPath CLI zip
-              Invoke-WebRequest -Uri https://downloads.uipath.com/UiPath.CLI/latest/UiPath.CLI.zip -OutFile "$env:USERPROFILE\UiPath.CLI.zip"
-              
-              # Create folder for CLI
-              New-Item -ItemType Directory -Path "$env:USERPROFILE\uipathcli" -Force
-              
-              # Extract the CLI
-              Expand-Archive "$env:USERPROFILE\UiPath.CLI.zip" -DestinationPath "$env:USERPROFILE\uipathcli" -Force
-              
-              # Add CLI folder to PATH
-              echo "$env:USERPROFILE\uipathcli" >> $env:GITHUB_PATH
-          } else {
-              Write-Host "UiPath CLI already installed!"
-          }
+      # -----------------------------------------------------------
+      # Official UiPath Action - Fixes the Invoke-WebRequest error
+      # -----------------------------------------------------------
+      - name: Setup UiPath CLI
+        uses: uipath/setup-uipath@v2
+        with:
+          uipath-cli-version: '23.10.8712.28549'
 
       - name: Verify UiPath CLI
         shell: pwsh
-        run: uipcli --version
+        run: uipath --version
 
-      # -------------------------
-      # Rest of the logic unchanged
-      # -------------------------
       - name: Read bot list
         id: readbots
         shell: bash
@@ -93,6 +76,7 @@ jobs:
           if [ -n "${{ github.event.inputs.bot }}" ]; then
             TO_BUILD="${{ github.event.inputs.bot }}"
           else
+            # Get changed bots based on project.json files
             CHANGED_BOTS=$(git diff --name-only HEAD~1 HEAD | grep project.json | awk -F/ '{print $1}' | sort | uniq)
             TO_BUILD=""
             for bot in $CHANGED_BOTS; do
@@ -116,14 +100,14 @@ jobs:
           mkdir -p artifacts
           for bot in ${{ steps.buildbots.outputs.to_build }}; do
             echo "🔨 Building $bot"
-            uipcli package restore --project-path "$bot"
-            uipcli package pack --project-path "$bot" --output "artifacts/$bot"
+            uipath package restore --project-path "$bot"
+            uipath package pack --project-path "$bot" --output "artifacts/$bot"
           done
 
       - name: Login to UiPath Orchestrator
         shell: bash
         run: |
-          uipcli auth login \
+          uipath auth login \
             --client-id "$UIPATH_CLIENT_ID" \
             --client-secret "$UIPATH_CLIENT_SECRET" \
             --account-name "$UIPATH_ORG" \
@@ -136,8 +120,15 @@ jobs:
           ENVIRONMENT="${{ github.event.inputs.environment }}"
           echo "🚀 Deploying to environment: $ENVIRONMENT"
 
-          for pkg in artifacts/*; do
-            BOT_NAME=$(basename "$pkg")
-            echo "Deploying $BOT_NAME to $ENVIRONMENT folder"
-            uipcli package deploy --package-path "$pkg" --folder "$ENVIRONMENT"
-          done
+          if [ -d "artifacts" ] && [ "$(ls -A artifacts)" ]; then
+            for pkg in artifacts/*; do
+              # The pack command creates folders per bot, find the .nupkg inside
+              NUPKG=$(find "$pkg" -name "*.nupkg")
+              if [ -n "$NUPKG" ]; then
+                echo "Deploying $(basename "$NUPKG") to $ENVIRONMENT folder"
+                uipath package deploy --package-path "$NUPKG" --folder "$ENVIRONMENT"
+              fi
+            done
+          else
+            echo "No artifacts found to deploy."
+          fi
