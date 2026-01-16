@@ -32,14 +32,30 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install UiPath CLI
+      - name: Install UiPath CLI if missing
         run: |
-          echo "Installing UiPath CLI..."
-          dotnet tool install --global UiPath.CLI || echo "UiPath CLI already installed"
-          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
-
+          echo "Checking if UiPath CLI is already installed..."
+          if ! command -v uipcli &> /dev/null
+          then
+              echo "UiPath CLI not found. Installing..."
+              # Download latest standalone UiPath CLI zip
+              curl -L -o UiPath.CLI.zip https://downloads.uipath.com/UiPath.CLI/latest/UiPath.CLI.zip
+              
+              # Create folder for CLI
+              mkdir -p $HOME/uipathcli
+              
+              # Extract the CLI
+              tar -xf UiPath.CLI.zip -C $HOME/uipathcli
+              
+              # Add CLI folder to PATH
+              echo "$HOME/uipathcli" >> $GITHUB_PATH
+          else
+              echo "UiPath CLI already installed!"
+          fi
+      
       - name: Verify UiPath CLI
         run: uipcli --version
+      
 
 
       - name: Read bot list
