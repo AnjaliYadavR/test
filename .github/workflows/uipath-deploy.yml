@@ -1,21 +1,166 @@
-name: 'Setup UiPath CLI'
-description: 'Download UiPath CLI and setup on GitHub Actions runner'
-inputs:
-  version:
-    description: | 
-      'Specific version of the UiPath CLI to download from the UiPath-Official Feed (https://uipath.visualstudio.com/Public.Feeds/_artifacts/feed/UiPath-Official/NuGet/UiPath.CLI.Windows/versions/). 
-      If not provided, the latest version will be downloaded based on platform-version input.'
-    required: false
-  platform-version:
-    description: |
-      'Version of the UiPath platform used (e.g. version of robots and Studio used) in major and minor version, such as "24.10".
-      If 'version' is provided, this input will be ignored.'
-    required: false
-outputs:
-  cliToolName:
-    description: 'Name of the UiPath CLI tool that was installed. E.g. UiPath.CLI.Windows for windows, UiPath.CLI otherwise'
-  cliVersion:
-    description: 'Version of the UiPath CLI tool that was installed. E.g. 24.10.0'
-runs:
-  using: 'node20'
-  main: 'dist/index.js'
+name: UiPath Build and Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select environment to deploy'
+        required: true
+        default: 'Dev'
+        type: choice
+        options:
+          - Dev
+          - Test
+          - Prod
+      bot:
+        description: 'Enter bot name (leave empty to deploy all changed bots)'
+        required: false
+        default: ''
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    env:
+      UIPATH_CLIENT_ID: ${{ secrets.UIPATH_CLIENT_ID }}
+      UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_CLIENT_SECRET }}
+      UIPATH_ORG: ${{ secrets.UIPATH_ORG }}
+      UIPATH_TENANT: ${{ secrets.UIPATH_TENANT }}
+      UIPATH_URL: ${{ secrets.UIPATH_URL }}
+
+    steps:
+      # -----------------------------------------------------------
+      # Checkout
+      # -----------------------------------------------------------
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # -----------------------------------------------------------
+      # Setup UiPath CLI (uipcli)
+      # -----------------------------------------------------------
+      - name: Setup UiPath (uipcli) command line tool
+        uses: Mikael-RnD/setup-uipath@v2
+
+      - name: Verify UiPath CLI
+        shell: pwsh
+        run: uipcli --version
+
+      # -----------------------------------------------------------
+      # Read bots list
+      # -----------------------------------------------------------
+      - name: Read bot list
+        id: readbots
+        shell: bash
+        run: |
+          if [ ! -f bots.txt ]; then
+            echo "ERROR: bots.txt not found"
+            exit 1
+          fi
+
+          BOTS=$(cat bots.txt)
+          echo "bots=$BOTS" >> $GITHUB_OUTPUT
+
+          echo "Available bots:"
+          echo "$BOTS"
+
+      # -----------------------------------------------------------
+      # Validate bot input
+      # -----------------------------------------------------------
+      - name: Validate bot input (if provided)
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.bot }}" ]; then
+            echo "Validating bot: ${{ github.event.inputs.bot }}"
+            if ! grep -qw "${{ github.event.inputs.bot }}" bots.txt; then
+              echo "ERROR: Bot '${{ github.event.inputs.bot }}' not found in bots.txt"
+              exit 1
+            fi
+          else
+            echo "No bot specified. Will deploy changed bots."
+          fi
+
+      # -----------------------------------------------------------
+      # Determine bots to build
+      # -----------------------------------------------------------
+      - name: Determine bots to build
+        id: buildbots
+        shell: bash
+        run: |
+          TO_BUILD=""
+
+          if [ -n "${{ github.event.inputs.bot }}" ]; then
+            TO_BUILD="${{ github.event.inputs.bot }}"
+          else
+            CHANGED_BOTS=$(git diff --name-only origin/main...HEAD \
+              | grep project.json \
+              | awk -F/ '{print $1}' \
+              | sort | uniq)
+
+            for bot in $CHANGED_BOTS; do
+              if echo "${{ steps.readbots.outputs.bots }}" | grep -qw "$bot"; then
+                TO_BUILD="$TO_BUILD $bot"
+              fi
+            done
+          fi
+
+          if [ -z "$TO_BUILD" ]; then
+            echo "⚠ No bots to build."
+          else
+            echo "Bots to build:$TO_BUILD"
+          fi
+
+          echo "to_build=$TO_BUILD" >> $GITHUB_OUTPUT
+
+      # -----------------------------------------------------------
+      # Build packages
+      # -----------------------------------------------------------
+      - name: Build UiPath packages
+        shell: bash
+        run: |
+          mkdir -p artifacts
+
+          for bot in ${{ steps.buildbots.outputs.to_build }}; do
+            echo "🔨 Building $bot"
+            uipcli package pack \
+              --project-path "$bot" \
+              --output "artifacts/$bot"
+          done
+
+      # -----------------------------------------------------------
+      # Login to Orchestrator
+      # -----------------------------------------------------------
+      - name: Login to UiPath Orchestrator
+        shell: bash
+        run: |
+          uipcli login orchestrator \
+            --clientId "$UIPATH_CLIENT_ID" \
+            --clientSecret "$UIPATH_CLIENT_SECRET" \
+            --accountName "$UIPATH_ORG" \
+            --tenant "$UIPATH_TENANT" \
+            --url "$UIPATH_URL"
+
+      # -----------------------------------------------------------
+      # Deploy packages
+      # -----------------------------------------------------------
+      - name: Deploy packages
+        shell: bash
+        run: |
+          ENVIRONMENT="${{ github.event.inputs.environment }}"
+          echo "🚀 Deploying to environment: $ENVIRONMENT"
+
+          if [ ! -d "artifacts" ] || [ -z "$(ls -A artifacts)" ]; then
+            echo "No artifacts found to deploy."
+            exit 0
+          fi
+
+          for pkg in artifacts/*; do
+            NUPKG=$(find "$pkg" -name "*.nupkg")
+            if [ -n "$NUPKG" ]; then
+              echo "Deploying $(basename "$NUPKG") to folder $ENVIRONMENT"
+              uipcli package deploy \
+                --package "$NUPKG" \
+                --folder "$ENVIRONMENT"
+            fi
+          done
