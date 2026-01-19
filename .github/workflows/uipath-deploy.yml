@@ -94,10 +94,10 @@ jobs:
             TO_BUILD="${{ github.event.inputs.bot }}"
           else
             CHANGED_BOTS=$(git diff --name-only origin/main...HEAD \
-              | grep project.json \
+              | grep -E 'project.json|\.xaml$|packages.config|.*\.config$|.*\.settings$' || true \
               | awk -F/ '{print $1}' \
               | sort | uniq)
-
+            echo $CHANGED_BOTS
             for bot in $CHANGED_BOTS; do
               if echo "${{ steps.readbots.outputs.bots }}" | grep -qw "$bot"; then
                 TO_BUILD="$TO_BUILD $bot"
