@@ -128,18 +128,6 @@ jobs:
               --output "artifacts/$bot"
           done
 
-      # -----------------------------------------------------------
-      # Login to Orchestrator
-      # -----------------------------------------------------------
-      - name: Login to UiPath Orchestrator
-        shell: pwsh
-        run: |
-          uipcli login orchestrator `
-            --clientId "$env:UIPATH_CLIENT_ID" `
-            --clientSecret "$env:UIPATH_CLIENT_SECRET" `
-            --accountName "$env:UIPATH_ORG" `
-            --tenant "$env:UIPATH_TENANT" `
-            --url "$env:UIPATH_URL"
 
       # -----------------------------------------------------------
       # Deploy packages
