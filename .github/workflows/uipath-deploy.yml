@@ -1,99 +1,21 @@
-name: UiPath Build and Deploy
-
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Select environment to deploy'
-        required: true
-        default: 'Dev'
-        type: choice
-        options:
-          - Dev
-          - Test
-          - Prod
-      bot:
-        description: 'Enter bot name (leave empty to deploy all changed bots)'
-        required: false
-        default: ''
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
-    env:
-      UIPATH_CLIENT_ID: ${{ secrets.UIPATH_CLIENT_ID }}
-      UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_CLIENT_SECRET }}
-      UIPATH_ORG: ${{ secrets.UIPATH_ORG }}
-      UIPATH_TENANT: ${{ secrets.UIPATH_TENANT }}
-      UIPATH_URL: ${{ secrets.UIPATH_URL }}
-
-    steps:
-      # --------------------------------
-      # Checkout code
-      # --------------------------------
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      # --------------------------------
-      # Setup UiPath CLI
-      # --------------------------------
-      - name: Install UiPath CLI
-        run: |
-          curl -L -o uipathcli.tar.gz https://github.com/UiPath/uipathcli/releases/uipathcli-linux-amd64.tar.gz
-          tar -xzf uipathcli.tar.gz
-          chmod +x uipathcli
-          sudo mv uipathcli /usr/local/bin/uipathcli
-      
-      - name: Verify UiPath CLI
-        run: uipathcli --version
-      
-      # --------------------------------
-      # Read bots.txt
-      # --------------------------------
-      - name: Read bot list
-        id: readbots
-        run: |
-          BOTS=$(tr '\n' ' ' < bots.txt)
-          echo "bots=$BOTS" >> $GITHUB_OUTPUT
-          echo "Available bots: $BOTS"
-
-      # --------------------------------
-      # Validate manual bot input
-      # --------------------------------
-      - name: Validate bot input
-        run: |
-          if [ -n "${{ github.event.inputs.bot }}" ]; then
-            if ! grep -qw "${{ github.event.inputs.bot }}" bots.txt; then
-              echo "ERROR: Bot '${{ github.event.inputs.bot }}' not found in bots.txt"
-              exit 1
-            fi
-          fi
-
-      # --------------------------------
-      # Determine bots to build
-      # --------------------------------
-      - name: Determine bots to build
-        id: buildbots
-        run: |
-          if [ -n "${{ github.event.inputs.bot }}" ]; then
-            TO_BUILD="${{ github.event.inputs.bot }}"
-          else
-            CHANGED_BOTS=$(git diff --name-only HEAD^ HEAD | grep project.json | awk -F/ '{print $1}' | sort -u || true)
-            TO_BUILD=""
-            for bot in $CHANGED_BOTS; do
-              if echo "${{ steps.readbots.outputs.bots }}" | grep -qw "$bot"; then
-                TO_BUILD="$TO_BUILD $bot"
-              fi
-            done
-          fi
-
-          if [ -z "$TO_BUILD" ]; then
-            echo "No bots to build. Exiting."
-            exit 0
-          fi
-
-          echo "to_build=$TO_BUILD" >> $GITHUB_OUTPUT
-          echo "Bots to buil
+name: 'Setup UiPath CLI'
+description: 'Download UiPath CLI and setup on GitHub Actions runner'
+inputs:
+  version:
+    description: | 
+      'Specific version of the UiPath CLI to download from the UiPath-Official Feed (https://uipath.visualstudio.com/Public.Feeds/_artifacts/feed/UiPath-Official/NuGet/UiPath.CLI.Windows/versions/). 
+      If not provided, the latest version will be downloaded based on platform-version input.'
+    required: false
+  platform-version:
+    description: |
+      'Version of the UiPath platform used (e.g. version of robots and Studio used) in major and minor version, such as "24.10".
+      If 'version' is provided, this input will be ignored.'
+    required: false
+outputs:
+  cliToolName:
+    description: 'Name of the UiPath CLI tool that was installed. E.g. UiPath.CLI.Windows for windows, UiPath.CLI otherwise'
+  cliVersion:
+    description: 'Version of the UiPath CLI tool that was installed. E.g. 24.10.0'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
