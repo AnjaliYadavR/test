@@ -118,26 +118,19 @@ jobs:
           if (-not (Test-Path $artifactsPath)) {
               New-Item -ItemType Directory -Path $artifactsPath | Out-Null
           }
-      
+
           $botsToBuild = "${{ steps.buildbots.outputs.to_build }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
-      
-          if ($botsToBuild.Count -eq 0) {
-              Write-Host "⚠ No bots to build. Skipping build step."
-              exit 0
-          }
-      
+
           foreach ($bot in $botsToBuild) {
-              Write-Host "🔨 Building $bot"
-              
-              # Use new UiPath CLI syntax
-              uipcli package pack `
-                  "$bot" `                       # workspace path / folder containing project.json
-                  -o "$artifactsPath\$bot" `     # output folder
-                  --traceLevel Information `
-                  -A "$env:UIPATH_ORG" `
-                  -I "$env:UIPATH_CLIENT_ID" `
-                  -S "$env:UIPATH_CLIENT_SECRET" `
-                  --libraryOrchestratorApplicationScope "OR.Folders"
+              $projectJson = Join-Path $bot "project.json"
+              if (-not (Test-Path $projectJson)) {
+                  Write-Warning "project.json not found for bot $bot. Skipping."
+                  continue
+              }
+              $outputPath = Join-Path $artifactsPath $bot
+              Write-Host "🔨 Building $bot -> $outputPath"
+
+              uipcli package pack "$projectJson" --traceLevel Information -o "$outputPath" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
           }
 
       # -----------------------------------------------------------
