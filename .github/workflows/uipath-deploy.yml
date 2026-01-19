@@ -40,7 +40,7 @@ jobs:
       # -----------------------------------------------------------
       # Setup UiPath CLI (uipcli)
       # -----------------------------------------------------------
-      - name: Setup UiPath (uipcli) command line tool
+      - name: Setup UiPath CLI
         uses: Mikael-RnD/setup-uipath@v2
 
       - name: Verify UiPath CLI
@@ -50,87 +50,89 @@ jobs:
       # -----------------------------------------------------------
       # Read bots list
       # -----------------------------------------------------------
-      - name: Read bot list
+      - name: Read bots list
         id: readbots
-        shell: bash
+        shell: pwsh
         run: |
-          if [ ! -f bots.txt ]; then
-            echo "ERROR: bots.txt not found"
-            exit 1
-          fi
-
-          BOTS=$(cat bots.txt)
-          echo "bots=$BOTS" >> $GITHUB_OUTPUT
-
-          echo "Available bots:"
-          echo "$BOTS"
-          echo "$bots and $GITHUB_OUTPUT"
-
-      # -----------------------------------------------------------
-      # Validate bot input
-      # -----------------------------------------------------------
-      - name: Validate bot input (if provided)
-        shell: bash
-        run: |
-          if [ -n "${{ github.event.inputs.bot }}" ]; then
-            echo "Validating bot: ${{ github.event.inputs.bot }}"
-            if ! grep -qw "${{ github.event.inputs.bot }}" bots.txt; then
-              echo "ERROR: Bot '${{ github.event.inputs.bot }}' not found in bots.txt"
+          if (-not (Test-Path "bots.txt")) {
+              Write-Error "bots.txt not found!"
               exit 1
-            fi
-          else
-            echo "No bot specified. Will deploy changed bots."
-          fi
+          }
+
+          $BOTS = Get-Content bots.txt | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne "" }
+          Write-Host "Available bots: $($BOTS -join ', ')"
+
+          # Export to GitHub output
+          $botsOutput = $BOTS -join ' '
+          echo "bots=$botsOutput" >> $env:GITHUB_OUTPUT
 
       # -----------------------------------------------------------
       # Determine bots to build
       # -----------------------------------------------------------
       - name: Determine bots to build
         id: buildbots
-        shell: bash
+        shell: pwsh
         run: |
-          TO_BUILD=""
+          $inputBot = "${{ github.event.inputs.bot }}".Trim()
+          $allBots = "${{ steps.readbots.outputs.bots }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
 
-          if [ -n "${{ github.event.inputs.bot }}" ]; then
-            TO_BUILD="${{ github.event.inputs.bot }}"
-            echo "Anjali bot info provided - $TO_BUILD"
-          else
-            echo "Anjali bot info not provided - $TO_BUILD"
-            CHANGED_BOTS=$(git diff --name-only origin/main...HEAD \
-              | grep -E 'project.json|\.xaml$|packages.config|.*\.config$|.*\.settings$' || true \
-              | awk -F/ '{print $1}' \
-              | sort | uniq)
-            echo $CHANGED_BOTS
-            for bot in $CHANGED_BOTS; do
-              if echo "${{ steps.readbots.outputs.bots }}" | grep -qw "$bot"; then
-                TO_BUILD="$TO_BUILD $bot"
-              fi
-            done
-          fi
-          echo "Anjali 1 - $TO_BUILD"
-          if [ -z "$TO_BUILD" ]; then
-            echo "⚠ No bots to build."
-          else
-            echo "Bots to build:$TO_BUILD"
-          fi
+          if ($inputBot) {
+              if ($allBots -notcontains $inputBot) {
+                  Write-Error "Bot '$inputBot' not found in bots.txt"
+                  exit 1
+              }
+              $toBuild = @($inputBot)
+              Write-Host "Deploying specified bot: $inputBot"
+          } else {
+              # Determine changed bots
+              git fetch origin main
+              $changedFiles = git diff --name-only origin/main...HEAD
+              $changedBots = $changedFiles | ForEach-Object {
+                  $_.Split("/")[0]
+              } | Sort-Object -Unique
 
-          echo "to_build=$TO_BUILD" >> $GITHUB_OUTPUT
+              $toBuild = @()
+              foreach ($bot in $changedBots) {
+                  if ($allBots -contains $bot) {
+                      $toBuild += $bot
+                  }
+              }
+
+              if ($toBuild.Count -eq 0) {
+                  Write-Host "⚠ No changed bots to build."
+              } else {
+                  Write-Host "Bots to build: $($toBuild -join ', ')"
+              }
+          }
+
+          # Export to GitHub output
+          echo "to_build=$($toBuild -join ' ')" >> $env:GITHUB_OUTPUT
 
       # -----------------------------------------------------------
       # Build packages
       # -----------------------------------------------------------
       - name: Build UiPath packages
-        shell: bash
+        shell: pwsh
         run: |
-          mkdir -p artifacts
+          $artifactsPath = "artifacts"
+          if (-not (Test-Path $artifactsPath)) {
+              New-Item -ItemType Directory -Path $artifactsPath | Out-Null
+          }
 
-          for bot in ${{ steps.buildbots.outputs.to_build }}; do
-            echo "🔨 Building $bot"
-            uipcli package pack \
-              --project-path "$bot" \
-              --output "artifacts/$bot"
-          done
-          echo "$Anjali build artifact - $to_build"
+          $botsToBuild = "${{ steps.buildbots.outputs.to_build }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
+
+          if ($botsToBuild.Count -eq 0) {
+              Write-Host "⚠ No bots to build. Skipping build step."
+              exit 0
+          }
+
+          foreach ($bot in $botsToBuild) {
+              Write-Host "🔨 Building $bot"
+              uipcli package pack `
+                  --project-path "$bot" `
+                  --output "$artifactsPath\$bot"
+          }
+
       # -----------------------------------------------------------
       # Deploy packages
       # -----------------------------------------------------------
@@ -139,23 +141,28 @@ jobs:
         run: |
           $ENVIRONMENT = "${{ github.event.inputs.environment }}"
           Write-Host "🚀 Deploying to Orchestrator folder: $ENVIRONMENT"
-      
-          if (!(Test-Path "artifacts") -or !(Get-ChildItem "artifacts" -Recurse -Filter *.nupkg)) {
-            Write-Host "⚠ No artifacts found to deploy."
-            exit 0
+
+          $artifactsPath = "artifacts"
+          if (-not (Test-Path $artifactsPath)) {
+              Write-Host "⚠ No artifacts folder found. Nothing to deploy."
+              exit 0
           }
-      
-          Get-ChildItem "artifacts" -Recurse -Filter *.nupkg | ForEach-Object {
-            Write-Host "📦 Deploying $($_.Name) to folder $ENVIRONMENT"
-      
-            uipcli package deploy `
-              "$($_.DirectoryName)" `
-              "$env:UIPATH_URL" `
-              "$env:UIPATH_TENANT" `
-              -A "$env:UIPATH_ORG" `
-              -I "$env:UIPATH_CLIENT_ID" `
-              -S "$env:UIPATH_CLIENT_SECRET" `
-              --applicationScope "OR.Folders" `
-              -o "$env:UIPATH_ORG"
+
+          $nupkgs = Get-ChildItem -Path $artifactsPath -Recurse -Filter *.nupkg
+          if (-not $nupkgs) {
+              Write-Host "⚠ No .nupkg files found. Nothing to deploy."
+              exit 0
           }
-      
+
+          foreach ($pkg in $nupkgs) {
+              Write-Host "📦 Deploying $($pkg.FullName) to folder $ENVIRONMENT"
+              uipcli package deploy `
+                  "$($pkg.FullName)" `
+                  "$env:UIPATH_URL" `
+                  "$env:UIPATH_TENANT" `
+                  -A "$env:UIPATH_ORG" `
+                  -I "$env:UIPATH_CLIENT_ID" `
+                  -S "$env:UIPATH_CLIENT_SECRET" `
+                  --applicationScope "OR.Folders" `
+                  -o "$env:UIPATH_ORG"
+          }
