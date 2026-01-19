@@ -128,27 +128,31 @@ jobs:
               --output "artifacts/$bot"
           done
 
-
       # -----------------------------------------------------------
       # Deploy packages
       # -----------------------------------------------------------
       - name: Deploy packages
-        shell: bash
+        shell: pwsh
         run: |
-          ENVIRONMENT="${{ github.event.inputs.environment }}"
-          echo "🚀 Deploying to environment: $ENVIRONMENT"
-
-          if [ ! -d "artifacts" ] || [ -z "$(ls -A artifacts)" ]; then
-            echo "No artifacts found to deploy."
+          $ENVIRONMENT = "${{ github.event.inputs.environment }}"
+          Write-Host "🚀 Deploying to Orchestrator folder: $ENVIRONMENT"
+      
+          if (!(Test-Path "artifacts") -or !(Get-ChildItem "artifacts" -Recurse -Filter *.nupkg)) {
+            Write-Host "⚠ No artifacts found to deploy."
             exit 0
-          fi
-
-          for pkg in artifacts/*; do
-            NUPKG=$(find "$pkg" -name "*.nupkg")
-            if [ -n "$NUPKG" ]; then
-              echo "Deploying $(basename "$NUPKG") to folder $ENVIRONMENT"
-              uipcli package deploy \
-                --package "$NUPKG" \
-                --folder "$ENVIRONMENT"
-            fi
-          done
+          }
+      
+          Get-ChildItem "artifacts" -Recurse -Filter *.nupkg | ForEach-Object {
+            Write-Host "📦 Deploying $($_.Name) to folder $ENVIRONMENT"
+      
+            uipcli package deploy `
+              "$($_.DirectoryName)" `
+              "$env:UIPATH_URL" `
+              "$env:UIPATH_TENANT" `
+              -A "$env:UIPATH_ORG" `
+              -I "$env:UIPATH_CLIENT_ID" `
+              -S "$env:UIPATH_CLIENT_SECRET" `
+              --applicationScope "OR.Folders" `
+              -o "$env:UIPATH_ORG"
+          }
+      
