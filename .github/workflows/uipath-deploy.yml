@@ -134,36 +134,25 @@ jobs:
               uipcli package pack "$projectJson" --traceLevel Information -o "$outputPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
           }
 
-      # -----------------------------------------------------------
+      #-----------------------------------------------------------
       # Deploy packages
       # -----------------------------------------------------------
       - name: Deploy packages
         shell: pwsh
         run: |
-          $ENVIRONMENT = "${{ github.event.inputs.environment }}"
-          Write-Host "🚀 Deploying to Orchestrator folder: $ENVIRONMENT"
+          $environment = "${{ github.event.inputs.environment }}"
+          Write-Host "🚀 Deploying to Orchestrator folder: $environment"
 
-          $artifactsPath = "artifacts"
-          if (-not (Test-Path $artifactsPath)) {
-              Write-Host "⚠ No artifacts folder found. Nothing to deploy."
-              exit 0
-          }
-
-          $nupkgs = Get-ChildItem -Path $artifactsPath -Recurse -Filter *.nupkg
+          $nupkgs = Get-ChildItem "artifacts" -Recurse -Filter *.nupkg
+          Write-Host "Anjali artifact $nupkgs"
           if (-not $nupkgs) {
-              Write-Host "⚠ No .nupkg files found. Nothing to deploy."
+              Write-Host "⚠ No artifacts found to deploy."
               exit 0
           }
 
           foreach ($pkg in $nupkgs) {
-              Write-Host "📦 Deploying $($pkg.FullName) to folder $ENVIRONMENT"
-              uipcli package deploy `
-                  "$($pkg.FullName)" `
-                  "$env:UIPATH_URL" `
-                  "$env:UIPATH_TENANT" `
-                  -A "$env:UIPATH_ORG" `
-                  -I "$env:UIPATH_CLIENT_ID" `
-                  -S "$env:UIPATH_CLIENT_SECRET" `
-                  --applicationScope "OR.Folders" `
-                  -o "$env:UIPATH_ORG"
+              Write-Host "📦 Deploying $($pkg.FullName) to folder $environment"
+
+              uipcli package deploy "$($pkg.FullName)" "$env:UIPATH_URL" "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --applicationScope "OR.Folders" --traceLevel Information --entryPointsPath "Main.xaml"
           }
+
