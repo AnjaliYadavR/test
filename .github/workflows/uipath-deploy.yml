@@ -132,14 +132,14 @@ jobs:
       # Login to Orchestrator
       # -----------------------------------------------------------
       - name: Login to UiPath Orchestrator
-        shell: bash
+        shell: pwsh
         run: |
-          uipcli login orchestrator \
-            --clientId "$UIPATH_CLIENT_ID" \
-            --clientSecret "$UIPATH_CLIENT_SECRET" \
-            --accountName "$UIPATH_ORG" \
-            --tenant "$UIPATH_TENANT" \
-            --url "$UIPATH_URL"
+          uipcli login orchestrator `
+            --clientId "$env:UIPATH_CLIENT_ID" `
+            --clientSecret "$env:UIPATH_CLIENT_SECRET" `
+            --accountName "$env:UIPATH_ORG" `
+            --tenant "$env:UIPATH_TENANT" `
+            --url "$env:UIPATH_URL"
 
       # -----------------------------------------------------------
       # Deploy packages
