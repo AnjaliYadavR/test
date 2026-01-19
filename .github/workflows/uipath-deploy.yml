@@ -129,8 +129,9 @@ jobs:
               }
               $outputPath = Join-Path $artifactsPath $bot
               Write-Host "🔨 Building $bot -> $outputPath"
+              Write-Host "🔨 Anjali!!! env variable $env $bot"
 
-              uipcli package pack "$projectJson" --traceLevel Information -o "$outputPath" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
+              uipcli package pack "$projectJson" --traceLevel Information -o "$outputPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
           }
 
       # -----------------------------------------------------------
