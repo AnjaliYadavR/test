@@ -64,6 +64,7 @@ jobs:
 
           echo "Available bots:"
           echo "$BOTS"
+          echo "$bots and $GITHUB_OUTPUT"
 
       # -----------------------------------------------------------
       # Validate bot input
@@ -92,7 +93,9 @@ jobs:
 
           if [ -n "${{ github.event.inputs.bot }}" ]; then
             TO_BUILD="${{ github.event.inputs.bot }}"
+            echo "Anjali bot info provided - $TO_BUILD"
           else
+            echo "Anjali bot info not provided - $TO_BUILD"
             CHANGED_BOTS=$(git diff --name-only origin/main...HEAD \
               | grep -E 'project.json|\.xaml$|packages.config|.*\.config$|.*\.settings$' || true \
               | awk -F/ '{print $1}' \
@@ -104,7 +107,7 @@ jobs:
               fi
             done
           fi
-
+          echo "Anjali 1 - $TO_BUILD"
           if [ -z "$TO_BUILD" ]; then
             echo "⚠ No bots to build."
           else
@@ -127,7 +130,7 @@ jobs:
               --project-path "$bot" \
               --output "artifacts/$bot"
           done
-
+          echo "$Anjali build artifact - $to_build"
       # -----------------------------------------------------------
       # Deploy packages
       # -----------------------------------------------------------
