@@ -147,11 +147,11 @@ jobs:
               Write-Host "🔨 Building $bot -> Version: $newVersion -> old version : $repoVersion"
 
               $projectData.projectVersion = $newVersion
-              
+
               # -------------------------------
               # 1️⃣ Save updated project.json back to repo
               # -------------------------------
-              $projectData | ConvertTo-Json -Depth 10 | Set-Content $projectJsonPath -Force
+              $projectData | ConvertTo-Json -Depth 10 | Set-Content $projectJsonContent -Force
 
               # Save updated project.json to artifacts folder
               $botArtifactPath = Join-Path $artifactsPath $bot
