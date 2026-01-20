@@ -183,6 +183,7 @@ jobs:
       - name: Commit and push updated project.json files
         shell: pwsh
         run: |
+          $existingProjectJsonPath = Join-Path $bot "project.json"
           $ErrorActionPreference = "Stop"
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
