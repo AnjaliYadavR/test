@@ -6,7 +6,7 @@ on:
       environment:
         description: 'environment to deploy'
         required: true
-        default: 'Dev'
+        default: ''
         type: choice
         options:
           - Shared
