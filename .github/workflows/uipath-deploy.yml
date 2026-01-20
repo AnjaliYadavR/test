@@ -118,30 +118,43 @@ jobs:
           # Export to GitHub output
           echo "to_build=$($toBuild -join ' ')" >> $env:GITHUB_OUTPUT
 
-      # -----------------------------------------------------------
-      # Build packages
+     # -----------------------------------------------------------
+      # Build UiPath packages (read project.json from commit, auto-version)
       # -----------------------------------------------------------
       - name: Build UiPath packages
         shell: pwsh
         run: |
           $artifactsPath = "artifacts"
-          if (-not (Test-Path $artifactsPath)) {
-              New-Item -ItemType Directory -Path $artifactsPath | Out-Null
-          }
+          if (-not (Test-Path $artifactsPath)) { New-Item -ItemType Directory -Path $artifactsPath | Out-Null }
 
           $botsToBuild = "${{ steps.buildbots.outputs.to_build }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
 
           foreach ($bot in $botsToBuild) {
-              $projectJson = Join-Path $bot "project.json"
-              if (-not (Test-Path $projectJson)) {
-                  Write-Warning "project.json not found for bot $bot. Skipping."
+              # Read project.json directly from commit
+              $projectJsonContent = git show HEAD:$bot/project.json
+              if (-not $projectJsonContent) {
+                  Write-Warning "project.json not found in commit for $bot. Skipping."
                   continue
               }
-              $outputPath = Join-Path $artifactsPath $bot
-              Write-Host "🔨 Building $bot -> $outputPath"
-              Write-Host "🔨 Anjali!!! env variable $env $bot"
 
-              uipcli package pack "$projectJson" --traceLevel Information -o "$outputPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
+              $projectData = $projectJsonContent | ConvertFrom-Json
+              $packageName = $projectData.name
+              $repoVersion = $projectData.projectVersion.Split(".")
+              
+              # Use GitHub run number as patch version
+              $newVersion = "$($repoVersion[0]).$($repoVersion[1]).${{ github.run_number }}"
+              Write-Host "🔨 Building $bot -> Version: $newVersion -> old version : $repoVersion"
+
+              $projectData.projectVersion = $newVersion
+
+              # Save updated project.json to artifacts folder
+              $botArtifactPath = Join-Path $artifactsPath $bot
+              if (-not (Test-Path $botArtifactPath)) { New-Item -ItemType Directory -Path $botArtifactPath | Out-Null }
+              $outputProjectJson = Join-Path $botArtifactPath "project.json"
+              $projectData | ConvertTo-Json -Depth 10 | Set-Content $outputProjectJson
+
+              # Pack the package
+              uipcli package pack "$outputProjectJson" --traceLevel Information -o "$outputPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
           }
 
       #-----------------------------------------------------------
