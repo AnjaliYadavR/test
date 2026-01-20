@@ -7,6 +7,10 @@ on:
         description: 'environment to deploy'
         required: true
         default: 'Dev'
+        type: choice
+        options:
+          - Shared
+          - Development Environment
       bot:
         description: 'Enter bot name (leave empty to deploy all changed bots)'
         required: false
@@ -148,6 +152,6 @@ jobs:
           foreach ($pkg in $nupkgs) {
               Write-Host "📦 Deploying $($pkg.FullName) to folder $environment"
 
-              uipcli package deploy "$($pkg.FullName)" "$env:UIPATH_URL" "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --folder "Development Environment" --applicationScope "OR.Folders" --traceLevel Information --entryPointsPath "Main.xaml"
+              uipcli package deploy "$($pkg.FullName)" "$env:UIPATH_URL" "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --folder "$environment" --applicationScope "OR.Folders" --traceLevel Information --entryPointsPath "Main.xaml"
           }
 
