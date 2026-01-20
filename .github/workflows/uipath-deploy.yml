@@ -176,6 +176,7 @@ jobs:
           $ErrorActionPreference = "Stop"
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
+          Write-Host "commiting changes of - $projectJsonPath"
           git add $projectJsonPath
           if (-not (git diff --cached --quiet)) {
             git commit -m "Bump project version(s) in project.json"
