@@ -151,7 +151,7 @@ jobs:
         shell: pwsh
         run: |
           $environment = "${{ github.event.inputs.environment }}"
-          Write-Host "🚀 Deploying to Orchestrator folder: $environment"
+          Write-Host "🚀 Deploying to Orchestrator folder: $environment and uipath url - $env:UIPATH_URL"
 
           $nupkgs = Get-ChildItem "artifacts" -Recurse -Filter *.nupkg
           Write-Host "Anjali artifact $nupkgs"
@@ -163,6 +163,6 @@ jobs:
           foreach ($pkg in $nupkgs) {
               Write-Host "📦 Deploying $($pkg.FullName) to folder $environment"
 
-              uipcli package deploy "$($pkg.FullName)" "$env:UIPATH_URL" "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" -o "$environment" --applicationScope "OR.Folders" --traceLevel Information --entryPointsPath "Main.xaml"
+              uipcli package deploy "$($pkg.FullName)" "$env:UIPATH_URL" "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" -o "$environment" --applicationScope "OR.Folders OR.BackgroundTasks OR.TestSets OR.TestSetExecutions OR.TestSetSchedules OR.Settings.Read OR.Robots.Read OR.Machines.Read OR.Execution OR.Assets OR.Users.Read OR.Jobs OR.Monitoring" --traceLevel Information --entryPointsPath "Main.xaml"
           }
 
