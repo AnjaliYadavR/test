@@ -137,8 +137,8 @@ jobs:
               # Read project.json directly from commit
               $projectJsonContent = git show HEAD:$bot/project.json
               if (-not $projectJsonContent) {
-                  Write-Warning "project.json not found in commit for $bot. Skipping."
-                  exit 0
+                  Write-Warning "project.json not found in commit for $bot."
+                  exit 1
               }
 
               $projectData = $projectJsonContent | ConvertFrom-Json
@@ -151,16 +151,26 @@ jobs:
               Write-Host "🔨 Building $bot -> Version: $newVersion -> old version : $($projectData.projectVersion)"
 
               $projectData.projectVersion = $newVersion
+
+              $existingProjectJsonPath = Join-Path $bot "project.json"
+
+              if (-not (Test-Path $existingProjectJsonPath)) {
+                  Write-Error "project.json does not exist in workspace for $bot"
+                  exit 1
+              }
               
-              # Correctly write updated project.json to the repo path
-              $projectJsonPath = "$bot/project.json"
-              $projectData | ConvertTo-Json -Depth 10 | Set-Content -Path $projectJsonPath -Force
-              Write-Host "json file path to update : $projectJsonPath"
-              # Save updated project.json to artifacts folder
+              $projectData | ConvertTo-Json -Depth 10 | Set-Content -Path $existingProjectJsonPath -Force
+
+              Write-Host "✅ Updated $existingProjectJsonPath"
+
+             # ---- Save to artifacts ----
               $botArtifactPath = Join-Path $artifactsPath $bot
-              if (-not (Test-Path $botArtifactPath)) { New-Item -ItemType Directory -Path $botArtifactPath | Out-Null }
+              if (-not (Test-Path $botArtifactPath)) {
+                  New-Item -ItemType Directory -Path $botArtifactPath | Out-Null
+              }
+      
               $outputProjectJson = Join-Path $botArtifactPath "project.json"
-              $projectData | ConvertTo-Json -Depth 10 | Set-Content $outputProjectJson
+              $projectData |ConvertTo-Json -Depth 10 |Set-Content $outputProjectJson
           
 
               # Pack the package
@@ -176,8 +186,8 @@ jobs:
           $ErrorActionPreference = "Stop"
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          Write-Host "commiting changes of - $projectJsonPath"
-          git add $projectJsonPath
+          Write-Host "commiting changes of - $existingProjectJsonPath"
+          git add $existingProjectJsonPath
           if (-not (git diff --cached --quiet)) {
             git commit -m "Bump project version(s) in project.json"
             git push origin HEAD:${{ github.ref }}
