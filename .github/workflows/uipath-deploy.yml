@@ -131,23 +131,23 @@ jobs:
 
           foreach ($bot in $botsToBuild) {
               # Read project.json directly from commit
-              $projectJsonContent = git show HEAD:$bot/project.json
+              $projectJsonContent  = Join-Path $bot "project.json"
               if (-not $projectJsonContent) {
                   Write-Warning "project.json not found in commit for $bot. Skipping."
                   exit 0
               }
 
-              $projectData = $projectJsonContent | ConvertFrom-Json
+              $projectData = Get-Content $projectJsonContent | ConvertFrom-Json
               $packageName = $projectData.name
               $repoVersion = $projectData.projectVersion.Split(".")
               
               # Use GitHub run number as patch version
               $patch = [int]$repoVersion[2] + 1
               $newVersion = "$($repoVersion[0]).$($repoVersion[1]).$patch"
-              Write-Host "🔨 Building $bot -> Version: $newVersion -> old version : $repoVersion"
+              Write-Host "🔨 Building $bot -> Version: $newVersion -> old version : $($projectData.projectVersion)"
 
               $projectData.projectVersion = $newVersion
-
+              
               # -------------------------------
               # 1️⃣ Save updated project.json back to repo
               # -------------------------------
