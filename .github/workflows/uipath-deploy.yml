@@ -28,6 +28,17 @@ jobs:
       UIPATH_URL: ${{ secrets.UIPATH_URL }}
 
     steps:
+      #---------------------------------------------------------
+      # 🔒 VALIDATION STEP (THIS IS WHERE IT GOES)
+      #---------------------------------------------------------
+      - name: Validate environment input
+        shell: pwsh
+        run: |
+          if ("${{ github.event.inputs.environment }}" -eq "") {
+            Write-Error "Environment must be selected"
+            exit 1
+          }
+          Write-Host "Running the bots in ENV : ${{ github.event.inputs.environment }}"
       # -----------------------------------------------------------
       # Checkout
       # -----------------------------------------------------------
