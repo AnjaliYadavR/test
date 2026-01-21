@@ -21,7 +21,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     env:
       UIPATH_CLIENT_ID: ${{ secrets.UIPATH_CLIENT_ID }}
