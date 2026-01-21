@@ -88,6 +88,7 @@ jobs:
         shell: pwsh
         run: |
           $inputBot = "${{ github.event.inputs.bot }}".Trim()
+          #-------------Get bot name from .txt file---------------------#
           $allBots = "${{ steps.readbots.outputs.bots }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
 
           if ($inputBot) {
@@ -98,27 +99,8 @@ jobs:
               $toBuild = @($inputBot)
               Write-Host "Deploying specified bot: $inputBot"
           } else {
-              # Determine changed bots
-              git fetch origin main
-              $changedFiles = git diff --name-only origin/main...HEAD
-              $changedFilesuncommited = git diff
-              Write-Host "Anjali 1 commited changes - $changedFiles and uncommited changes - $changedFilesuncommited"
-              $changedBots = $changedFiles | ForEach-Object {
-                  $_.Split("/")[0]
-              } | Sort-Object -Unique
-
-              $toBuild = @()
-              foreach ($bot in $changedBots) {
-                  if ($allBots -contains $bot) {
-                      $toBuild += $bot
-                  }
-              }
-
-              if ($toBuild.Count -eq 0) {
-                  Write-Host "⚠ No changed bots to build."
-              } else {
-                  Write-Host "Bots to build: $($toBuild -join ', ')"
-              }
+              Write-Warning "Bot name not provided in input!!! Please enter the Bot name to deploy."
+                  exit 1
           }
 
           # Export to GitHub output
@@ -134,6 +116,7 @@ jobs:
           if (-not (Test-Path $artifactsPath)) { New-Item -ItemType Directory -Path $artifactsPath | Out-Null }
 
           $botsToBuild = "${{ steps.buildbots.outputs.to_build }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
+          Write-Warning "list of bots to build $botsToBuild"
 
           foreach ($bot in $botsToBuild) {
               # Read project.json directly from commit
