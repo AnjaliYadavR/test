@@ -101,6 +101,8 @@ jobs:
               # Determine changed bots
               git fetch origin main
               $changedFiles = git diff --name-only origin/main...HEAD
+              $changedFilesuncommited = git diff
+              Write-Host "Anjali 1 commited changes - $changedFiles and uncommited changes - $changedFilesuncommited"
               $changedBots = $changedFiles | ForEach-Object {
                   $_.Split("/")[0]
               } | Sort-Object -Unique
