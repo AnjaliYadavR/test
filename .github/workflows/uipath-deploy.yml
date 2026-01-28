@@ -108,6 +108,7 @@ jobs:
       # -----------------------------------------------------------
       - name: Build UiPath packages
         shell: powershell
+        env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $artifactsPath = "artifacts"
           if (-not (Test-Path $artifactsPath)) { New-Item -ItemType Directory -Path $artifactsPath | Out-Null }
@@ -115,7 +116,8 @@ jobs:
           $botsToBuild = "${{ steps.buildbots.outputs.to_build }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
           Write-Warning "list of bots to build $botsToBuild"
 
-          foreach ($bot in $botsToBuild) {
+          foreach ($bot in $botsToBuild) 
+          {
               # Read project.json directly from commit
               $projectJsonContent = git show HEAD:$bot/project.json
               if (-not $projectJsonContent) {
@@ -157,27 +159,29 @@ jobs:
 
               # Pack the package
               uipcli package pack "$outputProjectJson" --traceLevel Information -o "$botArtifactPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
+              #-----------------------------
+              # Commiting changes
+              #-----------------------------
+              
+              $ErrorActionPreference = "Stop"
+              git config user.name "${{ github.actor }}"
+              git config user.email "${{ github.actor }}@users.noreply.github.com"
+              Write-Host "commiting changes of - $existingProjectJsonPath"
+              git status
+              git add $existingProjectJsonPath
+              git status
+              if (-not (git diff --cached --quiet)) 
+              {
+                git commit -m "Bump project version(s) in project.json"
+                git push origin HEAD:${{ github.ref }}
+                Write-Host "Committed and pushed updated project.json files."
+              }
+              else 
+              {
+                Write-Host "No changes to commit."
+              }
           }
-          #-----------------------------
-          # Commiting changes
-          #-----------------------------
-          
-          $ErrorActionPreference = "Stop"
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          Write-Host "commiting changes of - $existingProjectJsonPath"
-          git status
-          git add $existingProjectJsonPath
-          git status
-          if (-not (git diff --cached --quiet)) {
-            git commit -m "Bump project version(s) in project.json"
-            git push origin HEAD:${{ github.ref }}
-            Write-Host "Committed and pushed updated project.json files."
-          } else {
-            Write-Host "No changes to commit."
-          }
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       #-----------------------------------------------------------
       # Deploy packages
