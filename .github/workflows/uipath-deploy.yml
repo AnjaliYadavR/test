@@ -57,11 +57,12 @@ jobs:
       # -----------------------------------------------------------
       - name: Verify UiPath CLI
         shell: powershell
-        run: ls
+        run:  Get-Location
 
       - name: Verify UiPath CLI
         shell: powershell
-        run: C:\Users\anjal\uipathcli\uipath.exe --version
+        run: & "C:\Users\anjal\uipathcli\uipath.exe" --version
+
 
       # -----------------------------------------------------------
       # Read bots list
