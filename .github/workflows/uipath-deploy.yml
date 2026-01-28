@@ -55,6 +55,9 @@ jobs:
       # -----------------------------------------------------------
       # verify UiPath CLI (uipcli)
       # -----------------------------------------------------------
+      - name: Verify UiPath CLI
+        shell: powershell
+        run: ls
 
       - name: Verify UiPath CLI
         shell: powershell
