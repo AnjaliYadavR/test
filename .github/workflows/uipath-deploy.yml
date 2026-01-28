@@ -57,7 +57,7 @@ jobs:
       # -----------------------------------------------------------
 
       - name: Verify UiPath CLI
-        shell: pwsh
+        shell: powershell
         run: uipath --version
 
       # -----------------------------------------------------------
@@ -65,7 +65,7 @@ jobs:
       # -----------------------------------------------------------
       - name: Read bots list
         id: readbots
-        shell: pwsh
+        shell: powershell
         run: |
           if (-not (Test-Path "bots.txt")) {
               Write-Error "bots.txt not found!"
@@ -84,7 +84,7 @@ jobs:
       # -----------------------------------------------------------
       - name: Determine bots to build
         id: buildbots
-        shell: pwsh
+        shell: powershell
         run: |
           $inputBot = "${{ github.event.inputs.bot }}".Trim()
           #-------------Get bot name from .txt file---------------------#
@@ -109,7 +109,7 @@ jobs:
       # Build UiPath packages (read project.json from commit, auto-version)
       # -----------------------------------------------------------
       - name: Build UiPath packages
-        shell: pwsh
+        shell: powershell
         run: |
           $artifactsPath = "artifacts"
           if (-not (Test-Path $artifactsPath)) { New-Item -ItemType Directory -Path $artifactsPath | Out-Null }
@@ -185,7 +185,7 @@ jobs:
       # Deploy packages
       # -----------------------------------------------------------
       - name: Deploy packages
-        shell: pwsh
+        shell: powershell
         run: |
           $environment = "${{ github.event.inputs.environment }}"
           Write-Host "🚀 Deploying to Orchestrator folder: $environment and uipath url - $env:UIPATH_URL"
