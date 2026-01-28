@@ -37,6 +37,7 @@ jobs:
       - name: Validate environment input
         shell: pwsh
         run: |
+          Write-Host "Running the bots in ENV : ${{ github.event.inputs.environment }} and "${{ github.event.inputs.environment }}" -eq "" "
           if ("${{ github.event.inputs.environment }}" -eq "") {
             Write-Error "Environment must be selected"
             exit 1
