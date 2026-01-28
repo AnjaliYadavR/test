@@ -9,7 +9,7 @@ on:
       environment:
         description: 'environment to deploy'
         required: true
-        default: ''
+        default: 'Development Environment'
         type: choice
         options:
           - Shared
@@ -37,7 +37,6 @@ jobs:
       - name: Validate environment input
         shell: powershell
         run: |
-          Write-Host "Running the bots in ENV : ${{ github.event.inputs.environment }} and "${{ github.event.inputs.environment }}" -eq "" "
           if ("${{ github.event.inputs.environment }}" -eq "") {
             Write-Error "Environment must be selected"
             exit 1
@@ -53,12 +52,8 @@ jobs:
           persist-credentials: true
 
       # -----------------------------------------------------------
-      # verify UiPath CLI (uipcli)
+      # Setup UiPath CLI (uipcli)
       # -----------------------------------------------------------
-      - name: Verify UiPath CLI
-        shell: powershell
-        run: Get-Location
-
       - name: Verify UiPath CLI
         shell: powershell
         run: uipath --version
@@ -205,4 +200,3 @@ jobs:
               $inputBot = "${{ github.event.inputs.bot }}".Trim()
               uipcli package deploy "$($pkg.FullName)" "$env:UIPATH_URL" "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" -o "$environment" --applicationScope "OR.Folders OR.BackgroundTasks OR.TestSets OR.TestSetExecutions OR.TestSetSchedules OR.Settings.Read OR.Robots.Read OR.Machines.Read OR.Execution OR.Assets OR.Users.Read OR.Jobs OR.Monitoring" --traceLevel Information --entryPointsPath "Main.xaml" --processName "$inputBot"
           }
-
