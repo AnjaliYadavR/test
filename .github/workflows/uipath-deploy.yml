@@ -53,14 +53,12 @@ jobs:
           persist-credentials: true
 
       # -----------------------------------------------------------
-      # Setup UiPath CLI (uipcli)
+      # verify UiPath CLI (uipcli)
       # -----------------------------------------------------------
-      - name: Setup UiPath CLI
-        uses: Mikael-RnD/setup-uipath@v2
 
       - name: Verify UiPath CLI
         shell: pwsh
-        run: uipcli --version
+        run: uipath --version
 
       # -----------------------------------------------------------
       # Read bots list
