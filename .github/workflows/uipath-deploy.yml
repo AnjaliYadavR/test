@@ -108,8 +108,6 @@ jobs:
       # -----------------------------------------------------------
       - name: Build UiPath packages
         shell: powershell
-        env: GITHUB_TOKEN: 
-          ${{ secrets.GITHUB_TOKEN }}
         run: |
           $artifactsPath = "artifacts"
           if (-not (Test-Path $artifactsPath)) { New-Item -ItemType Directory -Path $artifactsPath | Out-Null }
@@ -182,6 +180,8 @@ jobs:
                 Write-Host "No changes to commit."
               }
           }
+        env: GITHUB_TOKEN: 
+          ${{ secrets.GITHUB_TOKEN }}
 
 
       #-----------------------------------------------------------
