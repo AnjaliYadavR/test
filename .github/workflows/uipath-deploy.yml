@@ -21,7 +21,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: self-hosted
 
     env:
       UIPATH_CLIENT_ID: ${{ secrets.UIPATH_CLIENT_ID }}
