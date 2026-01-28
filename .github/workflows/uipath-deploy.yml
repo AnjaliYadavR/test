@@ -35,7 +35,7 @@ jobs:
       # 🔒 VALIDATION STEP (THIS IS WHERE IT GOES)
       #---------------------------------------------------------
       - name: Validate environment input
-        shell: pwsh
+        shell: powershell
         run: |
           Write-Host "Running the bots in ENV : ${{ github.event.inputs.environment }} and "${{ github.event.inputs.environment }}" -eq "" "
           if ("${{ github.event.inputs.environment }}" -eq "") {
