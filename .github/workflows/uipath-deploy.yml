@@ -61,7 +61,7 @@ jobs:
 
       - name: Verify UiPath CLI
         shell: powershell
-        run: uipath --version
+        run: C:\Users\anjal\uipathcli\uipath --version
 
       # -----------------------------------------------------------
       # Read bots list
