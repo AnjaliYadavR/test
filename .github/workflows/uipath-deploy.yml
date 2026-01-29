@@ -142,6 +142,13 @@ jobs:
                Write-Warning "project.json not found in commit for $bot."
                exit 1
              }
+            $projectData = $projectJsonContent | ConvertFrom-Json
+            $repoVersion = $projectData.projectVersion.Split(".")
+
+            $patch = [int]$repoVersion[2] + 1
+            $newVersion = "$($repoVersion[0]).$($repoVersion[1]).$patch"
+
+            Write-Host "🔨 Building $bot -> Version: $newVersion -> old version : $($projectData.projectVersion)"
             }
 
       # -----------------------------------------------------------
