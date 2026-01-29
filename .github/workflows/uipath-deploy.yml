@@ -162,7 +162,7 @@ jobs:
         
 
           # Pack the package
-          
+
           uipcli package pack "$outputProjectJson" --traceLevel Information -o "$botArtifactPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
 
 
@@ -178,9 +178,11 @@ jobs:
             git commit -m "Bump project version(s) in project.json"
             git push origin HEAD:${{ github.ref }}
             Write-Host "Committed and pushed updated project.json files."
-          } else {
+            } else 
+             {
             Write-Host "No changes to commit."
-          }
+            }
+            
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
