@@ -180,7 +180,34 @@ jobs:
               -I "$env:UIPATH_CLIENT_ID" `
               -S "$env:UIPATH_CLIENT_SECRET" `
               --libraryOrchestratorApplicationScope "OR.Folders"
-            }
+          
+          # -----------------------------
+          # Committing changes
+          # -----------------------------
+          $ErrorActionPreference = "Stop"
+
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+          Write-Host "commiting changes of - $existingProjectJsonPath"
+
+          git status
+          git add $existingProjectJsonPath
+          git status
+
+          if (-not (git diff --cached --quiet)) {
+            git commit -m "Bump project version(s) in project.json"
+            git push origin HEAD:${{ github.ref }}
+            Write-Host "Committed and pushed updated project.json files"
+          }
+            else
+          {
+            Write-Host "No changes to commit "
+          }
+          }
+          
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # -----------------------------------------------------------
       # Deploy packages
