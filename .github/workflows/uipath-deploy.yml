@@ -148,8 +148,6 @@ jobs:
             $patch = [int]$repoVersion[2] + 1
             $newVersion = "$($repoVersion[0]).$($repoVersion[1]).$patch"
 
-            Write-Host "🔨 Building $bot -> Version: $newVersion -> old version : "$($projectData.projectVersion)""
-
             $projectData.projectVersion = $newVersion
             $existingProjectJsonPath = Join-Path $bot "project.json"
 
