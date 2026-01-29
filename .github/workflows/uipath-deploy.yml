@@ -206,9 +206,7 @@ jobs:
             git push origin HEAD:${{ github.ref }}
             Write-Host "Committed and pushed updated project.json files"
           }
-          else {
-            Write-Host "No changes to commit"
-          }
+          
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
