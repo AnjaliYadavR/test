@@ -115,6 +115,7 @@ jobs:
 
           $botsToBuild = "${{ steps.buildbots.outputs.to_build }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
           Write-Warning "list of bots to build $botsToBuild"
+
           if (-not $botsToBuild -or $botsToBuild.Count -eq 0) {
             Write-Error "No bots to build."
             exit 1
@@ -128,6 +129,7 @@ jobs:
               Write-Warning "project.json not found in commit for $bot."
               exit 1
           }
+
           $projectData = $projectJsonContent | ConvertFrom-Json
           $packageName = $projectData.name
           $repoVersion = $projectData.projectVersion.Split(".")
@@ -150,7 +152,6 @@ jobs:
 
           Write-Host "✅ Updated $existingProjectJsonPath"
 
-          #---- Save to artifacts ----
           $botArtifactPath = Join-Path $artifactsPath $bot
           if (-not (Test-Path $botArtifactPath)) {
               New-Item -ItemType Directory -Path $botArtifactPath | Out-Null
@@ -161,8 +162,28 @@ jobs:
         
 
           # Pack the package
+          
           uipcli package pack "$outputProjectJson" --traceLevel Information -o "$botArtifactPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
-      
+
+
+          # Commit the json changes
+
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          Write-Host "commiting changes of - $existingProjectJsonPath"
+          git status
+          git add $existingProjectJsonPath
+          git status
+          if (-not (git diff --cached --quiet)) {
+            git commit -m "Bump project version(s) in project.json"
+            git push origin HEAD:${{ github.ref }}
+            Write-Host "Committed and pushed updated project.json files."
+          } else {
+            Write-Host "No changes to commit."
+          }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       #-----------------------------------------------------------
       # Deploy packages
       # -----------------------------------------------------------
