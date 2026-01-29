@@ -157,10 +157,29 @@ jobs:
             }
             $projectData | ConvertTo-Json -Depth 10 | Set-Content -Path $existingProjectJsonPath -Force
 
-            Write-Host "✅ Updated $existingProjectJsonPath"
+            Write-Host "Updated $existingProjectJsonPath"
 
             $botArtifactPath = Join-Path $artifactsPath $bot
 
+            if (-not (Test-Path $botArtifactPath)) {
+              New-Item -ItemType Directory -Path $botArtifactPath | Out-Null
+            }
+
+            $outputProjectJson = Join-Path $botArtifactPath "project.json"
+
+            $projectData |
+              ConvertTo-Json -Depth 10 |
+              Set-Content $outputProjectJson
+
+            uipcli package pack "$outputProjectJson" `
+              --traceLevel Information `
+              -o "$botArtifactPath" `
+              --libraryOrchestratorUrl "$env:UIPATH_URL" `
+              --libraryOrchestratorTenant "$env:UIPATH_TENANT" `
+              -A "$env:UIPATH_ORG" `
+              -I "$env:UIPATH_CLIENT_ID" `
+              -S "$env:UIPATH_CLIENT_SECRET" `
+              --libraryOrchestratorApplicationScope "OR.Folders"
             }
 
       # -----------------------------------------------------------
