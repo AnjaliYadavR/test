@@ -9,7 +9,7 @@ on:
       environment:
         description: 'environment to deploy'
         required: true
-        default: 'Development Environment'
+        default: ''
         type: choice
         options:
           - Shared
@@ -54,9 +54,12 @@ jobs:
       # -----------------------------------------------------------
       # Setup UiPath CLI (uipcli)
       # -----------------------------------------------------------
+      #- name: Setup UiPath CLI
+      #  uses: Mikael-RnD/setup-uipath@v2
+
       - name: Verify UiPath CLI
         shell: powershell
-        run: uipath --version
+        run: UiPath --version
 
       # -----------------------------------------------------------
       # Read bots list
@@ -69,14 +72,11 @@ jobs:
               Write-Error "bots.txt not found!"
               exit 1
           }
-
           $BOTS = Get-Content bots.txt | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne "" }
           Write-Host "Available bots: $($BOTS -join ', ')"
-
           # Export to GitHub output
           $botsOutput = $BOTS -join ' '
           echo "bots=$botsOutput" >> $env:GITHUB_OUTPUT
-
       # -----------------------------------------------------------
       # Determine bots to build
       # -----------------------------------------------------------
@@ -87,7 +87,6 @@ jobs:
           $inputBot = "${{ github.event.inputs.bot }}".Trim()
           #-------------Get bot name from .txt file---------------------#
           $allBots = "${{ steps.readbots.outputs.bots }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
-
           if ($inputBot) {
               if ($allBots -notcontains $inputBot) {
                   Write-Error "Bot '$inputBot' not found in bots.txt"
@@ -99,75 +98,60 @@ jobs:
               Write-Warning "Bot name not provided in input!!! Please enter the Bot name to deploy."
                   exit 1
           }
-
           # Export to GitHub output
           echo "to_build=$($toBuild -join ' ')" >> $env:GITHUB_OUTPUT
-
-      # -----------------------------------------------------------
+     # -----------------------------------------------------------
       # Build UiPath packages (read project.json from commit, auto-version)
       # -----------------------------------------------------------
       - name: Build UiPath packages
         shell: powershell
         run: |
-          $ErrorActionPreference = "Stop"
           $artifactsPath = "artifacts"
           if (-not (Test-Path $artifactsPath)) { New-Item -ItemType Directory -Path $artifactsPath | Out-Null }
-
           $botsToBuild = "${{ steps.buildbots.outputs.to_build }}".Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
           Write-Warning "list of bots to build $botsToBuild"
-
-          if (-not $botsToBuild -or $botsToBuild.Count -eq 0) {
-            Write-Error "No bots to build."
-            exit 1
-          }
-          $bot = $botsToBuild[0]
-
-          #Read project.json directly from commit
-
-          $projectJsonContent = git show HEAD:$bot/project.json
-          if (-not $projectJsonContent) {
-              Write-Warning "project.json not found in commit for $bot."
-              exit 1
-          }
-
-          $projectData = $projectJsonContent | ConvertFrom-Json
-          $packageName = $projectData.name
-          $repoVersion = $projectData.projectVersion.Split(".")
-          
-          # Use GitHub run number as patch version
-          $patch = [int]$repoVersion[2] + 1
-          $newVersion = "$($repoVersion[0]).$($repoVersion[1]).$patch"
-          Write-Host "🔨 Building $bot -> Version: $newVersion -> old version : $($projectData.projectVersion)"
-
-          $projectData.projectVersion = $newVersion
-
-          $existingProjectJsonPath = Join-Path $bot "project.json"
-
-          if (-not (Test-Path $existingProjectJsonPath)) {
-              Write-Error "project.json does not exist in workspace for $bot"
-              exit 1
-          }
-          
-          $projectData | ConvertTo-Json -Depth 10 | Set-Content -Path $existingProjectJsonPath -Force
-
-          Write-Host "✅ Updated $existingProjectJsonPath"
-
-          $botArtifactPath = Join-Path $artifactsPath $bot
-          if (-not (Test-Path $botArtifactPath)) {
-              New-Item -ItemType Directory -Path $botArtifactPath | Out-Null
-          }
+          foreach ($bot in $botsToBuild) {
+              # Read project.json directly from commit
+              $projectJsonContent = git show HEAD:$bot/project.json
+              if (-not $projectJsonContent) {
+                  Write-Warning "project.json not found in commit for $bot."
+                  exit 1
+              }
+              $projectData = $projectJsonContent | ConvertFrom-Json
+              $packageName = $projectData.name
+              $repoVersion = $projectData.projectVersion.Split(".")
+              
+              # Use GitHub run number as patch version
+              $patch = [int]$repoVersion[2] + 1
+              $newVersion = "$($repoVersion[0]).$($repoVersion[1]).$patch"
+              Write-Host "🔨 Building $bot -> Version: $newVersion -> old version : $($projectData.projectVersion)"
+              $projectData.projectVersion = $newVersion
+              $existingProjectJsonPath = Join-Path $bot "project.json"
+              if (-not (Test-Path $existingProjectJsonPath)) {
+                  Write-Error "project.json does not exist in workspace for $bot"
+                  exit 1
+              }
+              
+              $projectData | ConvertTo-Json -Depth 10 | Set-Content -Path $existingProjectJsonPath -Force
+              Write-Host "✅ Updated $existingProjectJsonPath"
+             # ---- Save to artifacts ----
+              $botArtifactPath = Join-Path $artifactsPath $bot
+              if (-not (Test-Path $botArtifactPath)) {
+                  New-Item -ItemType Directory -Path $botArtifactPath | Out-Null
+              }
       
-          $outputProjectJson = Join-Path $botArtifactPath "project.json"
-          $projectData |ConvertTo-Json -Depth 10 |Set-Content $outputProjectJson
-        
+              $outputProjectJson = Join-Path $botArtifactPath "project.json"
+              $projectData |ConvertTo-Json -Depth 10 |Set-Content $outputProjectJson
+          
 
-          # Pack the package
-
-          uipcli package pack "$outputProjectJson" --traceLevel Information -o "$botArtifactPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
-
-
-          # Commit the json changes
-
+              # Pack the package
+              uipcli package pack "$outputProjectJson" --traceLevel Information -o "$botArtifactPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
+          }
+          #-----------------------------
+          # Commiting changes
+          #-----------------------------
+          
+          $ErrorActionPreference = "Stop"
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           Write-Host "commiting changes of - $existingProjectJsonPath"
@@ -178,11 +162,9 @@ jobs:
             git commit -m "Bump project version(s) in project.json"
             git push origin HEAD:${{ github.ref }}
             Write-Host "Committed and pushed updated project.json files."
-            } else 
-             {
+          } else {
             Write-Host "No changes to commit."
-            }
-            
+          }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -194,14 +176,12 @@ jobs:
         run: |
           $environment = "${{ github.event.inputs.environment }}"
           Write-Host "🚀 Deploying to Orchestrator folder: $environment and uipath url - $env:UIPATH_URL"
-
           $nupkgs = Get-ChildItem "artifacts" -Recurse -Filter *.nupkg
           Write-Host "Anjali artifact $nupkgs"
           if (-not $nupkgs) {
               Write-Host "⚠ No artifacts found to deploy."
               exit 0
           }
-
           foreach ($pkg in $nupkgs) {
               Write-Host "📦 Deploying $($pkg.FullName) to folder $environment"
               $inputBot = "${{ github.event.inputs.bot }}".Trim()
