@@ -137,8 +137,11 @@ jobs:
           foreach ($bot in $botsToBuild) 
           {
             $projectJsonContent = git show HEAD:$bot/project.json
-
-            
+            if (-not $projectJsonContent)
+             {
+               Write-Warning "project.json not found in commit for $bot."
+               exit 1
+             }
             }
 
       # -----------------------------------------------------------
