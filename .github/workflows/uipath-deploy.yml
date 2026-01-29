@@ -147,6 +147,14 @@ jobs:
 
             $patch = [int]$repoVersion[2] + 1
             $newVersion = "$($repoVersion[0]).$($repoVersion[1]).$patch"
+            
+            $projectData.projectVersion = $newVersion
+            $existingProjectJsonPath = Join-Path $bot "project.json"
+
+            if (-not (Test-Path $existingProjectJsonPath)) {
+              Write-Error "project.json does not exist in workspace for $bot"
+              exit 1
+            }
             }
 
       # -----------------------------------------------------------
