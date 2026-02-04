@@ -59,7 +59,7 @@ jobs:
       - name: Verify UiPath CLI
         shell: powershell
         run: | 
-        & "$env:USERPROFILE\.dotnet\tools\uipcli.exe" --version
+          & "C:\Users\anjal\.dotnet\tools\uipcli.exe" --version
 
       # -----------------------------------------------------------
       # Read bots list
