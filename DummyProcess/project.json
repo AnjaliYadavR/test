@@ -4,7 +4,8 @@
   "description": "this is just to check commit",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.System.Activities": "[25.4.4]"
+    "UiPath.System.Activities": "[25.4.4]",
+    "UiPath.WebAPI.Activities": "[2.3.2]"
   },
   "webServices": [],
   "entitiesStores": [],
