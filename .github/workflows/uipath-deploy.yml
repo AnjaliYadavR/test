@@ -164,9 +164,7 @@ jobs:
 
             $outputProjectJson = Join-Path $botArtifactPath "project.json"
 
-            $projectData |
-              ConvertTo-Json -Depth 10 |
-              Set-Content $outputProjectJson
+            $projectData | ConvertTo-Json -Depth 10 | Set-Content $outputProjectJson
 
             uipcli package pack "$outputProjectJson" --traceLevel Information -o "$botArtifactPath" --libraryOrchestratorUrl "$env:UIPATH_URL" --libraryOrchestratorTenant "$env:UIPATH_TENANT" -A "$env:UIPATH_ORG" -I "$env:UIPATH_CLIENT_ID" -S "$env:UIPATH_CLIENT_SECRET" --libraryOrchestratorApplicationScope "OR.Folders"
           
