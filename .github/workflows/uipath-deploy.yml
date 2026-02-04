@@ -60,7 +60,7 @@ jobs:
         shell: powershell
         run: | 
           $env:PATH += ";C:\Users\anjal\.dotnet\tools"
-          uipcli.exe --version
+          uipcli --version
 
       # -----------------------------------------------------------
       # Read bots list
