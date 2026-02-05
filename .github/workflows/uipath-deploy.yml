@@ -22,7 +22,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: self-hosted
+    runs-on: windows-latest
 
     env:
       UIPATH_CLIENT_ID: ${{ secrets.UIPATH_CLIENT_ID }}
@@ -56,11 +56,16 @@ jobs:
       # -----------------------------------------------------------
       # Setup UiPath CLI (uipcli)
       # -----------------------------------------------------------
+      - name: Setup UiPath CLI
+        uses: Mikael-RnD/setup-uipath@v2
+
       - name: Verify UiPath CLI
         shell: powershell
-        run: | 
-          $env:PATH += ";C:\actions-runner\externals"
-          uipcli --version
+        run: uipcli --version
+
+      - name: Verify UiPath CLI
+        shell: powershell
+        run: Get-Command uipcli
 
       # -----------------------------------------------------------
       # Read bots list
