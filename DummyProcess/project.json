@@ -1,59 +1,77 @@
 {
-  "name": "DummyProcess",
-  "projectId": "f51f6f52-b5f1-4581-8163-de157340c77c",
-  "description": "this is just to check commit",
-  "main": "Main.xaml",
-  "dependencies": {
-    "UiPath.System.Activities": "[25.4.4]",
-    "UiPath.WebAPI.Activities": "[2.3.2]"
-  },
-  "webServices": [],
-  "entitiesStores": [],
-  "schemaVersion": "4.0",
-  "studioVersion": "25.0.167.0",
-  "projectVersion": "1.0.5",
-  "runtimeOptions": {
-    "autoDispose": false,
-    "netFrameworkLazyLoading": false,
-    "isPausable": true,
-    "isAttended": false,
-    "requiresUserInteraction": true,
-    "supportsPersistence": false,
-    "workflowSerialization": "NewtonsoftJson",
-    "excludedLoggedData": [
-      "Private:*",
-      "*password*"
-    ],
-    "executionType": "Workflow",
-    "readyForPiP": false,
-    "startsInPiP": false,
-    "mustRestoreAllDependencies": true,
-    "pipType": "ChildSession"
-  },
-  "designOptions": {
-    "projectProfile": "Developement",
-    "outputType": "Process",
-    "libraryOptions": {
-      "includeOriginalXaml": false,
-      "privateWorkflows": []
-    },
-    "processOptions": {
-      "ignoredFiles": []
-    },
-    "fileInfoCollection": [],
-    "saveToCloud": false
-  },
-  "expressionLanguage": "VisualBasic",
-  "entryPoints": [
-    {
-      "filePath": "Main.xaml",
-      "uniqueId": "9f0e0085-9cf7-44ce-8f02-10f83692e8d7",
-      "input": [],
-      "output": []
-    }
-  ],
-  "isTemplate": false,
-  "templateProjectData": {},
-  "publishData": {},
-  "targetFramework": "Windows"
+    "name":  "DummyProcess",
+    "projectId":  "f51f6f52-b5f1-4581-8163-de157340c77c",
+    "description":  "this is just to check commit",
+    "main":  "Main.xaml",
+    "dependencies":  {
+                         "UiPath.System.Activities":  "[25.4.4]",
+                         "UiPath.WebAPI.Activities":  "[2.3.2]"
+                     },
+    "webServices":  [
+
+                    ],
+    "entitiesStores":  [
+
+                       ],
+    "schemaVersion":  "4.0",
+    "studioVersion":  "25.0.167.0",
+    "projectVersion":  "1.0.6",
+    "runtimeOptions":  {
+                           "autoDispose":  false,
+                           "netFrameworkLazyLoading":  false,
+                           "isPausable":  true,
+                           "isAttended":  false,
+                           "requiresUserInteraction":  true,
+                           "supportsPersistence":  false,
+                           "workflowSerialization":  "NewtonsoftJson",
+                           "excludedLoggedData":  [
+                                                      "Private:*",
+                                                      "*password*"
+                                                  ],
+                           "executionType":  "Workflow",
+                           "readyForPiP":  false,
+                           "startsInPiP":  false,
+                           "mustRestoreAllDependencies":  true,
+                           "pipType":  "ChildSession"
+                       },
+    "designOptions":  {
+                          "projectProfile":  "Developement",
+                          "outputType":  "Process",
+                          "libraryOptions":  {
+                                                 "includeOriginalXaml":  false,
+                                                 "privateWorkflows":  [
+
+                                                                      ]
+                                             },
+                          "processOptions":  {
+                                                 "ignoredFiles":  [
+
+                                                                  ]
+                                             },
+                          "fileInfoCollection":  [
+
+                                                 ],
+                          "saveToCloud":  false
+                      },
+    "expressionLanguage":  "VisualBasic",
+    "entryPoints":  [
+                        {
+                            "filePath":  "Main.xaml",
+                            "uniqueId":  "9f0e0085-9cf7-44ce-8f02-10f83692e8d7",
+                            "input":  [
+
+                                      ],
+                            "output":  [
+
+                                       ]
+                        }
+                    ],
+    "isTemplate":  false,
+    "templateProjectData":  {
+
+                            },
+    "publishData":  {
+
+                    },
+    "targetFramework":  "Windows"
 }
