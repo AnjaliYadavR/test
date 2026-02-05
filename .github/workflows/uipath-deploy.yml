@@ -226,19 +226,18 @@ jobs:
         run: |
           $environment = "${{ github.event.inputs.environment }}"
 
-          Write-Host "🚀 Deploying to Orchestrator folder: $environment and uipath url - $env:UIPATH_URL"
+          Write-Host "" Deploying to Orchestrator folder: $environment and uipath url - $env:UIPATH_URL"
 
           $nupkgs = Get-ChildItem "artifacts" -Recurse -Filter *.nupkg
 
           Write-Host "Anjali artifact $nupkgs"
 
           if (-not $nupkgs) {
-            Write-Host "⚠ No artifacts found to deploy."
+            Write-Host " No artifacts found to deploy."
             exit 0
           }
 
           foreach ($pkg in $nupkgs) {
-            Write-Host "📦 Deploying $($pkg.FullName) to folder $environment"
 
             $inputBot = "${{ github.event.inputs.bot }}".Trim()
 
