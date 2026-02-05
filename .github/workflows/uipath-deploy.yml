@@ -22,7 +22,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: self-hosted
 
     env:
       UIPATH_CLIENT_ID: ${{ secrets.UIPATH_CLIENT_ID }}
@@ -56,8 +56,18 @@ jobs:
       # -----------------------------------------------------------
       # Setup UiPath CLI (uipcli)
       # -----------------------------------------------------------
-      - name: Setup UiPath CLI
-        uses: Mikael-RnD/setup-uipath@v2
+      - name: Add dotnet tools to PATH
+        shell: powershell
+        run: |
+          $toolsPath = "$env:USERPROFILE\.dotnet\tools"
+          echo $toolsPath | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+
+      # -----------------------------------------------------------
+      # Setup UiPath CLI (uipcli)
+      # -----------------------------------------------------------
+      #- name: Setup UiPath CLI
+      #  uses: Mikael-RnD/setup-uipath@v2
 
       - name: Verify UiPath CLI
         shell: powershell
