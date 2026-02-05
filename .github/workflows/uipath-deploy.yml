@@ -59,8 +59,8 @@ jobs:
       - name: Verify UiPath CLI
         shell: powershell
         run: | 
-          Get-Command uipcli
-
+          $env:PATH += ";C:\actions-runner\externals"
+          uipcli --version
 
       # -----------------------------------------------------------
       # Read bots list
